@@ -1,0 +1,15 @@
+{
+  "name": "stardazz.com",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix StarDazz",
+    "build": "npm run build --prefix StarDazz",
+    "preview": "npm run preview --prefix StarDazz",
+    "lint": "npm run lint --prefix StarDazz"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^4.2.2"
+  }
+}
