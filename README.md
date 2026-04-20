@@ -90,4 +90,4 @@ pnpm build
 
 -----
 
-**Principal Maintainer:** **Yihan Li** *Graduate of Computing and Software Systems, The University of Melbourne* [GitHub Profile](https://github.com/YihanLi-erisaer) | [StarDazz (Yihan Li) Portfolio]([https://stardazz.com](https://stardazz-com.vercel.app/))
+**Principal Maintainer:** **Yihan Li** *Graduate of Computing and Software Systems, The University of Melbourne* [GitHub Profile](https://github.com/YihanLi-erisaer) | [StarDazz (Yihan Li) Portfolio](https://stardazz-com.vercel.app/)
