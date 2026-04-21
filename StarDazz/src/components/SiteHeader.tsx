@@ -1,4 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
   [
@@ -9,6 +11,8 @@ const navClass = ({ isActive }: { isActive: boolean }) =>
   ].join(' ')
 
 export function SiteHeader() {
+  const { t } = useLanguage()
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-zinc-950/80 backdrop-blur-xl">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
@@ -18,27 +22,30 @@ export function SiteHeader() {
         >
           <span className="text-lg">StarDazz</span>
           <span className="hidden text-xs font-normal text-zinc-500 sm:inline">
-            软件
+            {t('nav.tagline')}
           </span>
         </Link>
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-4 sm:gap-6">
           <NavLink to="/" className={navClass} end>
-            首页
+            {t('nav.home')}
           </NavLink>
           <Link
             to="/#products"
             className="text-sm text-zinc-400 transition-colors hover:text-zinc-200"
           >
-            产品
+            {t('nav.products')}
           </Link>
-          <a
-            href="https://github.com/YihanLi-erisaer/smeeting"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm text-zinc-400 transition-colors hover:text-zinc-200"
-          >
-            GitHub
-          </a>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <LanguageSwitcher />
+            <a
+              href="https://github.com/YihanLi-erisaer/smeeting"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-zinc-400 transition-colors hover:text-zinc-200"
+            >
+              {t('nav.github')}
+            </a>
+          </div>
         </nav>
       </div>
     </header>

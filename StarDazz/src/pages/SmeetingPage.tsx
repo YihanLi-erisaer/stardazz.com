@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const GITHUB = 'https://github.com/YihanLi-erisaer/smeeting'
 
 export function SmeetingPage() {
+  const { t } = useLanguage()
+
+  const features = [
+    { title: t('smeeting.f1t'), desc: t('smeeting.f1d') },
+    { title: t('smeeting.f2t'), desc: t('smeeting.f2d') },
+    { title: t('smeeting.f3t'), desc: t('smeeting.f3d') },
+    { title: t('smeeting.f4t'), desc: t('smeeting.f4d') },
+  ]
+
   return (
     <div className="relative">
       <div
@@ -13,7 +23,7 @@ export function SmeetingPage() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <nav className="text-sm text-zinc-500">
           <Link to="/" className="hover:text-zinc-300">
-            首页
+            {t('smeeting.crumbHome')}
           </Link>
           <span className="mx-2 text-zinc-600">/</span>
           <span className="text-zinc-400">smeeting</span>
@@ -21,14 +31,13 @@ export function SmeetingPage() {
 
         <div className="mt-10 max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-wider text-emerald-400/90">
-            StarDazz Product
+            {t('smeeting.label')}
           </p>
           <h1 className="mt-3 text-4xl font-medium tracking-tight text-zinc-50 sm:text-5xl">
             smeeting
           </h1>
           <p className="mt-4 text-xl leading-relaxed text-zinc-400">
-            轻量智能会议助手，整合语音识别与 AI
-            摘要，简化记录流程，并自动生成高效的会议纪要与行动项。
+            {t('smeeting.intro')}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
@@ -37,7 +46,7 @@ export function SmeetingPage() {
               rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-zinc-100 px-6 py-2.5 text-sm font-medium text-zinc-950 transition hover:bg-white"
             >
-              GitHub 仓库
+              {t('smeeting.repo')}
             </a>
             <a
               href={`${GITHUB}#readme`}
@@ -45,7 +54,7 @@ export function SmeetingPage() {
               rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-6 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/[0.06]"
             >
-              阅读说明
+              {t('smeeting.readme')}
             </a>
           </div>
         </div>
@@ -54,30 +63,11 @@ export function SmeetingPage() {
       <div className="border-t border-white/[0.06] bg-zinc-950/60 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-xl font-medium text-zinc-100 sm:text-2xl">
-            核心能力
+            {t('smeeting.featuresTitle')}
           </h2>
-          <p className="mt-2 max-w-2xl text-zinc-500">
-            面向会议记录与跟进的完整链路，减少手工整理时间。
-          </p>
+          <p className="mt-2 max-w-2xl text-zinc-500">{t('smeeting.featuresSub')}</p>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2">
-            {[
-              {
-                title: '语音识别',
-                desc: '将讨论内容转为文本，作为摘要与检索的基础。',
-              },
-              {
-                title: 'AI 摘要',
-                desc: '自动提炼会议要点，快速把握共识与分歧。',
-              },
-              {
-                title: '会议纪要',
-                desc: '结构化输出可读纪要，便于分享与归档。',
-              },
-              {
-                title: '行动项',
-                desc: '从讨论中提取待办，方便后续执行与追踪。',
-              },
-            ].map((f) => (
+            {features.map((f) => (
               <li
                 key={f.title}
                 className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6"
@@ -94,9 +84,9 @@ export function SmeetingPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-br from-zinc-900/50 to-zinc-950 p-8 sm:p-10">
-          <h2 className="text-lg font-medium text-zinc-100">开源与参与</h2>
+          <h2 className="text-lg font-medium text-zinc-100">{t('smeeting.ossTitle')}</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-zinc-500">
-            smeeting 的源码与更新托管在 GitHub。欢迎提交 Issue、贡献代码，或基于仓库自行构建与部署。
+            {t('smeeting.ossBody')}
           </p>
           <a
             href={GITHUB}
@@ -109,11 +99,8 @@ export function SmeetingPage() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link
-            to="/"
-            className="text-sm text-zinc-500 hover:text-zinc-300"
-          >
-            ← 返回首页
+          <Link to="/" className="text-sm text-zinc-500 hover:text-zinc-300">
+            ← {t('smeeting.backHome')}
           </Link>
         </div>
       </div>
