@@ -1,6 +1,6 @@
 export type Locale = 'zh' | 'en'
 
-export const defaultLocale: Locale = 'zh'
+export const defaultLocale: Locale = 'en'
 
 export const messages = {
   zh: {
