@@ -48,6 +48,9 @@ export function SiteHeader() {
           </Link>
           <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
+            <NavLink to="/about" className={navClass}>
+              {t('nav.about')}
+            </NavLink>
             <a
               href="https://github.com/YihanLi-erisaer/smeeting"
               target="_blank"
