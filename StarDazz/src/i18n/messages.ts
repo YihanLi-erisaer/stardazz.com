@@ -10,6 +10,8 @@ export const messages = {
     },
     nav: {
       tagline: '软件',
+      bilibili: '哔哩哔哩频道',
+      bilibiliAria: '前往 StarDazz 的哔哩哔哩空间',
       home: '首页',
       products: '产品',
       github: 'GitHub',
@@ -85,6 +87,8 @@ export const messages = {
     },
     nav: {
       tagline: 'Software',
+      bilibili: 'Bilibili channel',
+      bilibiliAria: 'Open StarDazz Bilibili space',
       home: 'Home',
       products: 'Products',
       github: 'GitHub',
