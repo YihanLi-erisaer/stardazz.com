@@ -15,7 +15,18 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-zinc-950/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-14 max-w-6xl min-w-0 flex-nowrap items-center justify-between gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain px-4 [scrollbar-width:none] sm:overflow-x-visible sm:px-6 [&::-webkit-scrollbar]:hidden">
+      <div
+        className={[
+          'mx-auto flex min-h-14 max-w-6xl min-w-0 flex-nowrap items-center justify-between gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain px-4 sm:overflow-x-visible sm:px-6',
+          /* Firefox：细滚动条，仅在有横向溢出时出现 */
+          '[scrollbar-color:rgb(113_113_122)_rgb(39_39_42)] [scrollbar-width:thin]',
+          /* WebKit：底部横向滚动条轨道与滑块 */
+          '[&::-webkit-scrollbar]:h-1.5',
+          '[&::-webkit-scrollbar-track]:bg-zinc-800/80',
+          '[&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-zinc-500/90',
+          '[&::-webkit-scrollbar-thumb]:hover:bg-zinc-400',
+        ].join(' ')}
+      >
         <div className="flex min-w-0 shrink-0 flex-nowrap items-center gap-x-2 sm:gap-x-3">
           <Link
             to="/"
