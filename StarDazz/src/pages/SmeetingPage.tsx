@@ -41,6 +41,14 @@ export function SmeetingPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
+              href={`${GITHUB}/releases/latest`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-zinc-100 px-6 py-2.5 text-sm font-medium text-zinc-950 transition hover:bg-white"
+            >
+              {t('smeeting.downloadRelease')}
+            </a>
+            <a
               href={GITHUB}
               target="_blank"
               rel="noreferrer"
