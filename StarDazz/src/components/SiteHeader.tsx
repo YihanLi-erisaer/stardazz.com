@@ -15,8 +15,8 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-zinc-950/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
-        <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 sm:gap-x-3">
+      <div className="mx-auto flex h-14 max-w-6xl min-w-0 flex-nowrap items-center justify-between gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain px-4 [scrollbar-width:none] sm:overflow-x-visible sm:px-6 [&::-webkit-scrollbar]:hidden">
+        <div className="flex min-w-0 shrink-0 flex-nowrap items-center gap-x-2 sm:gap-x-3">
           <Link
             to="/"
             className="flex items-baseline gap-2 font-medium tracking-tight text-zinc-100"
@@ -36,7 +36,7 @@ export function SiteHeader() {
             {t('nav.bilibili')}
           </a>
         </div>
-        <nav className="flex items-center gap-4 sm:gap-6">
+        <nav className="flex shrink-0 items-center gap-4 sm:gap-6">
           <NavLink to="/" className={navClass} end>
             {t('nav.home')}
           </NavLink>
