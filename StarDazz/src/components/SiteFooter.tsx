@@ -14,7 +14,7 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap gap-x-2 gap-y-2 text-sm text-zinc-500">
           <p className="text-sm font-medium">
-            Contact me:
+            {t('footer.contact')}
           </p>
           <Link to = "mailto:stardazz@163.com" className="underline text-sm font-medium">
             stardazz@163.com

@@ -119,6 +119,7 @@ export const messages = {
       home: '首页',
       smeeting: 'smeeting',
       copyright: '保留所有权利。',
+      contact: '联系我:',
     },
     home: {
       badge: 'StarDazz · 软件工作室',
@@ -291,6 +292,7 @@ export const messages = {
       home: 'Home',
       smeeting: 'smeeting',
       copyright: 'All rights reserved.',
+      contact: 'Contact me:',
     },
     home: {
       badge: 'StarDazz · Software Studio',
