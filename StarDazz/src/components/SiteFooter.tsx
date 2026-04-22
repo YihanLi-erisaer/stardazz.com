@@ -12,6 +12,14 @@ export function SiteFooter() {
           <p className="text-sm font-medium text-zinc-200">StarDazz</p>
           <p className="mt-1 text-sm text-zinc-500">{t('footer.blurb')}</p>
         </div>
+        <div className="flex flex-wrap gap-x-2 gap-y-2 text-sm text-zinc-500">
+          <p className="text-sm font-medium">
+            Contact me:
+          </p>
+          <Link to = "mailto:stardazz@163.com" className="underline text-sm font-medium">
+            stardazz@163.com
+          </Link>
+        </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-500">
           <Link to="/" className="hover:text-zinc-300">
             {t('footer.home')}
