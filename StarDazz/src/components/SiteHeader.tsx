@@ -52,7 +52,7 @@ export function SiteHeader() {
               {t('nav.about')}
             </NavLink>
             <a
-              href="https://github.com/YihanLi-erisaer/smeeting"
+              href="https://github.com/YihanLi-erisaer"
               target="_blank"
               rel="noreferrer"
               className="text-sm text-zinc-400 transition-colors hover:text-zinc-200"
