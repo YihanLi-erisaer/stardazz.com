@@ -154,7 +154,7 @@ export const messages = {
       intro:
         '轻量智能会议助手，整合语音识别与 AI 摘要，简化记录流程，并自动生成高效的会议纪要与行动项。\n\n' +
         '全链路隐私保护，所有数据本地处理包括音频转文本与大语言总结模型，不进行上传。\n\n' +
-        '支持语言，包括中文、英文、后续将增加日文、韩文等。\n\n' ,
+        '支持语言，包括中文、英文、后续将增加日文、韩文与ios版本等。\n\n' ,
       repo: 'GitHub 仓库',
       downloadRelease: '下载发行版',
       readme: '阅读说明',
@@ -327,7 +327,7 @@ export const messages = {
       intro:
         'A lightweight smart meeting assistant that combines speech recognition and AI summarization to streamline notes and produce minutes and action items.\n\n' +
         'Full-chain privacy protection, all data is processed locally including audio to text and large language summary model, no upload.\n\n' +
-        'Supports languages, including Chinese, English, and Japanese, Korean, etc. in the future.\n\n' ,
+        'Supports languages, including Chinese, English, and Japanese, Korean, and add ios version etc. in the future.\n\n' ,
       repo: 'GitHub repository',
       downloadRelease: 'Download release',
       readme: 'Read the README',
