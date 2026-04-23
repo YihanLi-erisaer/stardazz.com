@@ -191,6 +191,21 @@ export const messages = {
       privacyLink: '隐私政策',
       privacyTeaser:
         '说明麦克风、转写、本地模型与网络下载等数据处理方式，符合应用商店对用户数据的披露要求。',
+      demoTitle: '应用界面预览',
+      demoSub:
+        '以下为网页演示，非真实录音。点击「开始」可切换到录音中界面示意，再点「停止」返回。',
+      demoPressStart: '点击「开始」按钮开始',
+      demoResultText: '识别结果',
+      demoRecording: '正在录音…',
+      demoStart: '开始',
+      demoStop: '停止',
+      demoCopy: '复制',
+      demoAiDisclaimer: 'AI 模型可能会产生错误，请留意。',
+      demoCopyDisabled: '演示中暂无可复制内容',
+      demoPreviewBadge: 'smeeting 应用界面演示',
+      demoMenuAria: '菜单（演示）',
+      demoSettingsAria: '设置（演示）',
+      demoIdleHint: '等待开始',
     },
     smeetingPrivacy: {
       docTitle: 'smeeting 隐私政策 — StarDazz',
@@ -395,6 +410,21 @@ export const messages = {
       privacyLink: 'Privacy policy',
       privacyTeaser:
         'How smeeting handles microphone audio, transcripts, on-device models, and optional downloads—written for app store transparency.',
+      demoTitle: 'In-app UI preview',
+      demoSub:
+        'Interactive mock-up (not real audio). Tap Start to switch to the recording state, then Stop to return.',
+      demoPressStart: 'Press Start button to start',
+      demoResultText: 'Result text',
+      demoRecording: 'Recording...',
+      demoStart: 'Start',
+      demoStop: 'Stop',
+      demoCopy: 'Copy',
+      demoAiDisclaimer: 'Any AI model may make mistakes!',
+      demoCopyDisabled: 'Nothing to copy in this demo',
+      demoPreviewBadge: 'smeeting app UI demo',
+      demoMenuAria: 'Menu (demo)',
+      demoSettingsAria: 'Settings (demo)',
+      demoIdleHint: 'Idle — press Start to begin',
     },
     smeetingPrivacy: {
       docTitle: 'smeeting Privacy Policy — StarDazz',

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SmeetingAppUiDemo } from '../components/SmeetingAppUiDemo'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const GITHUB = 'https://github.com/YihanLi-erisaer/smeeting'
@@ -75,6 +76,18 @@ export function SmeetingPage() {
             >
               {t('smeeting.privacyLink')} →
             </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/[0.06] py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-xl font-medium text-zinc-100 sm:text-2xl">
+            {t('smeeting.demoTitle')}
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm text-zinc-500">{t('smeeting.demoSub')}</p>
+          <div className="mt-10 flex justify-center sm:mt-12">
+            <SmeetingAppUiDemo />
           </div>
         </div>
       </div>
