@@ -65,6 +65,17 @@ export function SmeetingPage() {
               {t('smeeting.readme')}
             </a>
           </div>
+          <div className="mt-8 max-w-2xl rounded-xl border border-white/[0.08] bg-zinc-950/50 px-4 py-4 sm:px-5">
+            <p className="text-sm leading-relaxed text-zinc-400">
+              {t('smeeting.privacyTeaser')}
+            </p>
+            <Link
+              to="/products/smeeting/privacy"
+              className="mt-3 inline-flex text-sm font-medium text-emerald-400/95 underline-offset-4 hover:text-emerald-300 hover:underline"
+            >
+              {t('smeeting.privacyLink')} →
+            </Link>
+          </div>
         </div>
       </div>
 

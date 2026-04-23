@@ -30,6 +30,9 @@ export function SiteFooter() {
           <Link to="/products/smeeting" className="hover:text-zinc-300">
             {t('footer.smeeting')}
           </Link>
+          <Link to="/products/smeeting/privacy" className="hover:text-zinc-300">
+            {t('footer.smeetingPrivacy')}
+          </Link>
         </div>
       </div>
       <div className="border-t border-white/[0.04] py-6 text-center text-xs text-zinc-600">

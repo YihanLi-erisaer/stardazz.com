@@ -132,6 +132,7 @@ export const messages = {
       smeeting: 'smeeting',
       copyright: '保留所有权利。',
       contact: '联系我:',
+      smeetingPrivacy: 'smeeting 隐私',
     },
     home: {
       badge: 'StarDazz · 软件工作室',
@@ -187,6 +188,19 @@ export const messages = {
       ossBody:
         'smeeting 的源码与更新托管在 GitHub。欢迎提交 Issue、贡献代码，或基于仓库自行构建与部署。',
       backHome: '返回首页',
+      privacyLink: '隐私政策',
+      privacyTeaser:
+        '说明麦克风、转写、本地模型与网络下载等数据处理方式，符合应用商店对用户数据的披露要求。',
+    },
+    smeetingPrivacy: {
+      docTitle: 'smeeting 隐私政策 — StarDazz',
+      metaDescription:
+        'smeeting Android 应用隐私政策：端侧语音识别与可选本地摘要、本地存储、仅在下载可选模型时使用网络等。',
+      title: 'smeeting 隐私政策',
+      updated: '最近更新：2026 年 4 月 23 日',
+      crumbCurrent: '隐私政策',
+      panelLabel: '政策全文',
+      backSmeeting: '← 返回 smeeting 产品页',
     },
   },
   en: {
@@ -321,6 +335,7 @@ export const messages = {
       smeeting: 'smeeting',
       copyright: 'All rights reserved.',
       contact: 'Contact me:',
+      smeetingPrivacy: 'smeeting privacy',
     },
     home: {
       badge: 'StarDazz · Software Studio',
@@ -377,6 +392,19 @@ export const messages = {
       ossBody:
         'smeeting’s source and updates live on GitHub—issues, contributions, and self-hosted builds are welcome.',
       backHome: 'Back to home',
+      privacyLink: 'Privacy policy',
+      privacyTeaser:
+        'How smeeting handles microphone audio, transcripts, on-device models, and optional downloads—written for app store transparency.',
+    },
+    smeetingPrivacy: {
+      docTitle: 'smeeting Privacy Policy — StarDazz',
+      metaDescription:
+        'Privacy policy for the smeeting Android app: on-device ASR and optional summarization, local storage, and network use when downloading optional models.',
+      title: 'smeeting Privacy Policy',
+      updated: 'Last updated: April 23, 2026',
+      crumbCurrent: 'Privacy policy',
+      panelLabel: 'Full text',
+      backSmeeting: '← Back to smeeting product page',
     },
   },
 } as const

@@ -7,12 +7,14 @@ const DOC_TITLE_KEY_BY_PATH: Record<string, string> = {
   '/': 'meta.title',
   '/about': 'about.docTitle',
   '/products/smeeting': 'smeeting.docTitle',
+  '/products/smeeting/privacy': 'smeetingPrivacy.docTitle',
 }
 
 const META_DESC_KEY_BY_PATH: Record<string, string> = {
   '/': 'meta.description',
   '/about': 'about.metaDescription',
   '/products/smeeting': 'smeeting.metaDescription',
+  '/products/smeeting/privacy': 'smeetingPrivacy.metaDescription',
 }
 
 const SMEETING_GITHUB = 'https://github.com/YihanLi-erisaer/smeeting'
@@ -63,6 +65,7 @@ function buildJsonLd(args: {
       operatingSystem: 'Android',
       description: descriptionSmeeting,
       url: `${siteUrl}/products/smeeting`,
+      privacyPolicy: `${siteUrl}/products/smeeting/privacy`,
       sameAs: SMEETING_GITHUB,
       offers: {
         '@type': 'Offer',

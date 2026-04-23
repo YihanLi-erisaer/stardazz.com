@@ -12,4 +12,8 @@
     <loc>https://stardazz-com.vercel.app/products/smeeting</loc>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://stardazz-com.vercel.app/products/smeeting/privacy</loc>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>
