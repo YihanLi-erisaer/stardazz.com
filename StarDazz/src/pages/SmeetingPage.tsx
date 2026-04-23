@@ -60,7 +60,8 @@ export function SmeetingPage() {
               href={`${GITHUB}/releases/latest/download/app-release.apk`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-zinc-100 px-6 py-2.5 text-sm font-medium text-zinc-950 transition hover:bg-white"
+              className="inline-flex items-center justify-center rounded-full bg-zinc-100 px-6 py-2.5 text-sm font-medium 
+                text-zinc-50 bg-zinc-950 dark:bg-zinc-50 dark:text-zinc-950 transition hover:bg-gray-800 dark:hover:bg-gray-300"
             >
               {t('smeeting.downloadRelease')}
             </a>
@@ -68,15 +69,18 @@ export function SmeetingPage() {
               href={GITHUB}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-zinc-100 px-6 py-2.5 text-sm font-medium text-zinc-950 transition hover:bg-white"
-            >
+              className="inline-flex items-center justify-center rounded-full bg-zinc-100 px-6 py-2.5 text-sm 
+                font-medium text-zinc-50 bg-zinc-950 dark:bg-zinc-50 dark:text-zinc-950 transition hover:bg-gray-800 dark:hover:bg-gray-300"
+              >
               {t('smeeting.repo')}
             </a>
             <a
               href={`${GITHUB}#readme`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
+              className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 
+                text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 
+                dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
             >
               {t('smeeting.readme')}
             </a>
@@ -130,7 +134,8 @@ export function SmeetingPage() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 p-8 dark:border-white/[0.08] dark:from-zinc-900/50 dark:to-zinc-950 sm:p-10">
+        <div className="rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 
+          p-8 dark:border-white/[0.08] dark:from-zinc-900/50 dark:to-zinc-950 sm:p-10">
           <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-100">{t('smeeting.ossTitle')}</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
             {t('smeeting.ossBody')}
