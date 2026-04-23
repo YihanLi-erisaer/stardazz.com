@@ -8,6 +8,15 @@ export const messages = {
       title: 'StarDazz — 软件工作室',
       description: 'StarDazz — 专注打造提升效率的软件产品。',
     },
+    a11y: {
+      skipToMain: '跳到主要内容',
+    },
+    notFound: {
+      docTitle: '页面未找到 — StarDazz',
+      title: '页面未找到',
+      body: '您访问的页面不存在，或链接已失效。',
+      backHome: '返回首页',
+    },
     nav: {
       tagline: '软件',
       bilibili: '哔哩哔哩频道',
@@ -149,6 +158,7 @@ export const messages = {
       a3b: '关键项目开源或提供可验证的获取渠道，方便社区与企业采用。',
     },
     smeeting: {
+      docTitle: 'smeeting — StarDazz',
       crumbHome: '首页',
       label: 'StarDazz 产品',
       intro:
@@ -179,6 +189,15 @@ export const messages = {
       title: 'StarDazz — Software Studio',
       description:
         'StarDazz — focused on productivity software that actually helps.',
+    },
+    a11y: {
+      skipToMain: 'Skip to main content',
+    },
+    notFound: {
+      docTitle: 'Page not found — StarDazz',
+      title: 'Page not found',
+      body: 'This URL does not exist, or the page has moved.',
+      backHome: 'Back to home',
     },
     nav: {
       tagline: 'Software',
@@ -322,6 +341,7 @@ export const messages = {
       a3b: 'Key projects are open source or easy to verify, for communities and teams.',
     },
     smeeting: {
+      docTitle: 'smeeting — StarDazz',
       crumbHome: 'Home',
       label: 'StarDazz Product',
       intro:
