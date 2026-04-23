@@ -172,7 +172,7 @@ export const messages = {
     smeeting: {
       docTitle: 'smeeting — StarDazz',
       metaDescription:
-        'smeeting：轻量智能会议助手，端侧语音识别与 AI 摘要，本地处理隐私友好。下载 Android 发行版并查看 GitHub 开源仓库。',
+        'smeeting 是面向 Android 的本地会议助手，支持语音识别与 AI 摘要，数据全链路本地处理。',
       crumbHome: '首页',
       label: 'StarDazz 产品',
       intro:
@@ -398,7 +398,7 @@ export const messages = {
     smeeting: {
       docTitle: 'smeeting — StarDazz',
       metaDescription:
-        'smeeting: a lightweight smart meeting assistant with on-device speech recognition and AI summaries, privacy-first local processing. Download the Android release and explore the open-source repo on GitHub.',
+        'smeeting is an Android meeting assistant with on-device speech recognition, AI summaries, and privacy-first local processing.',
       crumbHome: 'Home',
       label: 'StarDazz Product',
       intro:
