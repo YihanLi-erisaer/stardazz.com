@@ -58,13 +58,15 @@ export function LanguageSwitcher() {
           right: menuPos.right,
           zIndex: 100,
         }}
-        className="min-w-[9.5rem] overflow-hidden rounded-lg border border-white/10 bg-zinc-900 py-1 shadow-xl shadow-black/40"
+        className="min-w-[9.5rem] overflow-hidden rounded-lg border border-zinc-200 bg-white py-1 shadow-xl shadow-zinc-400/20 dark:border-white/10 dark:bg-zinc-900 dark:shadow-black/40"
       >
         <li role="option" aria-selected={locale === 'zh'}>
           <button
             type="button"
-            className={`flex w-full px-3 py-2 text-left text-sm transition hover:bg-white/[0.06] ${
-              locale === 'zh' ? 'text-zinc-100' : 'text-zinc-400'
+            className={`flex w-full px-3 py-2 text-left text-sm transition hover:bg-zinc-100 dark:hover:bg-white/[0.06] ${
+              locale === 'zh'
+                ? 'text-zinc-900 dark:text-zinc-100'
+                : 'text-zinc-600 dark:text-zinc-400'
             }`}
             onClick={() => pick('zh')}
           >
@@ -74,8 +76,10 @@ export function LanguageSwitcher() {
         <li role="option" aria-selected={locale === 'en'}>
           <button
             type="button"
-            className={`flex w-full px-3 py-2 text-left text-sm transition hover:bg-white/[0.06] ${
-              locale === 'en' ? 'text-zinc-100' : 'text-zinc-400'
+            className={`flex w-full px-3 py-2 text-left text-sm transition hover:bg-zinc-100 dark:hover:bg-white/[0.06] ${
+              locale === 'en'
+                ? 'text-zinc-900 dark:text-zinc-100'
+                : 'text-zinc-600 dark:text-zinc-400'
             }`}
             onClick={() => pick('en')}
           >
@@ -97,11 +101,11 @@ export function LanguageSwitcher() {
           e.stopPropagation()
           setOpen((v) => !v)
         }}
-        className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-zinc-300 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-zinc-100"
+        className="inline-flex items-center gap-1 rounded-md border border-zinc-300/80 bg-zinc-100/90 px-2.5 py-1 text-xs font-medium text-zinc-700 transition hover:border-zinc-400 hover:bg-zinc-200/80 hover:text-zinc-900 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-300 dark:hover:border-white/20 dark:hover:bg-white/[0.06] dark:hover:text-zinc-100"
       >
         <span>{locale === 'zh' ? t('lang.zhShort') : t('lang.enShort')}</span>
         <svg
-          className={`h-3.5 w-3.5 text-zinc-500 transition ${open ? 'rotate-180' : ''}`}
+          className={`h-3.5 w-3.5 text-zinc-500 transition dark:text-zinc-500 ${open ? 'rotate-180' : ''}`}
           viewBox="0 0 20 20"
           fill="currentColor"
           aria-hidden

@@ -15,7 +15,7 @@ export function SmeetingAppUiDemo() {
     >
       {/* status bar mock */}
       <div className="flex items-center justify-between px-1 pb-2 pt-0.5 text-[10px] font-medium text-zinc-500">
-        <span aria-hidden>11:31</span>
+        <span aria-hidden>hh:mm</span>
         <div className="flex gap-1" aria-hidden>
           <span className="h-2 w-3 rounded-sm bg-zinc-400/60" />
           <span className="h-2 w-2 rounded-full bg-zinc-400/60" />

@@ -34,6 +34,14 @@ export const messages = {
       zh: '简体中文',
       en: 'English',
     },
+    theme: {
+      dark: '深色',
+      light: '浅色',
+      switchToDark: '切换到深色模式',
+      switchToLight: '切换到浅色模式',
+      switchToDarkAria: '切换到深色模式',
+      switchToLightAria: '切换到浅色模式',
+    },
     about: {
       docTitle: '关于我 — StarDazz',
       title: '关于我',
@@ -250,6 +258,14 @@ export const messages = {
       enShort: 'EN',
       zh: '简体中文',
       en: 'English',
+    },
+    theme: {
+      dark: 'Dark',
+      light: 'Light',
+      switchToDark: 'Switch to dark mode',
+      switchToLight: 'Switch to light mode',
+      switchToDarkAria: 'Switch to dark mode',
+      switchToLightAria: 'Switch to light mode',
     },
     about: {
       docTitle: 'About me — StarDazz',

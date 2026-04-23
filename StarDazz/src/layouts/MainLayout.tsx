@@ -7,7 +7,7 @@ import { SiteHeader } from '../components/SiteHeader'
 
 export function MainLayout() {
   return (
-    <div className="relative flex min-h-dvh flex-col bg-zinc-950 font-sans text-zinc-300 antialiased">
+    <div className="relative flex min-h-dvh flex-col bg-zinc-50 font-sans text-zinc-700 antialiased dark:bg-zinc-950 dark:text-zinc-300">
       <SiteSeo />
       <SkipToMainLink />
       <ScrollToHash />
