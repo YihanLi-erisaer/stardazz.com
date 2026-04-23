@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -108,10 +108,21 @@ export function SiteSeo() {
     [siteUrl, path, t],
   )
 
+  useEffect(() => {
+    document.title = title
+    const desc = document.querySelector('meta[name="description"]')
+    if (desc) {
+      desc.setAttribute('content', description)
+      return
+    }
+    const meta = document.createElement('meta')
+    meta.name = 'description'
+    meta.content = description
+    document.head.appendChild(meta)
+  }, [title, description])
+
   return (
     <Helmet prioritizeSeoTags>
-      <title>{title}</title>
-      <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
 
       <meta property="og:type" content="website" />
