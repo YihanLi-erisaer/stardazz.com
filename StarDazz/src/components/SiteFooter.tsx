@@ -16,9 +16,12 @@ export function SiteFooter() {
           <p className="text-sm font-medium">
             {t('footer.contact')}
           </p>
-          <Link to = "mailto:stardazz@163.com" className="underline text-sm font-medium">
+          <a
+            href="mailto:stardazz@163.com"
+            className="text-sm font-medium underline"
+          >
             stardazz@163.com
-          </Link>
+          </a>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-500">
           <Link to="/" className="hover:text-zinc-300">
