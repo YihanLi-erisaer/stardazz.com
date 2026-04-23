@@ -180,7 +180,7 @@ export const messages = {
         '全链路隐私保护，所有数据本地处理包括音频转文本与大语言总结模型，不进行上传。\n\n' +
         '支持语言，包括中文、英文、后续将增加日文、韩文与ios版本等。\n\n' ,
       repo: 'GitHub 仓库',
-      downloadRelease: '下载发行版',
+      downloadRelease: '下载发行版apk',
       readme: '阅读说明',
       featuresTitle: '核心能力',
       featuresSub: '面向会议记录与跟进的完整链路，减少手工整理时间。',
@@ -406,7 +406,7 @@ export const messages = {
         'Full-chain privacy protection, all data is processed locally including audio to text and large language summary model, no upload.\n\n' +
         'Supports languages, including Chinese, English, and Japanese, Korean, and add ios version etc. in the future.\n\n' ,
       repo: 'GitHub repository',
-      downloadRelease: 'Download release',
+      downloadRelease: 'Download release apk',
       readme: 'Read the README',
       featuresTitle: 'Capabilities',
       featuresSub:

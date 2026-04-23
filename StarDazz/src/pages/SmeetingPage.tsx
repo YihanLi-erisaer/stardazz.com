@@ -3,6 +3,7 @@ import { SmeetingAppUiDemo } from '../components/SmeetingAppUiDemo'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const GITHUB = 'https://github.com/YihanLi-erisaer/smeeting'
+const PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.stardazz.smeeting'
 
 export function SmeetingPage() {
   const { t } = useLanguage()
@@ -41,6 +42,20 @@ export function SmeetingPage() {
             {t('smeeting.intro')}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href={PLAY_STORE}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Get smeeting on Google Play"
+              className="inline-flex rounded-xl transition hover:opacity-90"
+            >
+              <img
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                alt="Get it on Google Play"
+                className="h-14 w-auto rounded-lg"
+                loading="lazy"
+              />
+            </a>
             <a
               href={`${GITHUB}/releases/latest/download/app-release.apk`}
               target="_blank"
