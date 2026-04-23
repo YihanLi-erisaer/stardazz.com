@@ -16,6 +16,7 @@ export const messages = {
       title: '页面未找到',
       body: '您访问的页面不存在，或链接已失效。',
       backHome: '返回首页',
+      metaDescription: '找不到您要访问的页面。返回 StarDazz 首页或浏览产品与关于信息。',
     },
     nav: {
       tagline: '软件',
@@ -37,6 +38,8 @@ export const messages = {
       docTitle: '关于我 — StarDazz',
       title: '关于我',
       subtitle: '独立软件开发者，视频频道运营者。',
+      metaDescription:
+        '了解 StarDazz 主理人：独立软件开发者与内容创作者，技术栈、教育背景与精选开源项目。',
       crumbHome: '首页',
       crumbCurrent: '关于我',
       editorLabel: 'Markdown 输入',
@@ -159,6 +162,8 @@ export const messages = {
     },
     smeeting: {
       docTitle: 'smeeting — StarDazz',
+      metaDescription:
+        'smeeting：轻量智能会议助手，端侧语音识别与 AI 摘要，本地处理隐私友好。下载 Android 发行版并查看 GitHub 开源仓库。',
       crumbHome: '首页',
       label: 'StarDazz 产品',
       intro:
@@ -198,6 +203,8 @@ export const messages = {
       title: 'Page not found',
       body: 'This URL does not exist, or the page has moved.',
       backHome: 'Back to home',
+      metaDescription:
+        'The page you requested could not be found. Return to the StarDazz home page or browse products and about.',
     },
     nav: {
       tagline: 'Software',
@@ -220,6 +227,8 @@ export const messages = {
       title: 'About me',
       subtitle:
         'Independent software developer and video channel operator.',
+      metaDescription:
+        'Meet the person behind StarDazz—background, tech stack, education, and featured open-source projects.',
       crumbHome: 'Home',
       crumbCurrent: 'About me',
       editorLabel: 'Markdown input',
@@ -342,6 +351,8 @@ export const messages = {
     },
     smeeting: {
       docTitle: 'smeeting — StarDazz',
+      metaDescription:
+        'smeeting: a lightweight smart meeting assistant with on-device speech recognition and AI summaries, privacy-first local processing. Download the Android release and explore the open-source repo on GitHub.',
       crumbHome: 'Home',
       label: 'StarDazz Product',
       intro:
