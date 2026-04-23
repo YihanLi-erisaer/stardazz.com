@@ -32,9 +32,9 @@ export function SmeetingPrivacyPage() {
           <p className="font-mono text-xs uppercase tracking-wider text-emerald-400/90">
             smeeting
           </p>
-          <h1 className="mt-2 text-3xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+          <p className="mt-2 text-3xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
             {t('smeetingPrivacy.title')}
-          </h1>
+          </p>
           <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-500">{t('smeetingPrivacy.updated')}</p>
         </header>
 
