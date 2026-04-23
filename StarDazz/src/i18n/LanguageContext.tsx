@@ -54,9 +54,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale === 'zh' ? 'zh-CN' : 'en'
-    const meta = document.querySelector('meta[name="description"]')
-    if (meta) meta.setAttribute('content', t('meta.description'))
-  }, [locale, t])
+  }, [locale])
 
   const value = useMemo(
     () => ({ locale, setLocale, t }),

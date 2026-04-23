@@ -53,7 +53,7 @@ The implementation follows professional Software Development Life Cycle (SDLC) s
 ### Prerequisites
 
   * **Node.js:** 18.17.0 or later
-  * **Package Manager:** `pnpm` (recommended) or `npm`
+  * **Package Manager:** `npm`
 
 ### Installation
 
@@ -65,17 +65,17 @@ git clone https://github.com/YihanLi-erisaer/stardazz.com.git
 cd stardazz.com
 
 # Install dependencies
-pnpm install
+npm install
 ```
 
 ### Execution
 
 ```bash
 # Start the development server
-pnpm dev
+npm run dev
 
 # Build for production
-pnpm build
+npm build
 ```
 
 ## 7\. Future Roadmap

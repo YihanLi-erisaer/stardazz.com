@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -12,5 +13,25 @@ html {
 body {
   margin: 0;
   min-height: 100dvh;
+  background-color: #f8fafc;
+  color: #1f2937;
+}
+
+.dark body {
   background-color: #09090b;
+  color: #d4d4d8;
+}
+
+@layer base {
+  :where(
+      a,
+      button,
+      input:not([type='hidden']),
+      textarea,
+      select,
+      summary
+    ):focus-visible {
+    outline: 2px solid rgb(52 211 153);
+    outline-offset: 2px;
+  }
 }
