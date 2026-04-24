@@ -44,14 +44,12 @@ export const messages = {
     },
     about: {
       docTitle: '关于我 — StarDazz',
-      title: '关于我',
-      subtitle: '独立软件开发者，视频频道运营者。',
-      metaDescription:
-        '了解 StarDazz 主理人：独立软件开发者与内容创作者，技术栈、教育背景与精选开源项目。',
+      title: '关于我 (李奕涵）',
+      subtitle: '在左侧编辑 Markdown，右侧会实时渲染为排版后的内容。',
       crumbHome: '首页',
       crumbCurrent: '关于我',
       editorLabel: 'Markdown 输入',
-      previewLabel: '预览',
+      previewLabel: '个人介绍',
       editorAria: 'Markdown 源码编辑区',
       placeholder: '在此输入 Markdown…',
       resetSample: '插入示例',
@@ -269,7 +267,7 @@ export const messages = {
     },
     about: {
       docTitle: 'About me — StarDazz',
-      title: 'About me',
+      title: 'About me (Yihan Li)',
       subtitle:
         'Independent software developer and video channel operator.',
       metaDescription:
@@ -277,7 +275,7 @@ export const messages = {
       crumbHome: 'Home',
       crumbCurrent: 'About me',
       editorLabel: 'Markdown input',
-      previewLabel: 'Preview',
+      previewLabel: 'Personal Information',
       editorAria: 'Markdown source editor',
       placeholder: 'Type Markdown here…',
       resetSample: 'Insert sample',

@@ -7,6 +7,8 @@
 [](https://www.typescriptlang.org/)
 [](https://vercel.com/)
 
+Access here: [StarDazz](https://stardazz-com.vercel.app/)
+
 ## 1\. Abstract
 
 **Stardazz.com** is a high-performance, modular web platform designed for the structured dissemination of technical research and software engineering projects. Beyond serving as a personal portfolio, the project explores the intersection of **Information Architecture (IA)** and **Modern Web Frameworks**. It implements a robust content-delivery pipeline to showcase complex domains—such as Automatic Speech Recognition (ASR) and algorithmic state-space search—within a highly responsive and accessible user interface.
