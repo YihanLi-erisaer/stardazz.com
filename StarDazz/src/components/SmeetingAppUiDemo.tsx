@@ -10,15 +10,15 @@ export function SmeetingAppUiDemo() {
 
   return (
     <div
-      className="mx-auto w-full max-w-[22rem] select-none rounded-[1.75rem] border border-zinc-200/90 bg-[#f0f1f4] p-3 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.35)] sm:max-w-[24rem] sm:p-4"
+      className="mx-auto w-full max-w-[22rem] select-none rounded-[1.75rem] border border-zinc-200/90 bg-[#f0f1f4] p-3 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.35)] dark:border-[#111827] dark:bg-[#050913] sm:max-w-[24rem] sm:p-4"
       aria-label={t('smeeting.demoPreviewBadge')}
     >
       {/* status bar mock */}
-      <div className="flex items-center justify-between px-1 pb-2 pt-0.5 text-[10px] font-medium text-zinc-500">
+      <div className="flex items-center justify-between px-1 pb-2 pt-0.5 text-[10px] font-medium text-zinc-500 dark:text-zinc-100">
         <span aria-hidden>hh:mm</span>
         <div className="flex gap-1" aria-hidden>
-          <span className="h-2 w-3 rounded-sm bg-zinc-400/60" />
-          <span className="h-2 w-2 rounded-full bg-zinc-400/60" />
+          <span className="h-2 w-3 rounded-sm bg-zinc-400/60 dark:bg-zinc-200/90" />
+          <span className="h-2 w-2 rounded-full bg-zinc-400/60 dark:bg-zinc-200/90" />
         </div>
       </div>
 
@@ -26,21 +26,21 @@ export function SmeetingAppUiDemo() {
       <header className="flex items-center justify-between gap-2 px-1 pb-3">
         <button
           type="button"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-zinc-700 transition hover:bg-zinc-200/80"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-zinc-700 transition hover:bg-zinc-200/80 dark:text-zinc-100 dark:hover:bg-zinc-800/60"
           aria-label={t('smeeting.demoMenuAria')}
         >
           <span className="flex flex-col gap-1" aria-hidden>
-            <span className="h-0.5 w-5 rounded-full bg-zinc-700" />
-            <span className="h-0.5 w-5 rounded-full bg-zinc-700" />
-            <span className="h-0.5 w-5 rounded-full bg-zinc-700" />
+            <span className="h-0.5 w-5 rounded-full bg-zinc-700 dark:bg-zinc-100" />
+            <span className="h-0.5 w-5 rounded-full bg-zinc-700 dark:bg-zinc-100" />
+            <span className="h-0.5 w-5 rounded-full bg-zinc-700 dark:bg-zinc-100" />
           </span>
         </button>
-        <p className="min-w-0 flex-1 text-center text-[13px] font-semibold leading-snug text-zinc-800 sm:text-sm">
+        <p className="min-w-0 flex-1 text-center text-[13px] font-semibold leading-snug text-zinc-800 dark:text-zinc-100 sm:text-sm">
           {recording ? t('smeeting.demoResultText') : t('smeeting.demoPressStart')}
         </p>
         <button
           type="button"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-zinc-700 transition hover:bg-zinc-200/80"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-zinc-700 transition hover:bg-zinc-200/80 dark:text-zinc-100 dark:hover:bg-zinc-800/60"
           aria-label={t('smeeting.demoSettingsAria')}
         >
           <svg
@@ -61,12 +61,12 @@ export function SmeetingAppUiDemo() {
 
       {/* result area */}
       <div
-        className="min-h-[14rem] rounded-2xl bg-[#dee2e6] px-4 py-4 sm:min-h-[15.5rem]"
+        className="min-h-[14rem] rounded-2xl bg-[#dee2e6] px-4 py-4 dark:bg-[#2f343d] sm:min-h-[15.5rem]"
         role={recording ? 'status' : undefined}
         aria-live={recording ? 'polite' : undefined}
       >
         {recording ? (
-          <p className="text-left text-[15px] font-medium text-zinc-700">
+          <p className="text-left text-[15px] font-medium text-zinc-700 dark:text-zinc-100">
             {t('smeeting.demoRecording')}
           </p>
         ) : (
@@ -80,7 +80,7 @@ export function SmeetingAppUiDemo() {
           <button
             type="button"
             onClick={() => setMode('idle')}
-            className="min-h-[48px] flex-1 rounded-full bg-[#26597d] text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#1f4a66] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#26597d]"
+            className="min-h-[48px] flex-1 rounded-full bg-[#26597d] text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#1f4a66] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#26597d] dark:bg-[#8fc2f2] dark:text-[#0b2438] dark:hover:bg-[#a4d0fa] dark:focus-visible:outline-[#8fc2f2]"
           >
             {t('smeeting.demoStop')}
           </button>
@@ -88,7 +88,7 @@ export function SmeetingAppUiDemo() {
           <button
             type="button"
             onClick={() => setMode('recording')}
-            className="min-h-[48px] flex-1 rounded-full bg-[#26597d] text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#1f4a66] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#26597d]"
+            className="min-h-[48px] flex-1 rounded-full bg-[#26597d] text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#1f4a66] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#26597d] dark:bg-[#8fc2f2] dark:text-[#0b2438] dark:hover:bg-[#a4d0fa] dark:focus-visible:outline-[#8fc2f2]"
           >
             {t('smeeting.demoStart')}
           </button>
@@ -96,19 +96,19 @@ export function SmeetingAppUiDemo() {
         <button
           type="button"
           disabled
-          className="min-h-[48px] flex-1 rounded-full bg-zinc-300/90 text-[15px] font-semibold text-zinc-500"
+          className="min-h-[48px] flex-1 rounded-full bg-zinc-300/90 text-[15px] font-semibold text-zinc-500 dark:bg-[#1e2430] dark:text-[#616978]"
           title={t('smeeting.demoCopyDisabled')}
         >
           {t('smeeting.demoCopy')}
         </button>
       </div>
 
-      <p className="mt-5 pb-1 text-center text-[11px] font-medium leading-snug text-zinc-600 sm:text-xs">
+      <p className="mt-5 pb-1 text-center text-[11px] font-medium leading-snug text-zinc-600 dark:text-zinc-200 sm:text-xs">
         {t('smeeting.demoAiDisclaimer')}
       </p>
 
       {/* home indicator */}
-      <div className="mx-auto mt-2 h-1 w-28 rounded-full bg-zinc-400/50" aria-hidden />
+      <div className="mx-auto mt-2 h-1 w-28 rounded-full bg-zinc-400/50 dark:bg-zinc-100/80" aria-hidden />
     </div>
   )
 }
