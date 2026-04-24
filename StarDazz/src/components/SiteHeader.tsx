@@ -58,6 +58,9 @@ export function SiteHeader() {
           >
             {t('nav.products')}
           </Link>
+          <NavLink to="/blog" className={navClass}>
+            {t('nav.blog')}
+          </NavLink>
           <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
             <ThemeToggle />

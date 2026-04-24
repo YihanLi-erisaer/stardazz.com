@@ -24,6 +24,7 @@ export const messages = {
       bilibiliAria: '前往 StarDazz 的哔哩哔哩空间',
       home: '首页',
       products: '产品',
+      blog: '开发博客',
       github: 'GitHub',
       about: '关于我',
     },
@@ -131,6 +132,23 @@ export const messages = {
         '- Parsing + structured storage',
         '- Useful for LLM / RAG preprocessing',
       ].join('\n'),
+    },
+    blog: {
+      docTitle: '开发博客 — StarDazz',
+      metaDescription:
+        'StarDazz 开发博客：记录产品迭代、工程实践、性能优化与路线图更新。',
+      crumbHome: '首页',
+      crumbCurrent: '开发博客',
+      title: '开发博客',
+      subtitle: '记录 StarDazz 与 smeeting 的开发进度、设计思路和工程实践。',
+      tagUpdate: '更新',
+      tagRoadmap: '路线图',
+      post1Title: 'smeeting 近期开发进展',
+      post1Body:
+        '最近我们完成了隐私政策页面、主题切换、交互式 UI 预览以及应用下载入口优化。后续会继续完善性能与可访问性。',
+      post2Title: '下一阶段计划',
+      post2Body:
+        '接下来会发布更多产品开发日志，补充技术细节与设计决策，并公开关键功能的迭代路线。',
     },
     footer: {
       blurb: '专注打造提升效率的软件产品。',
@@ -247,6 +265,7 @@ export const messages = {
       bilibiliAria: 'Open StarDazz Bilibili space',
       home: 'Home',
       products: 'Products',
+      blog: 'Dev Blog',
       github: 'GitHub',
       about: 'About me',
     },
@@ -357,6 +376,24 @@ export const messages = {
         '- Parsing + structured storage',
         '- Useful for LLM / RAG preprocessing',
       ].join('\n'),
+    },
+    blog: {
+      docTitle: 'Dev Blog — StarDazz',
+      metaDescription:
+        'StarDazz development blog covering product updates, engineering notes, performance work, and roadmap milestones.',
+      crumbHome: 'Home',
+      crumbCurrent: 'Dev Blog',
+      title: 'Dev Blog',
+      subtitle:
+        'Build notes for StarDazz and smeeting: progress updates, design thinking, and engineering decisions.',
+      tagUpdate: 'Update',
+      tagRoadmap: 'Roadmap',
+      post1Title: 'Recent smeeting progress',
+      post1Body:
+        'We recently shipped the privacy page, theme switcher, interactive UI preview, and improved app download entry points. Next up: performance and accessibility refinements.',
+      post2Title: 'What comes next',
+      post2Body:
+        'We will publish more dev logs with technical details, design trade-offs, and milestone updates for upcoming features.',
     },
     footer: {
       blurb: 'We build focused productivity software.',

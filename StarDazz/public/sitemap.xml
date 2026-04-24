@@ -5,6 +5,10 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://stardazz-com.vercel.app/blog</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://stardazz-com.vercel.app/about</loc>
     <changefreq>weekly</changefreq>
   </url>
