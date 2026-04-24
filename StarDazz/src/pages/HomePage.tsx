@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SmeetingBrandIcon } from '../components/SmeetingBrandIcon'
 import { useLanguage } from '../i18n/LanguageContext'
 
 function GridBackdrop() {
@@ -91,6 +92,9 @@ export function HomePage() {
             >
               <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-emerald-500/10 blur-3xl transition group-hover:bg-emerald-400/15" />
               <div className="relative">
+                <div className="mb-4">
+                  <SmeetingBrandIcon sizeClassName="h-20 w-20" />
+                </div>
                 <p className="font-mono text-xs uppercase tracking-wider text-emerald-400/90">
                   {t('home.cardLabel')}
                 </p>

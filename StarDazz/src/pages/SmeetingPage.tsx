@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SmeetingAppUiDemo } from '../components/SmeetingAppUiDemo'
+import { SmeetingBrandIcon } from '../components/SmeetingBrandIcon'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const GITHUB = 'https://github.com/YihanLi-erisaer/smeeting'
@@ -32,6 +33,9 @@ export function SmeetingPage() {
         </nav>
 
         <div className="mt-10 max-w-3xl">
+          <div className="mb-5">
+            <SmeetingBrandIcon sizeClassName="h-24 w-24 sm:h-28 sm:w-28" />
+          </div>
           <p className="font-mono text-xs uppercase tracking-wider text-emerald-400/90">
             {t('smeeting.label')}
           </p>
