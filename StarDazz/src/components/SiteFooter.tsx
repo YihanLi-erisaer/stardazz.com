@@ -27,6 +27,12 @@ export function SiteFooter() {
           <Link to="/" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('footer.home')}
           </Link>
+          <Link to="/blog" className="hover:text-zinc-900 dark:hover:text-zinc-300">
+            {t('nav.blog')}
+          </Link>
+          <Link to="/about" className="hover:text-zinc-900 dark:hover:text-zinc-300">
+            {t('nav.about')}
+          </Link>
           <Link to="/products/smeeting" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('footer.smeeting')}
           </Link>
