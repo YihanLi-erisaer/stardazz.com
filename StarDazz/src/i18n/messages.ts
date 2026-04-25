@@ -1,4 +1,6 @@
-export type Locale = 'zh' | 'en'
+import { messagesZhTW } from './messagesZhTW'
+
+export type Locale = 'zh' | 'zh-TW' | 'en'
 
 export const defaultLocale: Locale = 'en'
 
@@ -30,9 +32,11 @@ export const messages = {
     },
     lang: {
       menuAria: '切换界面语言',
-      zhShort: '中文',
+      zhShort: '简',
+      zhHantShort: '繁',
       enShort: 'EN',
       zh: '简体中文',
+      zhHant: '繁體中文',
       en: 'English',
     },
     theme: {
@@ -45,6 +49,8 @@ export const messages = {
     },
     about: {
       docTitle: '关于我 — StarDazz',
+      metaDescription:
+        '认识 StarDazz 背后的人——背景、技术栈、学历与精选开源项目。',
       title: '关于我 (李奕涵）',
       subtitle: '在左侧编辑 Markdown，右侧会实时渲染为排版后的内容。',
       crumbHome: '首页',
@@ -236,6 +242,7 @@ export const messages = {
       backSmeeting: '← 返回 smeeting 产品页',
     },
   },
+  'zh-TW': messagesZhTW,
   en: {
     meta: {
       title: 'StarDazz — Software Studio',
@@ -265,9 +272,11 @@ export const messages = {
     },
     lang: {
       menuAria: 'Change language',
-      zhShort: '中文',
+      zhShort: '简',
+      zhHantShort: '繁',
       enShort: 'EN',
       zh: '简体中文',
+      zhHant: '繁體中文',
       en: 'English',
     },
     theme: {

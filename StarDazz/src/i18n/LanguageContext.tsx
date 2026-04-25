@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { localeToHtmlLang } from './localeDisplay'
 import {
   defaultLocale,
   getMessage,
@@ -19,7 +20,7 @@ const STORAGE_KEY = 'stardazz-locale'
 function readStoredLocale(): Locale {
   try {
     const v = localStorage.getItem(STORAGE_KEY)
-    if (v === 'zh' || v === 'en') return v
+    if (v === 'zh' || v === 'zh-TW' || v === 'en') return v
   } catch {
     /* private mode / blocked storage */
   }
@@ -53,7 +54,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   )
 
   useEffect(() => {
-    document.documentElement.lang = locale === 'zh' ? 'zh-CN' : 'en'
+    document.documentElement.lang = localeToHtmlLang(locale)
   }, [locale])
 
   const value = useMemo(

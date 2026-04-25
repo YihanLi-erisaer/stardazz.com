@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import { getDevBlogPostsSorted } from '../content/devBlogPosts'
 import { useLanguage } from '../i18n/LanguageContext'
+import { localeToDateFormatLocale } from '../i18n/localeDisplay'
 import type { Locale } from '../i18n/messages'
 
 function formatBlogDate(iso: string, locale: Locale): string {
   const d = new Date(`${iso}T12:00:00`)
   try {
-    return new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', {
+    return new Intl.DateTimeFormat(localeToDateFormatLocale(locale), {
       year: 'numeric',
       month: 'short',
       day: 'numeric',

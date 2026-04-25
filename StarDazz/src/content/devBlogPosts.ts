@@ -19,11 +19,14 @@ export const DEV_BLOG_POSTS: DevBlogPost[] = [
     date: '2026-04-01',
     title: {
       zh: 'smeeting 近期开发进展',
+      'zh-TW': 'smeeting 近期開發進展',
       en: 'Recent smeeting progress',
     },
     excerpt: {
       zh:
         '隐私政策、主题切换、交互式 UI 预览与下载入口等更新，以及后续性能与可访问性计划。',
+      'zh-TW':
+        '隱私權政策、主題切換、互動式 UI 預覽與下載入口等更新，以及後續效能與無障礙計畫。',
       en:
         'Privacy page, theme switcher, interactive UI preview, download flow—and what is next for performance and a11y.',
     },
@@ -39,6 +42,18 @@ export const DEV_BLOG_POSTS: DevBlogPost[] = [
         '## 接下来',
         '',
         '会继续打磨 **性能**（启动、转写与摘要延迟）以及 **可访问性**（焦点、对比度与屏幕阅读器友好度）。欢迎在 [GitHub](https://github.com/YihanLi-erisaer/smeeting) 提 issue。',
+      ].join('\n'),
+      'zh-TW': [
+        '這一迭代裡，我們主要圍繞**合規與體驗**做了幾件事：',
+        '',
+        '- 上線獨立的**隱私權政策**頁面，說明麥克風、轉寫與本機模型的資料邊界。',
+        '- 網站與產品側支援**淺色 / 深色主題**，減少長時間閱讀的疲勞。',
+        '- 增加**應用程式介面預覽**（網頁演示），方便在商店外快速了解主要介面狀態。',
+        '- 最佳化 **GitHub Releases / 下載**相關入口，讓試用路徑更直觀。',
+        '',
+        '## 接下來',
+        '',
+        '會繼續打磨 **效能**（啟動、轉寫與摘要延遲）以及 **無障礙**（焦點、對比度與螢幕閱讀器友善度）。歡迎在 [GitHub](https://github.com/YihanLi-erisaer/smeeting) 提 issue。',
       ].join('\n'),
       en: [
         'This cycle focused on **compliance and UX**:',
@@ -59,10 +74,13 @@ export const DEV_BLOG_POSTS: DevBlogPost[] = [
     date: '2026-03-15',
     title: {
       zh: '下一阶段计划',
+      'zh-TW': '下一階段計畫',
       en: 'What comes next',
     },
     excerpt: {
       zh: '更多开发日志、技术细节与里程碑公开，以及功能迭代的透明路线。',
+      'zh-TW':
+        '更多開發日誌、技術細節與里程碑公開，以及功能迭代的透明路線。',
       en:
         'More dev logs, technical write-ups, milestone posts, and a clearer public roadmap.',
     },
@@ -77,6 +95,17 @@ export const DEV_BLOG_POSTS: DevBlogPost[] = [
         '- 与 smeeting 路线图对齐的**里程碑**更新。',
         '',
         '若有希望优先覆盖的主题，欢迎通过 GitHub 或邮件反馈。',
+      ].join('\n'),
+      'zh-TW': [
+        'Dev Blog 會從此前「靜態公告」改成**可跳轉的多篇文章**結構：每篇文章在程式碼裡用 Markdown 維護，前端統一渲染。',
+        '',
+        '## 您在這裡會看到',
+        '',
+        '- 版本亮點與**工程權衡**（為什麼這樣設計、放棄了什麼）。',
+        '- **效能與裝置端模型**相關的實測筆記。',
+        '- 與 smeeting 路線圖對齊的**里程碑**更新。',
+        '',
+        '若有希望優先涵蓋的主題，歡迎透過 GitHub 或郵件回饋。',
       ].join('\n'),
       en: [
         'The dev blog is now a **real index + post** setup: each article is Markdown in the repo and rendered on the site.',

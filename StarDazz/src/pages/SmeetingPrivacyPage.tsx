@@ -6,7 +6,7 @@ import { useLanguage } from '../i18n/LanguageContext'
 
 export function SmeetingPrivacyPage() {
   const { locale, t } = useLanguage()
-  const source = locale === 'zh' ? privacyZh : privacyEn
+  const source = locale === 'zh' || locale === 'zh-TW' ? privacyZh : privacyEn
 
   return (
     <div className="relative">

@@ -5,6 +5,12 @@ import type { Locale } from '../i18n/messages'
 
 type MenuPos = { top: number; right: number }
 
+function localeShortLabel(locale: Locale, t: (key: string) => string): string {
+  if (locale === 'en') return t('lang.enShort')
+  if (locale === 'zh-TW') return t('lang.zhHantShort')
+  return t('lang.zhShort')
+}
+
 export function LanguageSwitcher() {
   const { locale, setLocale, t } = useLanguage()
   const [open, setOpen] = useState(false)
@@ -47,6 +53,13 @@ export function LanguageSwitcher() {
     setOpen(false)
   }
 
+  const itemClass = (active: boolean) =>
+    `flex w-full px-3 py-2 text-left text-sm transition hover:bg-zinc-100 dark:hover:bg-white/[0.06] ${
+      active
+        ? 'text-zinc-900 dark:text-zinc-100'
+        : 'text-zinc-600 dark:text-zinc-400'
+    }`
+
   const menu =
     open && menuPos ? (
       <ul
@@ -61,28 +74,21 @@ export function LanguageSwitcher() {
         className="min-w-[9.5rem] overflow-hidden rounded-lg border border-zinc-200 bg-white py-1 shadow-xl shadow-zinc-400/20 dark:border-white/10 dark:bg-zinc-900 dark:shadow-black/40"
       >
         <li role="option" aria-selected={locale === 'zh'}>
-          <button
-            type="button"
-            className={`flex w-full px-3 py-2 text-left text-sm transition hover:bg-zinc-100 dark:hover:bg-white/[0.06] ${
-              locale === 'zh'
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-600 dark:text-zinc-400'
-            }`}
-            onClick={() => pick('zh')}
-          >
+          <button type="button" className={itemClass(locale === 'zh')} onClick={() => pick('zh')}>
             {t('lang.zh')}
           </button>
         </li>
-        <li role="option" aria-selected={locale === 'en'}>
+        <li role="option" aria-selected={locale === 'zh-TW'}>
           <button
             type="button"
-            className={`flex w-full px-3 py-2 text-left text-sm transition hover:bg-zinc-100 dark:hover:bg-white/[0.06] ${
-              locale === 'en'
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-600 dark:text-zinc-400'
-            }`}
-            onClick={() => pick('en')}
+            className={itemClass(locale === 'zh-TW')}
+            onClick={() => pick('zh-TW')}
           >
+            {t('lang.zhHant')}
+          </button>
+        </li>
+        <li role="option" aria-selected={locale === 'en'}>
+          <button type="button" className={itemClass(locale === 'en')} onClick={() => pick('en')}>
             {t('lang.en')}
           </button>
         </li>
@@ -103,7 +109,7 @@ export function LanguageSwitcher() {
         }}
         className="inline-flex items-center gap-1 rounded-md border border-zinc-300/80 bg-zinc-100/90 px-2.5 py-1 text-xs font-medium text-zinc-700 transition hover:border-zinc-400 hover:bg-zinc-200/80 hover:text-zinc-900 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-300 dark:hover:border-white/20 dark:hover:bg-white/[0.06] dark:hover:text-zinc-100"
       >
-        <span>{locale === 'zh' ? t('lang.zhShort') : t('lang.enShort')}</span>
+        <span>{localeShortLabel(locale, t)}</span>
         <svg
           className={`h-3.5 w-3.5 text-zinc-500 transition dark:text-zinc-500 ${open ? 'rotate-180' : ''}`}
           viewBox="0 0 20 20"

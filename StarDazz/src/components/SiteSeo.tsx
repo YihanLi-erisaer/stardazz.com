@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 import { getDevBlogPostBySlug } from '../content/devBlogPosts'
 import { useLanguage } from '../i18n/LanguageContext'
+import { localeToOgLocale } from '../i18n/localeDisplay'
 
 const DOC_TITLE_KEY_BY_PATH: Record<string, string> = {
   '/': 'meta.title',
@@ -122,7 +123,7 @@ export function SiteSeo() {
     path === '/' ? `${siteUrl}/` : `${siteUrl}${path.startsWith('/') ? path : `/${path}`}`
 
   const ogImage = `${siteUrl}/StardazzIcon.jpg`
-  const ogLocale = locale === 'zh' ? 'zh_CN' : 'en_US'
+  const ogLocale = localeToOgLocale(locale)
 
   const jsonLd = useMemo(
     () =>
