@@ -141,14 +141,8 @@ export const messages = {
       crumbCurrent: '开发博客',
       title: '开发博客',
       subtitle: '记录 StarDazz 与 smeeting 的开发进度、设计思路和工程实践。',
-      tagUpdate: '更新',
-      tagRoadmap: '路线图',
-      post1Title: 'smeeting 近期开发进展',
-      post1Body:
-        '最近我们完成了隐私政策页面、主题切换、交互式 UI 预览以及应用下载入口优化。后续会继续完善性能与可访问性。',
-      post2Title: '下一阶段计划',
-      post2Body:
-        '接下来会发布更多产品开发日志，补充技术细节与设计决策，并公开关键功能的迭代路线。',
+      readMore: '阅读全文',
+      backToBlog: '返回博客列表',
     },
     footer: {
       blurb: '专注打造提升效率的软件产品。',
@@ -386,14 +380,8 @@ export const messages = {
       title: 'Dev Blog',
       subtitle:
         'Build notes for StarDazz and smeeting: progress updates, design thinking, and engineering decisions.',
-      tagUpdate: 'Update',
-      tagRoadmap: 'Roadmap',
-      post1Title: 'Recent smeeting progress',
-      post1Body:
-        'We recently shipped the privacy page, theme switcher, interactive UI preview, and improved app download entry points. Next up: performance and accessibility refinements.',
-      post2Title: 'What comes next',
-      post2Body:
-        'We will publish more dev logs with technical details, design trade-offs, and milestone updates for upcoming features.',
+      readMore: 'Read more',
+      backToBlog: 'Back to blog',
     },
     footer: {
       blurb: 'We build focused productivity software.',

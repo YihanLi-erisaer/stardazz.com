@@ -9,6 +9,14 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://stardazz-com.vercel.app/blog/smeeting-progress-update</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://stardazz-com.vercel.app/blog/roadmap-next-steps</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://stardazz-com.vercel.app/about</loc>
     <changefreq>weekly</changefreq>
   </url>

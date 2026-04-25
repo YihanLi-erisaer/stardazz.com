@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
+import { getDevBlogPostBySlug } from '../content/devBlogPosts'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const DOC_TITLE_KEY_BY_PATH: Record<string, string> = {
@@ -88,12 +89,35 @@ export function SiteSeo() {
   const { t, locale } = useLanguage()
   const siteUrl = useSiteOrigin()
 
-  const titleKey = DOC_TITLE_KEY_BY_PATH[pathname] ?? 'notFound.docTitle'
-  const descKey = META_DESC_KEY_BY_PATH[pathname] ?? 'notFound.metaDescription'
+  const normalizedPath =
+    pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname
 
-  const title = t(titleKey)
-  const description = t(descKey)
-  const path = pathname || '/'
+  const blogDetailMatch = /^\/blog\/([^/]+)$/.exec(normalizedPath)
+  const blogSlug = blogDetailMatch?.[1]
+  const blogPost = blogSlug ? getDevBlogPostBySlug(blogSlug) : undefined
+
+  let title: string
+  let description: string
+
+  if (blogDetailMatch) {
+    if (blogPost) {
+      title = `${blogPost.title[locale]} — StarDazz`
+      description = blogPost.excerpt[locale]
+    } else {
+      title = t('notFound.docTitle')
+      description = t('notFound.metaDescription')
+    }
+  } else if (normalizedPath === '/blog') {
+    title = t('blog.docTitle')
+    description = t('blog.metaDescription')
+  } else {
+    const titleKey = DOC_TITLE_KEY_BY_PATH[normalizedPath] ?? 'notFound.docTitle'
+    const descKey =
+      META_DESC_KEY_BY_PATH[normalizedPath] ?? 'notFound.metaDescription'
+    title = t(titleKey)
+    description = t(descKey)
+  }
+  const path = normalizedPath || '/'
   const canonicalUrl =
     path === '/' ? `${siteUrl}/` : `${siteUrl}${path.startsWith('/') ? path : `/${path}`}`
 

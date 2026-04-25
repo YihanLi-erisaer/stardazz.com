@@ -14,7 +14,17 @@ const base = (process.env.VITE_SITE_URL ?? 'https://stardazz-com.vercel.app').re
   '',
 )
 
-const paths = ['/', '/blog', '/about', '/products/smeeting', '/products/smeeting/privacy']
+/** Keep in sync with `src/content/devBlogPosts.ts` slugs. */
+const BLOG_SLUGS = ['smeeting-progress-update', 'roadmap-next-steps']
+
+const paths = [
+  '/',
+  '/blog',
+  ...BLOG_SLUGS.map((s) => `/blog/${s}`),
+  '/about',
+  '/products/smeeting',
+  '/products/smeeting/privacy',
+]
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

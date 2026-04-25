@@ -1,8 +1,24 @@
 import { Link } from 'react-router-dom'
+import { getDevBlogPostsSorted } from '../content/devBlogPosts'
 import { useLanguage } from '../i18n/LanguageContext'
+import type { Locale } from '../i18n/messages'
+
+function formatBlogDate(iso: string, locale: Locale): string {
+  const d = new Date(`${iso}T12:00:00`)
+  try {
+    return new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }).format(d)
+  } catch {
+    return iso
+  }
+}
 
 export function BlogPage() {
-  const { t } = useLanguage()
+  const { locale, t } = useLanguage()
+  const posts = getDevBlogPostsSorted()
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
@@ -21,31 +37,37 @@ export function BlogPage() {
         <p className="mt-3 text-zinc-600 dark:text-zinc-500">{t('blog.subtitle')}</p>
       </header>
 
-      <section className="mt-10 grid gap-6 md:grid-cols-2">
-        <article className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-white/[0.08] dark:bg-zinc-950/60">
-          <p className="font-mono text-xs uppercase tracking-wider text-emerald-400/90">
-            {t('blog.tagUpdate')}
-          </p>
-          <h2 className="mt-3 text-xl font-medium text-zinc-900 dark:text-zinc-100">
-            {t('blog.post1Title')}
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
-            {t('blog.post1Body')}
-          </p>
-        </article>
-
-        <article className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-white/[0.08] dark:bg-zinc-950/60">
-          <p className="font-mono text-xs uppercase tracking-wider text-emerald-400/90">
-            {t('blog.tagRoadmap')}
-          </p>
-          <h2 className="mt-3 text-xl font-medium text-zinc-900 dark:text-zinc-100">
-            {t('blog.post2Title')}
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
-            {t('blog.post2Body')}
-          </p>
-        </article>
-      </section>
+      <ul className="mt-10 flex flex-col gap-4">
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <article className="rounded-2xl border border-zinc-200 bg-white transition hover:border-zinc-300 dark:border-white/[0.08] dark:bg-zinc-950/60 dark:hover:border-white/[0.14]">
+              <Link
+                to={`/blog/${post.slug}`}
+                className="block p-6 no-underline outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-950"
+              >
+                <time
+                  dateTime={post.date}
+                  className="font-mono text-xs text-zinc-500 dark:text-zinc-500"
+                >
+                  {formatBlogDate(post.date, locale)}
+                </time>
+                <h2 className="mt-2 text-xl font-medium text-zinc-900 dark:text-zinc-100">
+                  {post.title[locale]}
+                </h2>
+                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
+                  {post.excerpt[locale]}
+                </p>
+                <span className="mt-4 inline-flex text-sm font-medium text-emerald-600 dark:text-emerald-400/95">
+                  {t('blog.readMore')}
+                  <span aria-hidden className="ml-1">
+                    →
+                  </span>
+                </span>
+              </Link>
+            </article>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
