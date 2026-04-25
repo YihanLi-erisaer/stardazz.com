@@ -1,4 +1,6 @@
+import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
+import { RouteFallback } from '../components/RouteFallback'
 import { ScrollToHash } from '../components/ScrollToHash'
 import { SiteSeo } from '../components/SiteSeo'
 import { SkipToMainLink } from '../components/SkipToMainLink'
@@ -13,7 +15,9 @@ export function MainLayout() {
       <ScrollToHash />
       <SiteHeader />
       <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
-        <Outlet />
+        <Suspense fallback={<RouteFallback />}>
+          <Outlet />
+        </Suspense>
       </main>
       <SiteFooter />
     </div>

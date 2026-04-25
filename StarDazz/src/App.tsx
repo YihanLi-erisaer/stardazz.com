@@ -1,12 +1,28 @@
+import { lazy } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout'
-import { AboutPage } from './pages/AboutPage'
-import { BlogPage } from './pages/BlogPage'
-import { BlogPostPage } from './pages/BlogPostPage'
 import { HomePage } from './pages/HomePage'
-import { NotFoundPage } from './pages/NotFoundPage'
-import { SmeetingPage } from './pages/SmeetingPage'
-import { SmeetingPrivacyPage } from './pages/SmeetingPrivacyPage'
+
+const BlogPage = lazy(() =>
+  import('./pages/BlogPage').then((m) => ({ default: m.BlogPage })),
+)
+const BlogPostPage = lazy(() =>
+  import('./pages/BlogPostPage').then((m) => ({ default: m.BlogPostPage })),
+)
+const AboutPage = lazy(() =>
+  import('./pages/AboutPage').then((m) => ({ default: m.AboutPage })),
+)
+const SmeetingPage = lazy(() =>
+  import('./pages/SmeetingPage').then((m) => ({ default: m.SmeetingPage })),
+)
+const SmeetingPrivacyPage = lazy(() =>
+  import('./pages/SmeetingPrivacyPage').then((m) => ({
+    default: m.SmeetingPrivacyPage,
+  })),
+)
+const NotFoundPage = lazy(() =>
+  import('./pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
+)
 
 export default function App() {
   return (
