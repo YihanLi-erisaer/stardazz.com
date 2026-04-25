@@ -1,6 +1,7 @@
 /**
  * Traditional Chinese — locale `zh-HK` (`<html lang="zh-HK">`, `og:locale` zh_HK).
  * Wording is 繁體中文；與台灣用語大致相通，可按需要再改為香港慣用詞。
+ * @see `messagesZh.ts` (简体) · `messagesEn.ts` (English)
  */
 export const messagesZhHK = {
   meta: {
