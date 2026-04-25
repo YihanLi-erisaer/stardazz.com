@@ -1,8 +1,8 @@
 /**
- * Traditional Chinese (Taiwan) — mirrors the shape of `messages.zh`.
- * About sample is mostly English; UI strings use 臺灣繁體用語（如：軟體、部落格、資料）。
+ * Traditional Chinese — locale `zh-HK` (`<html lang="zh-HK">`, `og:locale` zh_HK).
+ * Wording is 繁體中文；與台灣用語大致相通，可按需要再改為香港慣用詞。
  */
-export const messagesZhTW = {
+export const messagesZhHK = {
   meta: {
     title: 'StarDazz — 軟體工作室',
     description: 'StarDazz — 專注打造提升效率的軟體產品。',
@@ -33,7 +33,7 @@ export const messagesZhTW = {
     zhShort: '簡',
     zhHantShort: '繁',
     enShort: 'EN',
-    zh: '简体中文',
+    zh: '簡體中文',
     zhHant: '繁體中文',
     en: 'English',
   },

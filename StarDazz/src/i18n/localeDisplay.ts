@@ -5,8 +5,8 @@ export function localeToHtmlLang(locale: Locale): string {
   switch (locale) {
     case 'zh':
       return 'zh-CN'
-    case 'zh-TW':
-      return 'zh-TW'
+    case 'zh-HK':
+      return 'zh-HK'
     default:
       return 'en'
   }
@@ -17,8 +17,8 @@ export function localeToOgLocale(locale: Locale): string {
   switch (locale) {
     case 'zh':
       return 'zh_CN'
-    case 'zh-TW':
-      return 'zh_TW'
+    case 'zh-HK':
+      return 'zh_HK'
     default:
       return 'en_US'
   }
@@ -29,8 +29,8 @@ export function localeToDateFormatLocale(locale: Locale): string {
   switch (locale) {
     case 'zh':
       return 'zh-CN'
-    case 'zh-TW':
-      return 'zh-TW'
+    case 'zh-HK':
+      return 'zh-HK'
     default:
       return 'en-US'
   }

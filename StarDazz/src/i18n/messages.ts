@@ -1,6 +1,6 @@
-import { messagesZhTW } from './messagesZhTW'
+import { messagesZhHK } from './messagesZhHK'
 
-export type Locale = 'zh' | 'zh-TW' | 'en'
+export type Locale = 'zh' | 'zh-HK' | 'en'
 
 export const defaultLocale: Locale = 'en'
 
@@ -242,7 +242,7 @@ export const messages = {
       backSmeeting: '← 返回 smeeting 产品页',
     },
   },
-  'zh-TW': messagesZhTW,
+  'zh-HK': messagesZhHK,
   en: {
     meta: {
       title: 'StarDazz — Software Studio',

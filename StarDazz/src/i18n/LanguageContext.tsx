@@ -20,7 +20,15 @@ const STORAGE_KEY = 'stardazz-locale'
 function readStoredLocale(): Locale {
   try {
     const v = localStorage.getItem(STORAGE_KEY)
-    if (v === 'zh' || v === 'zh-TW' || v === 'en') return v
+    if (v === 'zh' || v === 'zh-HK' || v === 'en') return v
+    if (v === 'zh-TW') {
+      try {
+        localStorage.setItem(STORAGE_KEY, 'zh-HK')
+      } catch {
+        /* ignore */
+      }
+      return 'zh-HK'
+    }
   } catch {
     /* private mode / blocked storage */
   }

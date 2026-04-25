@@ -7,7 +7,7 @@ type MenuPos = { top: number; right: number }
 
 function localeShortLabel(locale: Locale, t: (key: string) => string): string {
   if (locale === 'en') return t('lang.enShort')
-  if (locale === 'zh-TW') return t('lang.zhHantShort')
+  if (locale === 'zh-HK') return t('lang.zhHantShort')
   return t('lang.zhShort')
 }
 
@@ -78,11 +78,11 @@ export function LanguageSwitcher() {
             {t('lang.zh')}
           </button>
         </li>
-        <li role="option" aria-selected={locale === 'zh-TW'}>
+        <li role="option" aria-selected={locale === 'zh-HK'}>
           <button
             type="button"
-            className={itemClass(locale === 'zh-TW')}
-            onClick={() => pick('zh-TW')}
+            className={itemClass(locale === 'zh-HK')}
+            onClick={() => pick('zh-HK')}
           >
             {t('lang.zhHant')}
           </button>

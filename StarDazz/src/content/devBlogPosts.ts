@@ -19,13 +19,13 @@ export const DEV_BLOG_POSTS: DevBlogPost[] = [
     date: '2026-04-01',
     title: {
       zh: 'smeeting 近期开发进展',
-      'zh-TW': 'smeeting 近期開發進展',
+      'zh-HK': 'smeeting 近期開發進展',
       en: 'Recent smeeting progress',
     },
     excerpt: {
       zh:
         '隐私政策、主题切换、交互式 UI 预览与下载入口等更新，以及后续性能与可访问性计划。',
-      'zh-TW':
+      'zh-HK':
         '隱私權政策、主題切換、互動式 UI 預覽與下載入口等更新，以及後續效能與無障礙計畫。',
       en:
         'Privacy page, theme switcher, interactive UI preview, download flow—and what is next for performance and a11y.',
@@ -43,7 +43,7 @@ export const DEV_BLOG_POSTS: DevBlogPost[] = [
         '',
         '会继续打磨 **性能**（启动、转写与摘要延迟）以及 **可访问性**（焦点、对比度与屏幕阅读器友好度）。欢迎在 [GitHub](https://github.com/YihanLi-erisaer/smeeting) 提 issue。',
       ].join('\n'),
-      'zh-TW': [
+      'zh-HK': [
         '這一迭代裡，我們主要圍繞**合規與體驗**做了幾件事：',
         '',
         '- 上線獨立的**隱私權政策**頁面，說明麥克風、轉寫與本機模型的資料邊界。',
@@ -74,12 +74,12 @@ export const DEV_BLOG_POSTS: DevBlogPost[] = [
     date: '2026-03-15',
     title: {
       zh: '下一阶段计划',
-      'zh-TW': '下一階段計畫',
+      'zh-HK': '下一階段計畫',
       en: 'What comes next',
     },
     excerpt: {
       zh: '更多开发日志、技术细节与里程碑公开，以及功能迭代的透明路线。',
-      'zh-TW':
+      'zh-HK':
         '更多開發日誌、技術細節與里程碑公開，以及功能迭代的透明路線。',
       en:
         'More dev logs, technical write-ups, milestone posts, and a clearer public roadmap.',
@@ -96,7 +96,7 @@ export const DEV_BLOG_POSTS: DevBlogPost[] = [
         '',
         '若有希望优先覆盖的主题，欢迎通过 GitHub 或邮件反馈。',
       ].join('\n'),
-      'zh-TW': [
+      'zh-HK': [
         'Dev Blog 會從此前「靜態公告」改成**可跳轉的多篇文章**結構：每篇文章在程式碼裡用 Markdown 維護，前端統一渲染。',
         '',
         '## 您在這裡會看到',
