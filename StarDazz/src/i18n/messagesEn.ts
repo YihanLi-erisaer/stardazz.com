@@ -218,7 +218,7 @@ export const messagesEn = {
       'How smeeting handles microphone audio, transcripts, on-device models, and optional downloads—written for app store transparency.',
     demoTitle: 'In-app UI preview',
     demoSub:
-      'Interactive mock-up (not real audio). Tap Start to switch to the recording state, then Stop to return.',
+      'Interactive mock-up (not real audio). Tap Start / Stop for the recording state; open Settings or the menu to preview slide-in screens.',
     demoPressStart: 'Press Start button to start',
     demoResultText: 'Result text',
     demoRecording: 'Recording...',
@@ -231,6 +231,29 @@ export const messagesEn = {
     demoMenuAria: 'Menu (demo)',
     demoSettingsAria: 'Settings (demo)',
     demoIdleHint: 'Idle — press Start to begin',
+    demoBack: 'Back',
+    demoSettingsTitle: 'Settings',
+    demoTheme: 'Theme',
+    demoThemeSystem: 'System',
+    demoThemeLight: 'Light',
+    demoThemeDark: 'Dark',
+    demoBeamSearch: 'Beam search',
+    demoBeamSearchDesc:
+      'Default greedy search. On: modified beam search, often slower with higher accuracy.',
+    demoAppVersion: 'App version',
+    demoAppVersionValue: '4.1.3',
+    demoHistoryTitle: 'Transcription history',
+    demoHistCard1:
+      'We should align on scope first, then split ownership for the API layer and the dashboard…',
+    demoHistTime1: '5 hours ago',
+    demoHistCard2:
+      'Where are we on the rollout checklist? If staging looks good, we can tag a release candidate…',
+    demoHistTime2: '22 hours ago',
+    demoHistCard3:
+      'Quick recap: naming conventions for regions, shared phases, and what we want in the export…',
+    demoHistTime3: '22 hours ago',
+    demoHistCopy: 'Copy',
+    demoHistCopied: 'Copied',
   },
   smeetingPrivacy: {
     docTitle: 'smeeting Privacy Policy — StarDazz',

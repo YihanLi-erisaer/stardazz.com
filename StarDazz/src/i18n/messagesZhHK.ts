@@ -217,7 +217,7 @@ export const messagesZhHK = {
       '說明麥克風、轉寫、本機模型與網路下載等資料處理方式，符合應用程式商店對使用者資料的揭露要求。',
     demoTitle: '應用程式介面預覽',
     demoSub:
-      '以下為網頁演示，非真實錄音。點選「開始」可切換到錄音中介面示意，再點「停止」返回。',
+      '以下為網頁演示，非真實錄音。可點選「開始」/「停止」切換狀態；點設定或選單體驗側滑進入的介面。',
     demoPressStart: '點選「開始」按鈕開始',
     demoResultText: '辨識結果',
     demoRecording: '正在錄音…',
@@ -230,6 +230,29 @@ export const messagesZhHK = {
     demoMenuAria: '選單（演示）',
     demoSettingsAria: '設定（演示）',
     demoIdleHint: '等待開始',
+    demoBack: '返回',
+    demoSettingsTitle: '設定',
+    demoTheme: '主題',
+    demoThemeSystem: '跟隨系統',
+    demoThemeLight: '淺色',
+    demoThemeDark: '深色',
+    demoBeamSearch: '束搜尋',
+    demoBeamSearchDesc:
+      '預設貪心搜尋。開啟：改進型束搜尋，通常較慢但精準度較高。',
+    demoAppVersion: '應用程式版本',
+    demoAppVersionValue: '4.1.3',
+    demoHistoryTitle: '轉寫紀錄',
+    demoHistCard1:
+      '但是我們兩個，所謂的是，他師傅之後，需求，退網，遊戲，只會自己在一塊，…',
+    demoHistTime1: '5 小時前',
+    demoHistCard2:
+      '在哪裡啊？還有，換規則還有，不要想那麼多，考慮過這個，持股地產再往延，…',
+    demoHistTime2: '22 小時前',
+    demoHistCard3:
+      '呃就是主要是他的然後。共共同名字設幾個地區有共同階段還是說？嗯看到嗎？…',
+    demoHistTime3: '22 小時前',
+    demoHistCopy: '複製',
+    demoHistCopied: '已複製',
   },
   smeetingPrivacy: {
     docTitle: 'smeeting 隱私權政策 — StarDazz',

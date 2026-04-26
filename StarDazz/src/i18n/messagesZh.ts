@@ -213,7 +213,7 @@ export const messagesZh = {
       '说明麦克风、转写、本地模型与网络下载等数据处理方式，符合应用商店对用户数据的披露要求。',
     demoTitle: '应用界面预览',
     demoSub:
-      '以下为网页演示，非真实录音。点击「开始」可切换到录音中界面示意，再点「停止」返回。',
+      '以下为网页演示，非真实录音。可点击「开始」/「停止」切换状态；点设置或菜单体验侧滑进入的界面。',
     demoPressStart: '点击「开始」按钮开始',
     demoResultText: '识别结果',
     demoRecording: '正在录音…',
@@ -226,6 +226,29 @@ export const messagesZh = {
     demoMenuAria: '菜单（演示）',
     demoSettingsAria: '设置（演示）',
     demoIdleHint: '等待开始',
+    demoBack: '返回',
+    demoSettingsTitle: '设置',
+    demoTheme: '主题',
+    demoThemeSystem: '跟随系统',
+    demoThemeLight: '浅色',
+    demoThemeDark: '深色',
+    demoBeamSearch: '束搜索',
+    demoBeamSearchDesc:
+      '默认贪心搜索。开启：改进型束搜索，通常更慢但精度更高。',
+    demoAppVersion: '应用版本',
+    demoAppVersionValue: '4.1.3',
+    demoHistoryTitle: '转写记录',
+    demoHistCard1:
+      '但是我们两个，所谓的是，他师傅之后，需求，退网，游戏，只会自己在一块，…',
+    demoHistTime1: '5 小时前',
+    demoHistCard2:
+      '在哪里啊？还有，换规则还有，不要想那么多，考虑过这个，持股地产再往延，…',
+    demoHistTime2: '22 小时前',
+    demoHistCard3:
+      '呃就是主要是他的然后。共共同名字设几个地区有共同阶段还是说？嗯看到吗？…',
+    demoHistTime3: '22 小时前',
+    demoHistCopy: '复制',
+    demoHistCopied: '已复制',
   },
   smeetingPrivacy: {
     docTitle: 'smeeting 隐私政策 — StarDazz',
