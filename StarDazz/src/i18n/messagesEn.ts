@@ -239,9 +239,9 @@ export const messagesEn = {
     demoThemeDark: 'Dark',
     demoBeamSearch: 'Beam search',
     demoBeamSearchDesc:
-      'Default greedy search. On: modified beam search, often slower with higher accuracy.',
+      'Default Greedy search. On: modified beam search, often slower with higher accuracy.',
     demoAppVersion: 'App version',
-    demoAppVersionValue: '4.1.3',
+    demoAppVersionValue: '4.1.4',
     demoHistoryTitle: 'Transcription history',
     demoHistCard1:
       'We should align on scope first, then split ownership for the API layer and the dashboard…',
@@ -254,6 +254,7 @@ export const messagesEn = {
     demoHistTime3: '22 hours ago',
     demoHistCopy: 'Copy',
     demoHistCopied: 'Copied',
+    demoHistDelete: 'Delete transcription',
   },
   smeetingPrivacy: {
     docTitle: 'smeeting Privacy Policy — StarDazz',

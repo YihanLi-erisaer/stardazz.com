@@ -236,7 +236,7 @@ export const messagesZh = {
     demoBeamSearchDesc:
       '默认贪心搜索。开启：改进型束搜索，通常更慢但精度更高。',
     demoAppVersion: '应用版本',
-    demoAppVersionValue: '4.1.3',
+    demoAppVersionValue: '4.1.4',
     demoHistoryTitle: '转写记录',
     demoHistCard1:
       '但是我们两个，所谓的是，他师傅之后，需求，退网，游戏，只会自己在一块，…',
@@ -249,6 +249,7 @@ export const messagesZh = {
     demoHistTime3: '22 小时前',
     demoHistCopy: '复制',
     demoHistCopied: '已复制',
+    demoHistDelete: '删除转写',
   },
   smeetingPrivacy: {
     docTitle: 'smeeting 隐私政策 — StarDazz',

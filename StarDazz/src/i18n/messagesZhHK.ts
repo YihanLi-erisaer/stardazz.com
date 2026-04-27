@@ -240,7 +240,7 @@ export const messagesZhHK = {
     demoBeamSearchDesc:
       '預設貪心搜尋。開啟：改進型束搜尋，通常較慢但精準度較高。',
     demoAppVersion: '應用程式版本',
-    demoAppVersionValue: '4.1.3',
+    demoAppVersionValue: '4.1.4',
     demoHistoryTitle: '轉寫紀錄',
     demoHistCard1:
       '但是我們兩個，所謂的是，他師傅之後，需求，退網，遊戲，只會自己在一塊，…',
@@ -253,6 +253,7 @@ export const messagesZhHK = {
     demoHistTime3: '22 小時前',
     demoHistCopy: '複製',
     demoHistCopied: '已複製',
+    demoHistDelete: '刪除轉寫',
   },
   smeetingPrivacy: {
     docTitle: 'smeeting 隱私權政策 — StarDazz',
