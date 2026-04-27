@@ -6,6 +6,15 @@ type Mode = 'idle' | 'recording'
 type Panel = 'main' | 'settings' | 'history'
 type ThemeChoice = 'system' | 'light' | 'dark'
 
+function DemoHomeIndicator() {
+  return (
+    <div
+      className="mx-auto h-1 w-28 shrink-0 rounded-full bg-zinc-400/50 smeeting-demo-dark:bg-zinc-500/70"
+      aria-hidden
+    />
+  )
+}
+
 function DemoStatusBar({ isDark }: { isDark: boolean }) {
   return (
     <div
@@ -51,8 +60,13 @@ export function SmeetingAppUiDemo() {
   const [copyFlash, setCopyFlash] = useState<string | null>(null)
   const [historyLongPressId, setHistoryLongPressId] = useState<string | null>(null)
   const [historyDeletedIds, setHistoryDeletedIds] = useState(() => new Set<string>())
+  const [historySubView, setHistorySubView] = useState<'list' | 'detail'>('list')
+  const [historyDetailId, setHistoryDetailId] = useState<string | null>(null)
   const historyLongPressTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null)
   const historyLongPressStartRef = useRef<{ x: number; y: number } | null>(null)
+  const historyLongPressTriggeredRef = useRef(false)
+  const historyTextPressRef = useRef<{ id: string; at: number } | null>(null)
+  const historyTextDragInvalidRef = useRef(false)
 
   const recording = mode === 'recording'
   const mainBlocked = panel !== 'main'
@@ -74,13 +88,31 @@ export function SmeetingAppUiDemo() {
 
   const historyCardsAll = useMemo(
     () => [
-      { id: '1', text: t('smeeting.demoHistCard1'), time: t('smeeting.demoHistTime1') },
-      { id: '2', text: t('smeeting.demoHistCard2'), time: t('smeeting.demoHistTime2') },
-      { id: '3', text: t('smeeting.demoHistCard3'), time: t('smeeting.demoHistTime3') },
+      {
+        id: '1',
+        text: t('smeeting.demoHistCard1'),
+        time: t('smeeting.demoHistTime1'),
+        detailDate: t('smeeting.demoHistDetailDate1'),
+      },
+      {
+        id: '2',
+        text: t('smeeting.demoHistCard2'),
+        time: t('smeeting.demoHistTime2'),
+        detailDate: t('smeeting.demoHistDetailDate2'),
+      },
+      {
+        id: '3',
+        text: t('smeeting.demoHistCard3'),
+        time: t('smeeting.demoHistTime3'),
+        detailDate: t('smeeting.demoHistDetailDate3'),
+      },
     ],
     [t],
   )
   const historyCards = historyCardsAll.filter((row) => !historyDeletedIds.has(row.id))
+  const historyDetailRow = historyDetailId
+    ? historyCards.find((r) => r.id === historyDetailId)
+    : undefined
 
   const cancelHistoryLongPressPending = useCallback(() => {
     if (historyLongPressTimerRef.current) {
@@ -94,31 +126,65 @@ export function SmeetingAppUiDemo() {
     historyLongPressStartRef.current = null
   }, [cancelHistoryLongPressPending])
 
-  const onHistoryCardPointerDown = useCallback(
-    (id: string) => (e: React.PointerEvent<HTMLDivElement>) => {
+  const onHistoryCardTextPointerDown = useCallback(
+    (id: string) => (e: React.PointerEvent<HTMLButtonElement>) => {
       if (historyLongPressId) return
       if (e.pointerType === 'mouse' && e.button !== 0) return
+      historyLongPressTriggeredRef.current = false
+      historyTextDragInvalidRef.current = false
+      historyTextPressRef.current = { id, at: Date.now() }
       cancelHistoryLongPressPending()
       historyLongPressStartRef.current = { x: e.clientX, y: e.clientY }
       historyLongPressTimerRef.current = window.setTimeout(() => {
         historyLongPressTimerRef.current = null
         historyLongPressStartRef.current = null
+        historyTextPressRef.current = null
+        historyLongPressTriggeredRef.current = true
         setHistoryLongPressId(id)
       }, 500)
     },
     [cancelHistoryLongPressPending, historyLongPressId],
   )
 
-  const onHistoryCardPointerMove = useCallback(
-    (e: React.PointerEvent<HTMLDivElement>) => {
+  const onHistoryCardTextPointerMove = useCallback(
+    (e: React.PointerEvent<HTMLButtonElement>) => {
       const start = historyLongPressStartRef.current
       if (!start || !historyLongPressTimerRef.current) return
       const dx = e.clientX - start.x
       const dy = e.clientY - start.y
-      if (dx * dx + dy * dy > 144) resetHistoryLongPressTracking()
+      if (dx * dx + dy * dy > 144) {
+        historyTextDragInvalidRef.current = true
+        resetHistoryLongPressTracking()
+      }
     },
     [resetHistoryLongPressTracking],
   )
+
+  const onHistoryCardTextPointerUp = useCallback(
+    (e: React.PointerEvent<HTMLButtonElement>) => {
+      if (historyLongPressId) return
+      cancelHistoryLongPressPending()
+      historyLongPressStartRef.current = null
+      const press = historyTextPressRef.current
+      historyTextPressRef.current = null
+      if (!press) return
+      if (historyLongPressTriggeredRef.current) {
+        historyLongPressTriggeredRef.current = false
+        return
+      }
+      if (historyTextDragInvalidRef.current) return
+      if (Date.now() - press.at > 500) return
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      setHistoryDetailId(press.id)
+      setHistorySubView('detail')
+    },
+    [cancelHistoryLongPressPending, historyLongPressId],
+  )
+
+  const onHistoryCardTextPointerLeave = useCallback(() => {
+    historyTextPressRef.current = null
+    resetHistoryLongPressTracking()
+  }, [resetHistoryLongPressTracking])
 
   useEffect(() => {
     if (!historyLongPressId) return
@@ -128,6 +194,14 @@ export function SmeetingAppUiDemo() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [historyLongPressId])
+
+  useEffect(() => {
+    if (historySubView !== 'detail' || !historyDetailId) return
+    if (!historyCards.some((r) => r.id === historyDetailId)) {
+      setHistorySubView('list')
+      setHistoryDetailId(null)
+    }
+  }, [historySubView, historyDetailId, historyCards])
 
   useEffect(() => () => resetHistoryLongPressTracking(), [resetHistoryLongPressTracking])
 
@@ -256,16 +330,14 @@ export function SmeetingAppUiDemo() {
             </button>
           </div>
 
-          <p className="mt-5 pb-1 text-center text-[11px] font-medium leading-snug text-zinc-600 smeeting-demo-dark:text-zinc-200 sm:text-xs">
+          <p className="mt-5 pb-8 text-center text-[11px] font-medium leading-snug text-zinc-600 smeeting-demo-dark:text-zinc-200 sm:text-xs">
             {t('smeeting.demoAiDisclaimer')}
           </p>
-
-          <div className="mx-auto mt-2 h-1 w-28 rounded-full bg-zinc-400/50 smeeting-demo-dark:bg-zinc-100/80" aria-hidden />
         </div>
 
             {/* Settings: slides in from the right */}
             <div
-              className={`absolute inset-0 z-20 flex flex-col bg-[#f0f1f4] px-2 text-zinc-900 transition-transform duration-300 ease-out motion-reduce:transition-none smeeting-demo-dark:bg-[#080c12] smeeting-demo-dark:text-zinc-100 ${
+              className={`absolute inset-0 z-20 flex min-h-0 flex-col bg-[#f0f1f4] px-2 text-zinc-900 transition-transform duration-300 ease-out motion-reduce:transition-none smeeting-demo-dark:bg-[#080c12] smeeting-demo-dark:text-zinc-100 ${
                 panel === 'settings' ? 'translate-x-0' : 'translate-x-full pointer-events-none'
               }`}
               aria-hidden={panel !== 'settings'}
@@ -286,7 +358,7 @@ export function SmeetingAppUiDemo() {
                 </h2>
               </div>
 
-              <div className="min-h-0 flex-1 space-y-6 overflow-y-auto pb-4">
+              <div className="min-h-0 flex-1 space-y-6 overflow-y-auto pb-8">
                 <section>
                   <h3 className="text-[15px] font-semibold text-zinc-900 smeeting-demo-dark:text-zinc-100">
                     {t('smeeting.demoTheme')}
@@ -336,16 +408,11 @@ export function SmeetingAppUiDemo() {
                   </span>
                 </div>
               </div>
-
-              <div
-                className="mx-auto mb-1 mt-auto h-1 w-28 shrink-0 rounded-full bg-zinc-400/50 smeeting-demo-dark:bg-zinc-600/60"
-                aria-hidden
-              />
             </div>
 
             {/* Transcription history: slides in from the left */}
             <div
-              className={`absolute inset-0 z-20 flex flex-col bg-[#f0f1f4] px-2 text-zinc-900 transition-transform duration-300 ease-out motion-reduce:transition-none smeeting-demo-dark:bg-[#080c12] smeeting-demo-dark:text-zinc-100 ${
+              className={`absolute inset-0 z-20 flex min-h-0 flex-col bg-[#f0f1f4] px-2 text-zinc-900 transition-transform duration-300 ease-out motion-reduce:transition-none smeeting-demo-dark:bg-[#080c12] smeeting-demo-dark:text-zinc-100 ${
                 panel === 'history' ? 'translate-x-0' : '-translate-x-full pointer-events-none'
               }`}
               aria-hidden={panel !== 'history'}
@@ -356,6 +423,13 @@ export function SmeetingAppUiDemo() {
                   onClick={() => {
                     setHistoryLongPressId(null)
                     resetHistoryLongPressTracking()
+                    if (historySubView === 'detail') {
+                      setHistorySubView('list')
+                      setHistoryDetailId(null)
+                      return
+                    }
+                    setHistorySubView('list')
+                    setHistoryDetailId(null)
                     setPanel('main')
                   }}
                   className="flex shrink-0 items-center gap-0.5 pt-0.5 text-[13px] font-medium text-[#2c5282] smeeting-demo-dark:text-[#7eb3e8]"
@@ -365,69 +439,120 @@ export function SmeetingAppUiDemo() {
                   </span>
                   {t('smeeting.demoBack')}
                 </button>
-                <h2 className="min-w-0 pt-0.5 text-lg font-bold leading-snug tracking-tight">
+                <h2 className="min-w-0 flex-1 pt-0.5 text-lg font-bold leading-snug tracking-tight">
                   {t('smeeting.demoHistoryTitle')}
                 </h2>
-              </div>
-
-              <div className="min-h-0 flex-1 space-y-3 overflow-y-auto pb-4">
-                {historyCards.map((row) => (
-                  <div
-                    key={row.id}
-                    className="relative touch-manipulation overflow-hidden rounded-2xl bg-[#e5e5e5] shadow-sm smeeting-demo-dark:bg-zinc-800/80"
+                {historySubView === 'detail' ? (
+                  <button
+                    type="button"
+                    aria-label={t('smeeting.demoHistMoreMenuAria')}
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-zinc-700 transition hover:bg-zinc-200/80 smeeting-demo-dark:text-zinc-200 smeeting-demo-dark:hover:bg-zinc-800/80"
                   >
-                    <div
-                      className="flex gap-3 px-3 py-3"
-                      onPointerDown={onHistoryCardPointerDown(row.id)}
-                      onPointerMove={onHistoryCardPointerMove}
-                      onPointerUp={resetHistoryLongPressTracking}
-                      onPointerCancel={resetHistoryLongPressTracking}
-                      onPointerLeave={resetHistoryLongPressTracking}
-                      onContextMenu={(e) => e.preventDefault()}
+                    <svg
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden
                     >
-                      <div className="min-w-0 flex-1">
-                        <p className="line-clamp-3 text-left text-[13px] font-medium leading-snug text-zinc-900 smeeting-demo-dark:text-zinc-100">
-                          {row.text}
-                        </p>
-                        <p className="mt-1.5 text-[11px] text-zinc-500 smeeting-demo-dark:text-zinc-400">{row.time}</p>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => copyFullText(row.id, row.text)}
-                        className="flex shrink-0 items-center self-center text-[13px] font-bold text-[#3b6ea5] underline-offset-2 hover:underline"
-                      >
-                        {copyFlash === row.id ? t('smeeting.demoHistCopied') : t('smeeting.demoHistCopy')}
-                      </button>
-                    </div>
-                    {historyLongPressId === row.id ? (
-                      <div
-                        role="presentation"
-                        className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-[#505050]/80 px-3"
-                        onPointerDown={(e) => {
-                          if (e.target === e.currentTarget) setHistoryLongPressId(null)
-                        }}
-                      >
-                        <button
-                          type="button"
-                          className="rounded-full bg-[#e53935] px-5 py-2.5 text-[13px] font-semibold text-white shadow-md"
-                          onPointerDown={(e) => e.stopPropagation()}
-                          onClick={() => {
-                            setHistoryDeletedIds((prev) => new Set([...prev, row.id]))
-                            setHistoryLongPressId(null)
-                          }}
-                        >
-                          {t('smeeting.demoHistDelete')}
-                        </button>
-                      </div>
-                    ) : null}
-                  </div>
-                ))}
+                      <circle cx="12" cy="6" r="1.75" />
+                      <circle cx="12" cy="12" r="1.75" />
+                      <circle cx="12" cy="18" r="1.75" />
+                    </svg>
+                  </button>
+                ) : null}
               </div>
 
-              <div
-                className="mx-auto mb-1 mt-auto h-1 w-28 shrink-0 rounded-full bg-zinc-400/50 smeeting-demo-dark:bg-zinc-600/60"
-                aria-hidden
-              />
+              {historySubView === 'list' ? (
+                <div className="min-h-0 flex-1 space-y-3 overflow-y-auto pb-8">
+                    {historyCards.map((row) => (
+                      <div
+                        key={row.id}
+                        className="relative touch-manipulation overflow-hidden rounded-2xl bg-[#e5e5e5] shadow-sm smeeting-demo-dark:bg-zinc-800/80"
+                      >
+                        <div className="flex gap-3 px-3 py-3">
+                          <button
+                            type="button"
+                            className="min-w-0 flex-1 cursor-pointer rounded-lg text-left outline-none focus-visible:ring-2 focus-visible:ring-[#3b6ea5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f0f1f4] smeeting-demo-dark:focus-visible:ring-offset-[#080c12]"
+                            onPointerDown={onHistoryCardTextPointerDown(row.id)}
+                            onPointerMove={onHistoryCardTextPointerMove}
+                            onPointerUp={onHistoryCardTextPointerUp}
+                            onPointerCancel={onHistoryCardTextPointerLeave}
+                            onPointerLeave={onHistoryCardTextPointerLeave}
+                            onContextMenu={(e) => e.preventDefault()}
+                          >
+                            <span className="line-clamp-3 block text-[13px] font-medium leading-snug text-zinc-900 smeeting-demo-dark:text-zinc-100">
+                              {row.text}
+                            </span>
+                            <span className="mt-1.5 block text-[11px] text-zinc-500 smeeting-demo-dark:text-zinc-400">
+                              {row.time}
+                            </span>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => copyFullText(row.id, row.text)}
+                            className="flex shrink-0 items-center self-center text-[13px] font-bold text-[#3b6ea5] underline-offset-2 hover:underline"
+                          >
+                            {copyFlash === row.id
+                              ? t('smeeting.demoHistCopied')
+                              : t('smeeting.demoHistCopy')}
+                          </button>
+                        </div>
+                        {historyLongPressId === row.id ? (
+                          <div
+                            role="presentation"
+                            className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-[#505050]/80 px-3"
+                            onPointerDown={(e) => {
+                              if (e.target === e.currentTarget) setHistoryLongPressId(null)
+                            }}
+                          >
+                            <button
+                              type="button"
+                              className="rounded-full bg-[#e53935] px-5 py-2.5 text-[13px] font-semibold text-white shadow-md"
+                              onPointerDown={(e) => e.stopPropagation()}
+                              onClick={() => {
+                                setHistoryDeletedIds((prev) => new Set([...prev, row.id]))
+                                setHistoryLongPressId(null)
+                                if (historyDetailId === row.id) {
+                                  setHistorySubView('list')
+                                  setHistoryDetailId(null)
+                                }
+                              }}
+                            >
+                              {t('smeeting.demoHistDelete')}
+                            </button>
+                          </div>
+                        ) : null}
+                      </div>
+                    ))}
+                </div>
+              ) : historyDetailRow ? (
+                <div className="flex min-h-0 flex-1 flex-col pb-8">
+                  <p className="mb-3 text-[13px] text-zinc-500 smeeting-demo-dark:text-zinc-400">
+                    {historyDetailRow.detailDate}
+                  </p>
+                  <div className="min-h-0 flex-1 overflow-y-auto">
+                    <div className="min-h-[12rem] rounded-2xl bg-[#dee2e6] px-4 py-4 smeeting-demo-dark:bg-[#2f343d]">
+                      <p className="text-left text-[15px] font-medium leading-relaxed text-zinc-900 smeeting-demo-dark:text-zinc-100">
+                        {historyDetailRow.text}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => undefined}
+                    className="mt-4 min-h-[48px] w-full shrink-0 rounded-full bg-[#26597d] text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#1f4a66] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#26597d] smeeting-demo-dark:bg-[#8fc2f2] smeeting-demo-dark:text-[#0b2438] smeeting-demo-dark:hover:bg-[#a4d0fa] smeeting-demo-dark:focus-visible:outline-[#8fc2f2]"
+                  >
+                    {t('smeeting.demoHistSummarize')}
+                  </button>
+                </div>
+              ) : null}
+            </div>
+
+            <div
+              className="pointer-events-none absolute bottom-1.5 left-0 right-0 z-[25] flex justify-center"
+              aria-hidden
+            >
+              <DemoHomeIndicator />
             </div>
           </div>
         </div>

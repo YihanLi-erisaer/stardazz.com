@@ -250,6 +250,11 @@ export const messagesZh = {
     demoHistCopy: '复制',
     demoHistCopied: '已复制',
     demoHistDelete: '删除转写',
+    demoHistSummarize: '摘要',
+    demoHistMoreMenuAria: '更多选项（演示）',
+    demoHistDetailDate1: '2026年4月15日',
+    demoHistDetailDate2: '2026年4月15日',
+    demoHistDetailDate3: '2026年4月14日',
   },
   smeetingPrivacy: {
     docTitle: 'smeeting 隐私政策 — StarDazz',

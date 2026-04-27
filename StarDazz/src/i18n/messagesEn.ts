@@ -255,6 +255,11 @@ export const messagesEn = {
     demoHistCopy: 'Copy',
     demoHistCopied: 'Copied',
     demoHistDelete: 'Delete transcription',
+    demoHistSummarize: 'Summarize',
+    demoHistMoreMenuAria: 'More options (demo)',
+    demoHistDetailDate1: 'Apr 15, 2026',
+    demoHistDetailDate2: 'Apr 15, 2026',
+    demoHistDetailDate3: 'Apr 14, 2026',
   },
   smeetingPrivacy: {
     docTitle: 'smeeting Privacy Policy — StarDazz',
