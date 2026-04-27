@@ -265,7 +265,7 @@ export function SmeetingAppUiDemo() {
 
             {/* Settings: slides in from the right */}
             <div
-              className={`absolute inset-0 z-20 flex flex-col bg-[#f5f6f7] px-2 text-zinc-900 transition-transform duration-300 ease-out motion-reduce:transition-none smeeting-demo-dark:bg-[#12151c] smeeting-demo-dark:text-zinc-100 ${
+              className={`absolute inset-0 z-20 flex flex-col bg-[#f0f1f4] px-2 text-zinc-900 transition-transform duration-300 ease-out motion-reduce:transition-none smeeting-demo-dark:bg-[#080c12] smeeting-demo-dark:text-zinc-100 ${
                 panel === 'settings' ? 'translate-x-0' : 'translate-x-full pointer-events-none'
               }`}
               aria-hidden={panel !== 'settings'}
@@ -345,7 +345,7 @@ export function SmeetingAppUiDemo() {
 
             {/* Transcription history: slides in from the left */}
             <div
-              className={`absolute inset-0 z-20 flex flex-col bg-[#f2f2f3] px-2 text-zinc-900 transition-transform duration-300 ease-out motion-reduce:transition-none smeeting-demo-dark:bg-[#12151c] smeeting-demo-dark:text-zinc-100 ${
+              className={`absolute inset-0 z-20 flex flex-col bg-[#f0f1f4] px-2 text-zinc-900 transition-transform duration-300 ease-out motion-reduce:transition-none smeeting-demo-dark:bg-[#080c12] smeeting-demo-dark:text-zinc-100 ${
                 panel === 'history' ? 'translate-x-0' : '-translate-x-full pointer-events-none'
               }`}
               aria-hidden={panel !== 'history'}
