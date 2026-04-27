@@ -159,9 +159,9 @@ export function SmeetingAppUiDemo() {
       }`}
       aria-label={t('smeeting.demoPreviewBadge')}
     >
-      <div className="rounded-[1.75rem] border border-zinc-200/90 bg-[#ebecef] p-3 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.35)] smeeting-demo-dark:border-[#1e293b] smeeting-demo-dark:bg-[#0d1118] sm:p-4">
+      <div className="rounded-[1.75rem] border border-zinc-200/90 bg-[#f0f1f4] p-3 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.35)] smeeting-demo-dark:border-[#1e293b] smeeting-demo-dark:bg-[#080c12] sm:p-4">
         <div className="relative overflow-hidden rounded-[1.35rem] bg-[#f0f1f4] smeeting-demo-dark:bg-[#080c12]">
-          <div className="relative z-30 shrink-0 rounded-t-[1.35rem] bg-[#dfe5f0] px-3 pb-2 pt-1.5 smeeting-demo-dark:bg-[#252a33]">
+          <div className="relative z-30 shrink-0 rounded-t-[1.35rem] px-3 pb-2 pt-1.5">
             <DemoStatusBar isDark={previewIsDark} />
           </div>
 
