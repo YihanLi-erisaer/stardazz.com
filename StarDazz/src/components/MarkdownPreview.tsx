@@ -102,7 +102,11 @@ const components: Partial<Components> = {
 export function MarkdownPreview({ source }: Props) {
   return (
     <div className="min-h-0 min-w-0">
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+      <ReactMarkdown
+        key={source}
+        remarkPlugins={[remarkGfm]}
+        components={components}
+      >
         {source}
       </ReactMarkdown>
     </div>

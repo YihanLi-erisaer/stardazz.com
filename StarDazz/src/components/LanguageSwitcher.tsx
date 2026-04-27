@@ -125,7 +125,10 @@ export function LanguageSwitcher() {
       </button>
 
       {typeof document !== 'undefined' && menu
-        ? createPortal(menu, document.body)
+        ? createPortal(
+            menu,
+            document.getElementById('floating-ui-root') ?? document.body,
+          )
         : null}
     </div>
   )

@@ -20,6 +20,7 @@ export function MainLayout() {
         </Suspense>
       </main>
       <SiteFooter />
+      <div id="floating-ui-root" />
     </div>
   )
 }
