@@ -251,7 +251,7 @@ export const messagesZh = {
       '全链路隐私保护，所有数据本地处理包括音频转文本与大语言总结模型，不进行上传。\n\n' +
       '支持语言，包括中文、英文、后续将增加日文、韩文与ios版本等。\n\n',
     repo: 'GitHub 仓库',
-    playStore: '在 Google Play 获取',
+    playStore: '在 Google Play 获取 (封闭测试)',
     downloadRelease: '下载发行版apk',
     readme: '阅读说明',
     support: '支持 / FAQ',

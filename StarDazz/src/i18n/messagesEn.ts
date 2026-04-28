@@ -255,7 +255,7 @@ export const messagesEn = {
       'Full-chain privacy protection, all data is processed locally including audio to text and large language summary model, no upload.\n\n' +
       'Supports languages, including Chinese, English, and Japanese, Korean, and add ios version etc. in the future.\n\n',
     repo: 'GitHub repository',
-    playStore: 'Get on Google Play',
+    playStore: 'Get on Google Play (Closed Beta)',
     downloadRelease: 'Download release apk',
     readme: 'Read the README',
     support: 'Support / FAQ',

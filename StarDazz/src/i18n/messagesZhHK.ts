@@ -255,7 +255,7 @@ export const messagesZhHK = {
       '全鏈路隱私保護，所有資料本機處理包括音訊轉文字與大語言總結模型，不進行上傳。\n\n' +
       '支援語言，包括中文、英文、後續將增加日文、韓文與 iOS 版本等。\n\n',
     repo: 'GitHub 倉庫',
-    playStore: '在 Google Play 取得',
+    playStore: '在 Google Play 取得 (封閉測試)',
     downloadRelease: '下載發行版 apk',
     readme: '閱讀說明',
     support: '支援 / FAQ',
