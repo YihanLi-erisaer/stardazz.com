@@ -8,9 +8,9 @@ type Props = {
 
 const components: Partial<Components> = {
   h1: ({ children }) => (
-    <h1 className="mb-3 mt-8 border-b border-zinc-200 pb-2 text-2xl font-semibold tracking-tight text-zinc-900 first:mt-0 dark:border-white/10 dark:text-zinc-50">
+    <h2 className="mb-3 mt-8 border-b border-zinc-200 pb-2 text-2xl font-semibold tracking-tight text-zinc-900 first:mt-0 dark:border-white/10 dark:text-zinc-50">
       {children}
-    </h1>
+    </h2>
   ),
   h2: ({ children }) => (
     <h2 className="mb-2 mt-6 text-xl font-semibold text-zinc-900 dark:text-zinc-100">

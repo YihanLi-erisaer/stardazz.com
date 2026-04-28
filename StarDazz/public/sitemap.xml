@@ -9,6 +9,10 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://stardazz-com.vercel.app/blog/smeeting-release-and-deploy-history</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://stardazz-com.vercel.app/blog/smeeting-progress-update</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -21,11 +25,27 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://stardazz-com.vercel.app/products</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://stardazz-com.vercel.app/products/smeeting</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://stardazz-com.vercel.app/products/smeeting/support</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://stardazz-com.vercel.app/products/smeeting/privacy</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://stardazz-com.vercel.app/contact</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://stardazz-com.vercel.app/roadmap</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

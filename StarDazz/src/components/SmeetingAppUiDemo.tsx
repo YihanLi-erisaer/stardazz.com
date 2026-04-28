@@ -195,14 +195,6 @@ export function SmeetingAppUiDemo() {
     return () => window.removeEventListener('keydown', onKey)
   }, [historyLongPressId])
 
-  useEffect(() => {
-    if (historySubView !== 'detail' || !historyDetailId) return
-    if (!historyCards.some((r) => r.id === historyDetailId)) {
-      setHistorySubView('list')
-      setHistoryDetailId(null)
-    }
-  }, [historySubView, historyDetailId, historyCards])
-
   useEffect(() => () => resetHistoryLongPressTracking(), [resetHistoryLongPressTracking])
 
   const themeSeg = (value: ThemeChoice, label: string) => {

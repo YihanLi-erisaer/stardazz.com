@@ -24,9 +24,13 @@ export function SmeetingPage() {
       />
 
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <nav className="text-sm text-zinc-600 dark:text-zinc-500">
+        <nav aria-label={t('a11y.breadcrumbNavigation')} className="text-sm text-zinc-600 dark:text-zinc-500">
           <Link to="/" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('smeeting.crumbHome')}
+          </Link>
+          <span className="mx-2 text-zinc-500 dark:text-zinc-600">/</span>
+          <Link to="/products" className="hover:text-zinc-900 dark:hover:text-zinc-300">
+            {t('nav.products')}
           </Link>
           <span className="mx-2 text-zinc-500 dark:text-zinc-600">/</span>
           <span className="text-zinc-700 dark:text-zinc-400">smeeting</span>
@@ -50,15 +54,9 @@ export function SmeetingPage() {
               href={PLAY_STORE}
               target="_blank"
               rel="noreferrer"
-              aria-label="Get smeeting on Google Play"
-              className="inline-flex rounded-xl transition hover:opacity-90"
+              className="inline-flex items-center justify-center rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-medium text-zinc-50 transition hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-300"
             >
-              <img
-                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                alt="Get it on Google Play"
-                className="h-14 w-auto rounded-lg"
-                loading="lazy"
-              />
+              {t('smeeting.playStore')}
             </a>
             <a
               href={`${GITHUB}/releases/latest/download/app-release.apk`}
@@ -88,6 +86,12 @@ export function SmeetingPage() {
             >
               {t('smeeting.readme')}
             </a>
+            <Link
+              to="/products/smeeting/support"
+              className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
+            >
+              {t('smeeting.support')}
+            </Link>
           </div>
           <div className="mt-8 max-w-2xl rounded-xl border border-zinc-200 bg-zinc-100/70 px-4 py-4 dark:border-white/[0.08] dark:bg-zinc-950/50 sm:px-5">
             <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">

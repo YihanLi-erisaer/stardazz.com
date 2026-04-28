@@ -9,6 +9,9 @@ export const messagesEn = {
   },
   a11y: {
     skipToMain: 'Skip to main content',
+    primaryNavigation: 'Primary navigation',
+    footerNavigation: 'Footer navigation',
+    breadcrumbNavigation: 'Breadcrumb',
   },
   notFound: {
     docTitle: 'Page not found — StarDazz',
@@ -61,6 +64,34 @@ export const messagesEn = {
     resetSample: 'Insert sample',
     clear: 'Clear',
     emptyPreview: 'Nothing to preview yet. Add Markdown on the left.',
+    profileLabel: 'Profile',
+    profileTitle: 'Builder of local-first productivity tools',
+    profileBody:
+      'I build StarDazz as a small software studio focused on practical AI, Android engineering, and tools that make everyday knowledge work less manual.',
+    highlight1: 'Graduate study in computing and software systems at the University of Melbourne.',
+    highlight2: 'Hands-on work across Android, Kotlin, Python, on-device ASR, and small language models.',
+    highlight3: 'Open-source products with clear privacy boundaries and verifiable release channels.',
+    currentTitle: 'Current focus',
+    currentBody:
+      'Right now I am improving smeeting, documenting release decisions, and turning repeated meeting workflows into reliable local software.',
+    contactCta: 'Contact me',
+    stackTitle: 'Tech stack',
+    stack1: 'Android: Kotlin, Jetpack Compose, Gradle, Kotlin Multiplatform',
+    stack2: 'AI and ML: sherpa-ncnn, ONNX, ncnn, model optimization, quantization',
+    stack3: 'Web: React, TypeScript, Vite, Tailwind CSS',
+    stack4: 'Data: Python, SQL, crawling, parsing, structured analysis',
+    projectsTitle: 'Featured projects',
+    projectsSub:
+      'Selected work that shows the direction of StarDazz: useful AI, transparent releases, and practical engineering.',
+    projectSmeeting:
+      'On-device meeting assistant with speech recognition, local AI summaries, minutes, and action items.',
+    projectAiClient:
+      'A modular AI API client and KMP exploration for LLM usage across app surfaces.',
+    projectCrawler:
+      'A data collection and analysis pipeline for structured web data and downstream AI workflows.',
+    educationTitle: 'Education',
+    educationBody:
+      'Bachelor of Science in Computing and Software Systems at the University of Melbourne, with continuing focus on software engineering and applied AI.',
     sampleMd: [
       '',
       '# About me',
@@ -157,6 +188,34 @@ export const messagesEn = {
     copyright: 'All rights reserved.',
     contact: 'Contact me:',
     smeetingPrivacy: 'smeeting privacy',
+    roadmap: 'Roadmap',
+    contactPage: 'Contact',
+  },
+  products: {
+    docTitle: 'Products — StarDazz',
+    metaDescription:
+      'Explore StarDazz products, including smeeting, a privacy-first Android meeting assistant with local speech recognition and AI summaries.',
+    crumbHome: 'Home',
+    crumbCurrent: 'Products',
+    label: 'Product hub',
+    title: 'Products built for real work',
+    subtitle:
+      'StarDazz products start from concrete workflows, ship with clear release channels, and keep privacy boundaries easy to understand.',
+    featuredLabel: 'Featured product',
+    smeetingBody:
+      'A lightweight Android meeting assistant for speech recognition, local AI summaries, meeting minutes, and action items.',
+    viewProduct: 'View product',
+    nextLabel: 'Coming next',
+    nextTitle: 'More focused tools are planned',
+    nextBody:
+      'Future products will follow the same pattern: small, dependable software for productivity, collaboration, and applied AI.',
+    roadmapLink: 'See the roadmap',
+    p1t: 'Practical by default',
+    p1b: 'Each product is shaped by a real workflow instead of broad feature checklists.',
+    p2t: 'Transparent releases',
+    p2b: 'Public notes, GitHub releases, and support paths make changes easy to follow.',
+    p3t: 'Privacy-aware',
+    p3b: 'Sensitive data handling is explained clearly, especially where local AI is involved.',
   },
   home: {
     badge: 'StarDazz · Software Studio',
@@ -196,8 +255,10 @@ export const messagesEn = {
       'Full-chain privacy protection, all data is processed locally including audio to text and large language summary model, no upload.\n\n' +
       'Supports languages, including Chinese, English, and Japanese, Korean, and add ios version etc. in the future.\n\n',
     repo: 'GitHub repository',
+    playStore: 'Get on Google Play',
     downloadRelease: 'Download release apk',
     readme: 'Read the README',
+    support: 'Support / FAQ',
     featuresTitle: 'Capabilities',
     featuresSub:
       'End-to-end support for capturing meetings and following up—with less manual cleanup.',
@@ -261,6 +322,45 @@ export const messagesEn = {
     demoHistDetailDate2: 'Apr 15, 2026',
     demoHistDetailDate3: 'Apr 14, 2026',
   },
+  smeetingSupport: {
+    docTitle: 'smeeting Support — StarDazz',
+    metaDescription:
+      'Support and FAQ for smeeting: install from Google Play or APK, model downloads, permissions, privacy, and feedback channels.',
+    crumbCurrent: 'Support',
+    title: 'smeeting support and FAQ',
+    subtitle:
+      'Quick answers for installing smeeting, understanding permissions, and reporting issues.',
+    playTitle: 'Install from Google Play',
+    playBody:
+      'Recommended for most Android users. Google Play handles updates and app integrity checks.',
+    playCta: 'Open Play Store',
+    apkTitle: 'Download the APK',
+    apkBody:
+      'Use the latest GitHub Release APK if Play is unavailable. Android may ask you to allow installs from your browser.',
+    apkCta: 'Download latest APK',
+    githubTitle: 'Report an issue',
+    githubBody:
+      'Bug reports, device details, and feature requests are easiest to track on GitHub Issues.',
+    githubCta: 'Open GitHub Issues',
+    faqTitle: 'Frequently asked questions',
+    faqSub:
+      'The common concerns are install source, privacy, permissions, and optional model downloads.',
+    q1: 'Does smeeting upload my meeting audio?',
+    a1: 'No. Speech recognition and summaries are designed to run locally on the device. Network access is used for optional app or model downloads.',
+    q2: 'Why does Android show microphone permission?',
+    a2: 'The microphone is required to capture live meeting audio for transcription. You can deny or revoke it from Android settings.',
+    q3: 'What should I do if model download fails?',
+    a3: 'Check storage and network first. If you are on a restricted network, try another connection or use the GitHub Release notes for the latest guidance.',
+    q4: 'Should I use Google Play or the APK?',
+    a4: 'Google Play is recommended for automatic updates. The APK is useful when Play is unavailable or you want to test the latest release directly.',
+    q5: 'Where can I request features?',
+    a5: 'Open a GitHub Issue with your use case, device model, Android version, and the behavior you expected.',
+    contactTitle: 'Still need help?',
+    contactBody:
+      'For app bugs, GitHub Issues are preferred. For collaboration or personal messages, use the contact page.',
+    openIssue: 'Open an issue',
+    emailLink: 'Contact by email',
+  },
   smeetingPrivacy: {
     docTitle: 'smeeting Privacy Policy — StarDazz',
     metaDescription:
@@ -270,5 +370,52 @@ export const messagesEn = {
     crumbCurrent: 'Privacy policy',
     panelLabel: 'Full text',
     backSmeeting: '← Back to smeeting product page',
+  },
+  contact: {
+    docTitle: 'Contact — StarDazz',
+    metaDescription:
+      'Contact StarDazz for product feedback, open-source collaboration, smeeting support, or software project discussions.',
+    crumbHome: 'Home',
+    crumbCurrent: 'Contact',
+    title: 'Contact StarDazz',
+    subtitle:
+      'Reach out about product feedback, collaboration, open-source work, or questions about smeeting.',
+    emailTitle: 'Email',
+    emailBody:
+      'For direct messages, email is the best place. Please include enough context so I can respond usefully.',
+    topicsTitle: 'Good reasons to reach out',
+    topic1: 'smeeting feedback, bugs, and device-specific behavior',
+    topic2: 'Open-source collaboration or code review discussions',
+    topic3: 'Product, AI, Android, or productivity software ideas',
+    topic4: 'Speaking, writing, or project collaboration',
+    linksTitle: 'Other places',
+    supportLink: 'smeeting support',
+  },
+  roadmap: {
+    docTitle: 'Roadmap — StarDazz',
+    metaDescription:
+      'StarDazz roadmap for smeeting and future productivity tools: current priorities, next improvements, and longer-term ideas.',
+    crumbHome: 'Home',
+    crumbCurrent: 'Roadmap',
+    title: 'Roadmap and changelog direction',
+    subtitle:
+      'A lightweight public view of what is active now, what comes next, and where release notes live.',
+    phaseNow: 'Now',
+    nowTitle: 'Stabilize smeeting releases',
+    nowBody:
+      'Improve transcription and AI summary reliability, keep release notes current, and make install/support paths easier to follow.',
+    phaseNext: 'Next',
+    nextTitle: 'Better product documentation',
+    nextBody:
+      'Add clearer support material, performance notes, privacy explanations, and more technical posts for design decisions.',
+    phaseLater: 'Later',
+    laterTitle: 'More StarDazz tools',
+    laterBody:
+      'Explore additional focused tools around productivity, applied AI, and collaboration once smeeting foundations are stronger.',
+    followTitle: 'Follow progress',
+    followBody:
+      'The dev blog explains major decisions. GitHub Releases remain the source of truth for app version changes.',
+    blogCta: 'Read the dev blog',
+    releasesCta: 'View releases',
   },
 } as const

@@ -48,16 +48,13 @@ export function SiteHeader() {
             {t('nav.bilibili')}
           </a>
         </div>
-        <nav className="flex shrink-0 items-center gap-4 sm:gap-6">
+        <nav aria-label={t('a11y.primaryNavigation')} className="flex shrink-0 items-center gap-4 sm:gap-6">
           <NavLink to="/" className={navClass} end>
             {t('nav.home')}
           </NavLink>
-          <Link
-            to="/#products"
-            className="text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
-          >
+          <NavLink to="/products" className={navClass}>
             {t('nav.products')}
-          </Link>
+          </NavLink>
           <NavLink to="/blog" className={navClass}>
             {t('nav.blog')}
           </NavLink>

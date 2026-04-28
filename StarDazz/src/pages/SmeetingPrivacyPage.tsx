@@ -16,9 +16,13 @@ export function SmeetingPrivacyPage() {
       />
 
       <div className="mx-auto w-full max-w-[min(100%,96rem)] px-4 py-10 sm:px-6 sm:py-14">
-        <nav className="text-sm text-zinc-600 dark:text-zinc-500">
+        <nav aria-label={t('a11y.breadcrumbNavigation')} className="text-sm text-zinc-600 dark:text-zinc-500">
           <Link to="/" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('smeeting.crumbHome')}
+          </Link>
+          <span className="mx-2 text-zinc-500 dark:text-zinc-600">/</span>
+          <Link to="/products" className="hover:text-zinc-900 dark:hover:text-zinc-300">
+            {t('nav.products')}
           </Link>
           <span className="mx-2 text-zinc-500 dark:text-zinc-600">/</span>
           <Link to="/products/smeeting" className="hover:text-zinc-900 dark:hover:text-zinc-300">

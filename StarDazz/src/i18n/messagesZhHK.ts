@@ -10,6 +10,9 @@ export const messagesZhHK = {
   },
   a11y: {
     skipToMain: '跳到主要內容',
+    primaryNavigation: '主導覽',
+    footerNavigation: '頁尾導覽',
+    breadcrumbNavigation: '麵包屑導覽',
   },
   notFound: {
     docTitle: '頁面未找到 — StarDazz',
@@ -61,6 +64,34 @@ export const messagesZhHK = {
     resetSample: '插入範例',
     clear: '清空',
     emptyPreview: '暫無內容。在左側輸入 Markdown 即可預覽。',
+    profileLabel: '個人簡介',
+    profileTitle: '建構本機優先的效率工具',
+    profileBody:
+      '我把 StarDazz 當作一個小型軟體工作室來建設，關注實用 AI、Android 工程，以及能減少日常知識工作負擔的工具。',
+    highlight1: '在墨爾本大學學習計算與軟體系統相關課程。',
+    highlight2: '實踐方向涵蓋 Android、Kotlin、Python、裝置端語音辨識與小型語言模型。',
+    highlight3: '透過開源專案、清晰隱私邊界和可驗證發布管道建立可信度。',
+    currentTitle: '目前關注',
+    currentBody:
+      '目前重點是繼續打磨 smeeting，記錄版本決策，並把重複的會議流程沉澱成本機可用的軟體能力。',
+    contactCta: '聯絡我',
+    stackTitle: '技術棧',
+    stack1: 'Android：Kotlin、Jetpack Compose、Gradle、Kotlin Multiplatform',
+    stack2: 'AI 與機器學習：sherpa-ncnn、ONNX、ncnn、模型最佳化、量化',
+    stack3: 'Web：React、TypeScript、Vite、Tailwind CSS',
+    stack4: '資料：Python、SQL、爬蟲、解析、結構化分析',
+    projectsTitle: '精選專案',
+    projectsSub:
+      '這些專案體現 StarDazz 的方向：有用的 AI、透明的發布和務實的工程實作。',
+    projectSmeeting:
+      '裝置端會議助理，支援語音辨識、本機 AI 摘要、會議紀錄和行動項。',
+    projectAiClient:
+      '模組化 AI API 用戶端與 KMP 探索，用於跨應用場景呼叫 LLM。',
+    projectCrawler:
+      '面向結構化網頁資料和後續 AI 工作流的資料採集與分析管線。',
+    educationTitle: '教育背景',
+    educationBody:
+      '墨爾本大學計算與軟體系統方向，本科階段持續關注軟體工程與應用 AI。',
     sampleMd: [
       '',
       '# About me',
@@ -157,6 +188,34 @@ export const messagesZhHK = {
     copyright: '保留所有權利。',
     contact: '聯絡我：',
     smeetingPrivacy: 'smeeting 隱私',
+    roadmap: '路線圖',
+    contactPage: '聯絡',
+  },
+  products: {
+    docTitle: '產品 — StarDazz',
+    metaDescription:
+      '瀏覽 StarDazz 產品，包括注重隱私的 Android 會議助理 smeeting，支援本機語音辨識與 AI 摘要。',
+    crumbHome: '首頁',
+    crumbCurrent: '產品',
+    label: '產品中心',
+    title: '為真實工作場景建構的產品',
+    subtitle:
+      'StarDazz 的產品從具體工作流出發，提供清晰發布管道，並讓隱私邊界容易理解。',
+    featuredLabel: '重點產品',
+    smeetingBody:
+      '輕量 Android 會議助理，支援語音辨識、本機 AI 摘要、會議紀錄和行動項。',
+    viewProduct: '查看產品',
+    nextLabel: '後續計畫',
+    nextTitle: '更多專注型工具正在規劃',
+    nextBody:
+      '未來產品會延續同樣的方向：面向效率、協作與應用 AI 的小而可靠的軟體。',
+    roadmapLink: '查看路線圖',
+    p1t: '預設務實',
+    p1b: '每個產品都從真實工作流出發，而不是堆疊功能清單。',
+    p2t: '發布透明',
+    p2b: '透過公開筆記、GitHub Releases 和支援入口，讓變化易於追蹤。',
+    p3t: '重視隱私',
+    p3b: '特別是涉及本機 AI 時，會清楚說明敏感資料如何處理。',
   },
   home: {
     badge: 'StarDazz · 軟體工作室',
@@ -196,8 +255,10 @@ export const messagesZhHK = {
       '全鏈路隱私保護，所有資料本機處理包括音訊轉文字與大語言總結模型，不進行上傳。\n\n' +
       '支援語言，包括中文、英文、後續將增加日文、韓文與 iOS 版本等。\n\n',
     repo: 'GitHub 倉庫',
+    playStore: '在 Google Play 取得',
     downloadRelease: '下載發行版 apk',
     readme: '閱讀說明',
+    support: '支援 / FAQ',
     featuresTitle: '核心能力',
     featuresSub: '面向會議記錄與跟進的完整鏈路，減少手工整理時間。',
     f1t: '語音辨識',
@@ -260,6 +321,45 @@ export const messagesZhHK = {
     demoHistDetailDate2: '2026年4月15日',
     demoHistDetailDate3: '2026年4月14日',
   },
+  smeetingSupport: {
+    docTitle: 'smeeting 支援 — StarDazz',
+    metaDescription:
+      'smeeting 支援與常見問題：Google Play 或 APK 安裝、模型下載、權限、隱私與回饋管道。',
+    crumbCurrent: '支援',
+    title: 'smeeting 支援與常見問題',
+    subtitle:
+      '快速了解如何安裝 smeeting、理解權限用途，並回饋問題。',
+    playTitle: '透過 Google Play 安裝',
+    playBody:
+      '推薦大多數 Android 使用者使用。Google Play 會處理更新和應用程式完整性檢查。',
+    playCta: '開啟 Play 商店',
+    apkTitle: '下載 APK',
+    apkBody:
+      '如果無法使用 Play，可下載 GitHub Release 中的最新 APK。Android 可能會要求允許瀏覽器安裝應用程式。',
+    apkCta: '下載最新 APK',
+    githubTitle: '回饋問題',
+    githubBody:
+      'Bug、裝置資訊和功能請求最適合透過 GitHub Issues 追蹤。',
+    githubCta: '開啟 GitHub Issues',
+    faqTitle: '常見問題',
+    faqSub:
+      '常見問題主要集中在安裝來源、隱私、權限和可選模型下載。',
+    q1: 'smeeting 會上傳我的會議音訊嗎？',
+    a1: '不會。語音辨識和摘要設計為在裝置本機運行。網路主要用於可選的應用程式或模型下載。',
+    q2: '為什麼 Android 會提示麥克風權限？',
+    a2: '麥克風用於採集即時會議音訊並轉寫。您可以在 Android 設定中拒絕或撤銷該權限。',
+    q3: '模型下載失敗怎麼辦？',
+    a3: '先檢查儲存空間和網路。如果處在受限網路環境，可以更換連線，或查看 GitHub Release 說明中的最新建議。',
+    q4: '應該用 Google Play 還是 APK？',
+    a4: '推薦使用 Google Play 取得自動更新。APK 適合無法存取 Play，或想直接測試最新發行版的使用者。',
+    q5: '在哪裡提交功能建議？',
+    a5: '請在 GitHub Issue 中說明使用場景、裝置型號、Android 版本和期望行為。',
+    contactTitle: '仍然需要協助？',
+    contactBody:
+      '應用程式 Bug 優先使用 GitHub Issues；合作或個人訊息可以透過聯絡頁面傳送。',
+    openIssue: '提交 Issue',
+    emailLink: '郵件聯絡',
+  },
   smeetingPrivacy: {
     docTitle: 'smeeting 隱私權政策 — StarDazz',
     metaDescription:
@@ -269,5 +369,52 @@ export const messagesZhHK = {
     crumbCurrent: '隱私權政策',
     panelLabel: '政策全文',
     backSmeeting: '← 返回 smeeting 產品頁',
+  },
+  contact: {
+    docTitle: '聯絡 — StarDazz',
+    metaDescription:
+      '聯絡 StarDazz：產品回饋、開源協作、smeeting 支援或軟體專案討論。',
+    crumbHome: '首頁',
+    crumbCurrent: '聯絡',
+    title: '聯絡 StarDazz',
+    subtitle:
+      '歡迎就產品回饋、合作、開源專案或 smeeting 相關問題聯絡我。',
+    emailTitle: '信箱',
+    emailBody:
+      '直接訊息建議使用郵件。請盡量提供上下文，方便我更有效地回覆。',
+    topicsTitle: '適合聯絡的主題',
+    topic1: 'smeeting 回饋、Bug 和裝置相關表現',
+    topic2: '開源協作或程式碼審查討論',
+    topic3: '產品、AI、Android 或效率軟體想法',
+    topic4: '寫作、分享或專案合作',
+    linksTitle: '其他入口',
+    supportLink: 'smeeting 支援',
+  },
+  roadmap: {
+    docTitle: '路線圖 — StarDazz',
+    metaDescription:
+      'StarDazz 路線圖：smeeting 與未來效率工具的目前重點、下一步最佳化和長期想法。',
+    crumbHome: '首頁',
+    crumbCurrent: '路線圖',
+    title: '路線圖與更新方向',
+    subtitle:
+      '用輕量方式公開目前正在做什麼、下一步做什麼，以及版本紀錄在哪裡查看。',
+    phaseNow: '目前',
+    nowTitle: '穩定 smeeting 發布節奏',
+    nowBody:
+      '提升轉寫與 AI 摘要可靠性，持續維護版本說明，並讓安裝與支援路徑更清晰。',
+    phaseNext: '下一步',
+    nextTitle: '完善產品文件',
+    nextBody:
+      '補充支援資料、效能筆記、隱私說明，以及更多關於設計決策的技術文章。',
+    phaseLater: '之後',
+    laterTitle: '更多 StarDazz 工具',
+    laterBody:
+      '在 smeeting 基礎更穩之後，探索更多圍繞效率、應用 AI 和協作的小工具。',
+    followTitle: '跟進進展',
+    followBody:
+      '開發部落格會解釋主要決策；GitHub Releases 仍是應用程式版本變化的權威來源。',
+    blogCta: '閱讀開發部落格',
+    releasesCta: '查看 Releases',
   },
 } as const

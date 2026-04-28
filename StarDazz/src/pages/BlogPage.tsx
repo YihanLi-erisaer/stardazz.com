@@ -23,7 +23,7 @@ export function BlogPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-      <nav className="text-sm text-zinc-600 dark:text-zinc-500">
+      <nav aria-label={t('a11y.breadcrumbNavigation')} className="text-sm text-zinc-600 dark:text-zinc-500">
         <Link to="/" className="hover:text-zinc-900 dark:hover:text-zinc-300">
           {t('blog.crumbHome')}
         </Link>

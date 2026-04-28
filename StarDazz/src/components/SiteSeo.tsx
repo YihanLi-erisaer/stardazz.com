@@ -9,16 +9,24 @@ const DOC_TITLE_KEY_BY_PATH: Record<string, string> = {
   '/': 'meta.title',
   '/blog': 'blog.docTitle',
   '/about': 'about.docTitle',
+  '/products': 'products.docTitle',
   '/products/smeeting': 'smeeting.docTitle',
   '/products/smeeting/privacy': 'smeetingPrivacy.docTitle',
+  '/products/smeeting/support': 'smeetingSupport.docTitle',
+  '/contact': 'contact.docTitle',
+  '/roadmap': 'roadmap.docTitle',
 }
 
 const META_DESC_KEY_BY_PATH: Record<string, string> = {
   '/': 'meta.description',
   '/blog': 'blog.metaDescription',
   '/about': 'about.metaDescription',
+  '/products': 'products.metaDescription',
   '/products/smeeting': 'smeeting.metaDescription',
   '/products/smeeting/privacy': 'smeetingPrivacy.metaDescription',
+  '/products/smeeting/support': 'smeetingSupport.metaDescription',
+  '/contact': 'contact.metaDescription',
+  '/roadmap': 'roadmap.metaDescription',
 }
 
 const SMEETING_GITHUB = 'https://github.com/YihanLi-erisaer/smeeting'
@@ -39,8 +47,13 @@ function buildJsonLd(args: {
   siteUrl: string
   pathname: string
   descriptionSmeeting: string
+  blogPost?: {
+    title: string
+    description: string
+    date: string
+  }
 }) {
-  const { siteUrl, pathname, descriptionSmeeting } = args
+  const { siteUrl, pathname, descriptionSmeeting, blogPost } = args
   const orgId = `${siteUrl}/#organization`
 
   const organization = {
@@ -48,7 +61,7 @@ function buildJsonLd(args: {
     '@type': 'Organization',
     name: 'StarDazz',
     url: siteUrl,
-    logo: `${siteUrl}/StardazzIcon.jpg`,
+    logo: `${siteUrl}/smeeting-icon-light.png`,
     email: 'stardazz@163.com',
   }
 
@@ -76,6 +89,19 @@ function buildJsonLd(args: {
         price: '0',
         priceCurrency: 'USD',
       },
+    })
+  }
+
+  if (blogPost) {
+    graph.push({
+      '@type': 'BlogPosting',
+      headline: blogPost.title,
+      description: blogPost.description,
+      datePublished: blogPost.date,
+      dateModified: blogPost.date,
+      mainEntityOfPage: `${siteUrl}${pathname}`,
+      author: { '@id': orgId },
+      publisher: { '@id': orgId },
     })
   }
 
@@ -122,7 +148,11 @@ export function SiteSeo() {
   const canonicalUrl =
     path === '/' ? `${siteUrl}/` : `${siteUrl}${path.startsWith('/') ? path : `/${path}`}`
 
-  const ogImage = `${siteUrl}/StardazzIcon.jpg`
+  const isBlogPost = Boolean(blogPost)
+  const isSmeetingPage = path.startsWith('/products/smeeting')
+  const ogType = isBlogPost ? 'article' : 'website'
+  const ogImage = `${siteUrl}/${isSmeetingPage ? 'smeeting-icon-dark.png' : 'smeeting-icon-light.png'}`
+  const ogImageAlt = isSmeetingPage ? 'smeeting app icon' : 'StarDazz preview image'
   const ogLocale = localeToOgLocale(locale)
 
   const jsonLd = useMemo(
@@ -131,8 +161,15 @@ export function SiteSeo() {
         siteUrl,
         pathname: path,
         descriptionSmeeting: t('smeeting.metaDescription'),
+        blogPost: blogPost
+          ? {
+              title: blogPost.title[locale],
+              description: blogPost.excerpt[locale],
+              date: blogPost.date,
+            }
+          : undefined,
       }),
-    [siteUrl, path, t],
+    [siteUrl, path, t, blogPost, locale],
   )
 
   return (
@@ -141,18 +178,23 @@ export function SiteSeo() {
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
 
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content="StarDazz" />
       <meta property="og:locale" content={ogLocale} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:alt" content={ogImageAlt} />
+      {blogPost ? (
+        <meta property="article:published_time" content={`${blogPost.date}T12:00:00.000Z`} />
+      ) : null}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={ogImageAlt} />
 
       <script
         type="application/ld+json"

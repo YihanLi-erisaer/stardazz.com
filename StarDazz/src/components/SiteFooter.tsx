@@ -23,9 +23,12 @@ export function SiteFooter() {
             stardazz@163.com
           </a>
         </div>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-600 dark:text-zinc-500">
+        <nav aria-label={t('a11y.footerNavigation')} className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-600 dark:text-zinc-500">
           <Link to="/" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('footer.home')}
+          </Link>
+          <Link to="/products" className="hover:text-zinc-900 dark:hover:text-zinc-300">
+            {t('nav.products')}
           </Link>
           <Link to="/blog" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('nav.blog')}
@@ -39,7 +42,13 @@ export function SiteFooter() {
           <Link to="/products/smeeting/privacy" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('footer.smeetingPrivacy')}
           </Link>
-        </div>
+          <Link to="/roadmap" className="hover:text-zinc-900 dark:hover:text-zinc-300">
+            {t('footer.roadmap')}
+          </Link>
+          <Link to="/contact" className="hover:text-zinc-900 dark:hover:text-zinc-300">
+            {t('footer.contactPage')}
+          </Link>
+        </nav>
       </div>
       <div className="border-t border-zinc-200 py-6 text-center text-xs text-zinc-500 dark:border-white/[0.04] dark:text-zinc-600">
         © {year} StarDazz. {t('footer.copyright')}

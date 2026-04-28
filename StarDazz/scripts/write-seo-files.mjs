@@ -15,15 +15,23 @@ const base = (process.env.VITE_SITE_URL ?? 'https://stardazz-com.vercel.app').re
 )
 
 /** Keep in sync with `src/content/devBlogPosts.ts` slugs. */
-const BLOG_SLUGS = ['smeeting-progress-update', 'roadmap-next-steps']
+const BLOG_SLUGS = [
+  'smeeting-release-and-deploy-history',
+  'smeeting-progress-update',
+  'roadmap-next-steps',
+]
 
 const paths = [
   '/',
   '/blog',
   ...BLOG_SLUGS.map((s) => `/blog/${s}`),
   '/about',
+  '/products',
   '/products/smeeting',
+  '/products/smeeting/support',
   '/products/smeeting/privacy',
+  '/contact',
+  '/roadmap',
 ]
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
