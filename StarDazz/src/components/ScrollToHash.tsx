@@ -1,12 +1,16 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-/** Scrolls to #id when the location hash changes (e.g. /#products). */
+/** Keeps route navigation at the expected scroll position. */
 export function ScrollToHash() {
   const { hash, pathname } = useLocation()
 
   useEffect(() => {
-    if (!hash) return
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      return
+    }
+
     const id = hash.slice(1)
     if (!id) return
     const el = document.getElementById(id)
