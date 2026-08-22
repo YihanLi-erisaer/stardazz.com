@@ -14,6 +14,7 @@ const DOC_TITLE_KEY_BY_PATH: Record<string, string> = {
   '/products/smeeting/privacy': 'smeetingPrivacy.docTitle',
   '/products/smeeting/support': 'smeetingSupport.docTitle',
   '/contact': 'contact.docTitle',
+  '/login': 'login.docTitle',
   '/roadmap': 'roadmap.docTitle',
 }
 
@@ -26,6 +27,7 @@ const META_DESC_KEY_BY_PATH: Record<string, string> = {
   '/products/smeeting/privacy': 'smeetingPrivacy.metaDescription',
   '/products/smeeting/support': 'smeetingSupport.metaDescription',
   '/contact': 'contact.metaDescription',
+  '/login': 'login.metaDescription',
   '/roadmap': 'roadmap.metaDescription',
 }
 

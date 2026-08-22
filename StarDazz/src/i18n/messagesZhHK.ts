@@ -390,6 +390,23 @@ export const messagesZhHK = {
     linksTitle: '其他入口',
     supportLink: 'smeeting 支援',
   },
+  login: {
+    docTitle: '登入 — StarDazz',
+    metaDescription: '登入 StarDazz 帳戶以存取產品與服務。',
+    crumbHome: '首頁',
+    crumbCurrent: '登入',
+    title: '登入',
+    subtitle: '輸入憑證以存取你的 StarDazz 帳戶。',
+    emailLabel: '信箱',
+    emailPlaceholder: 'you@example.com',
+    passwordLabel: '密碼',
+    passwordPlaceholder: '你的密碼',
+    rememberMe: '記住我',
+    forgotPassword: '忘記密碼？',
+    submit: '登入',
+    noAccount: '還沒有帳戶？',
+    contactLink: '聯絡我們',
+  },
   roadmap: {
     docTitle: '路線圖 — StarDazz',
     metaDescription:

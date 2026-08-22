@@ -34,6 +34,9 @@ const ContactPage = lazy(() =>
 const RoadmapPage = lazy(() =>
   import('./pages/RoadmapPage').then((m) => ({ default: m.RoadmapPage })),
 )
+const LoginPage = lazy(() =>
+  import('./pages/LoginPage').then((m) => ({ default: m.LoginPage })),
+)
 const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
 )
@@ -58,6 +61,7 @@ export default function App() {
           />
           <Route path="/products/smeeting" element={<SmeetingPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/roadmap" element={<RoadmapPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

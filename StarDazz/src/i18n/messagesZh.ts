@@ -386,6 +386,23 @@ export const messagesZh = {
     linksTitle: '其他入口',
     supportLink: 'smeeting 支持',
   },
+  login: {
+    docTitle: '登录 — StarDazz',
+    metaDescription: '登录 StarDazz 账户以访问产品与服务。',
+    crumbHome: '首页',
+    crumbCurrent: '登录',
+    title: '登录',
+    subtitle: '输入凭据以访问你的 StarDazz 账户。',
+    emailLabel: '邮箱',
+    emailPlaceholder: 'you@example.com',
+    passwordLabel: '密码',
+    passwordPlaceholder: '你的密码',
+    rememberMe: '记住我',
+    forgotPassword: '忘记密码？',
+    submit: '登录',
+    noAccount: '还没有账户？',
+    contactLink: '联系我们',
+  },
   roadmap: {
     docTitle: '路线图 — StarDazz',
     metaDescription:

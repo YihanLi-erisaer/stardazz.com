@@ -391,6 +391,24 @@ export const messagesEn = {
     linksTitle: 'Other places',
     supportLink: 'smeeting support',
   },
+  login: {
+    docTitle: 'Sign in — StarDazz',
+    metaDescription:
+      'Sign in to your StarDazz account to access products and services.',
+    crumbHome: 'Home',
+    crumbCurrent: 'Sign in',
+    title: 'Sign in',
+    subtitle: 'Enter your credentials to access your StarDazz account.',
+    emailLabel: 'Email',
+    emailPlaceholder: 'you@example.com',
+    passwordLabel: 'Password',
+    passwordPlaceholder: 'Your password',
+    rememberMe: 'Remember me',
+    forgotPassword: 'Forgot password?',
+    submit: 'Sign in',
+    noAccount: "Don't have an account?",
+    contactLink: 'Contact us',
+  },
   roadmap: {
     docTitle: 'Roadmap — StarDazz',
     metaDescription:
