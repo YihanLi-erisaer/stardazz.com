@@ -18,6 +18,9 @@ const ProductsPage = lazy(() =>
 const SmeetingPage = lazy(() =>
   import('./pages/SmeetingPage').then((m) => ({ default: m.SmeetingPage })),
 )
+const Yt2biliPage = lazy(() =>
+  import('./pages/Yt2biliPage').then((m) => ({ default: m.Yt2biliPage })),
+)
 const SmeetingPrivacyPage = lazy(() =>
   import('./pages/SmeetingPrivacyPage').then((m) => ({
     default: m.SmeetingPrivacyPage,
@@ -60,6 +63,7 @@ export default function App() {
             element={<SmeetingSupportPage />}
           />
           <Route path="/products/smeeting" element={<SmeetingPage />} />
+          <Route path="/products/yt2bili" element={<Yt2biliPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/roadmap" element={<RoadmapPage />} />

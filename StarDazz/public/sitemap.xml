@@ -9,6 +9,10 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://stardazz-com.vercel.app/blog/yt2bili-pipeline-and-commit-history</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://stardazz-com.vercel.app/blog/smeeting-release-and-deploy-history</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -38,6 +42,10 @@
   </url>
   <url>
     <loc>https://stardazz-com.vercel.app/products/smeeting/privacy</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://stardazz-com.vercel.app/products/yt2bili</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>

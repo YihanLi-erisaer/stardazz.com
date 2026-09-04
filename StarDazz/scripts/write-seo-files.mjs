@@ -16,6 +16,7 @@ const base = (process.env.VITE_SITE_URL ?? 'https://stardazz-com.vercel.app').re
 
 /** Keep in sync with `src/content/devBlogPosts.ts` slugs. */
 const BLOG_SLUGS = [
+  'yt2bili-pipeline-and-commit-history',
   'smeeting-release-and-deploy-history',
   'smeeting-progress-update',
   'roadmap-next-steps',
@@ -30,6 +31,7 @@ const paths = [
   '/products/smeeting',
   '/products/smeeting/support',
   '/products/smeeting/privacy',
+  '/products/yt2bili',
   '/contact',
   '/roadmap',
 ]

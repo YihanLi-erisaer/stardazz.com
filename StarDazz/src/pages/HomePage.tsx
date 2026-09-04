@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SmeetingBrandIcon } from '../components/SmeetingBrandIcon'
+import { Yt2biliBrandIcon } from '../components/Yt2biliBrandIcon'
 import { useLanguage } from '../i18n/LanguageContext'
 
 function GridBackdrop() {
@@ -111,11 +112,32 @@ export function HomePage() {
               </div>
             </Link>
 
-            <div className="flex flex-col justify-center rounded-2xl border border-dashed border-zinc-300 
-              bg-zinc-100/40 p-8 text-center dark:border-white/[0.1] dark:bg-zinc-950/40">
-              <p className="text-sm text-zinc-600 dark:text-zinc-500">{t('home.comingTitle')}</p>
-              <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-600">{t('home.comingSub')}</p>
-            </div>
+            <Link
+              to="/products/yt2bili"
+              className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 
+                p-8 transition hover:border-zinc-300 dark:border-white/[0.08] dark:from-zinc-900/80 dark:to-zinc-950 
+                dark:hover:border-white/[0.14] dark:hover:shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
+            >
+              <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#fb7299]/15 blur-3xl transition group-hover:bg-[#fb7299]/25" />
+              <div className="relative">
+                <div className="mb-4">
+                  <Yt2biliBrandIcon sizeClassName="h-20 w-20" />
+                </div>
+                <p className="font-mono text-xs uppercase tracking-wider text-[#fb7299]">
+                  {t('home.cardLabel')}
+                </p>
+                <h3 className="mt-2 text-2xl font-medium text-zinc-900 dark:text-zinc-50">yt2bili</h3>
+                <p className="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-400">
+                  {t('home.yt2biliDesc')}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                  {t('home.viewDetails')}
+                  <span aria-hidden className="transition group-hover:translate-x-0.5">
+                    →
+                  </span>
+                </span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
