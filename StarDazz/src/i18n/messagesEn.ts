@@ -23,8 +23,6 @@ export const messagesEn = {
   },
   nav: {
     tagline: 'Software',
-    bilibili: 'Bilibili channel',
-    bilibiliAria: 'Open StarDazz Bilibili space',
     home: 'Home',
     products: 'Products',
     blog: 'Dev Blog',

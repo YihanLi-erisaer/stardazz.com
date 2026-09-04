@@ -21,8 +21,6 @@ export const messagesZh = {
   },
   nav: {
     tagline: '软件',
-    bilibili: '哔哩哔哩频道',
-    bilibiliAria: '前往 StarDazz 的哔哩哔哩空间',
     home: '首页',
     products: '产品',
     blog: '开发博客',

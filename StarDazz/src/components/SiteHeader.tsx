@@ -38,15 +38,6 @@ export function SiteHeader() {
               {t('nav.tagline')}
             </span>
           </Link>
-          <a
-            href="https://space.bilibili.com/23941395"
-            target="_blank"
-            rel="noreferrer"
-            aria-label={t('nav.bilibiliAria')}
-            className="inline-flex max-w-[11rem] items-center truncate rounded-md border border-[#FB7299]/35 bg-[#FB7299]/10 px-2 py-1 text-[11px] font-medium leading-none text-[#ffc1d4] transition hover:border-[#FB7299]/55 hover:bg-[#FB7299]/18 sm:max-w-none sm:px-2.5 sm:text-xs"
-          >
-            {t('nav.bilibili')}
-          </a>
         </div>
         <nav aria-label={t('a11y.primaryNavigation')} className="flex shrink-0 items-center gap-4 sm:gap-6">
           <NavLink to="/" className={navClass} end>

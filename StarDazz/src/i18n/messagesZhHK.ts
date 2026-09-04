@@ -24,8 +24,6 @@ export const messagesZhHK = {
   },
   nav: {
     tagline: '軟體',
-    bilibili: '嗶哩嗶哩頻道',
-    bilibiliAria: '前往 StarDazz 的嗶哩嗶哩空間',
     home: '首頁',
     products: '產品',
     blog: '開發部落格',
