@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SmeetingBrandIcon } from '../components/SmeetingBrandIcon'
+import { Yt2biliBrandIcon } from '../components/Yt2biliBrandIcon'
 import { useLanguage } from '../i18n/LanguageContext'
 
 export function ProductsPage() {
@@ -39,7 +40,7 @@ export function ProductsPage() {
           </p>
         </header>
 
-        <section className="mt-12 grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
+        <section className="mt-12 grid gap-6 md:grid-cols-2">
           <Link
             to="/products/smeeting"
             className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 p-8 transition hover:border-zinc-300 dark:border-white/[0.08] dark:from-zinc-900/80 dark:to-zinc-950 dark:hover:border-white/[0.14]"
@@ -63,23 +64,46 @@ export function ProductsPage() {
             </div>
           </Link>
 
-          <div className="rounded-2xl border border-dashed border-zinc-300 bg-zinc-100/60 p-8 dark:border-white/[0.1] dark:bg-zinc-950/50">
-            <p className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-600">
-              {t('products.nextLabel')}
-            </p>
-            <h2 className="mt-3 text-xl font-medium text-zinc-900 dark:text-zinc-100">
-              {t('products.nextTitle')}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
-              {t('products.nextBody')}
-            </p>
-            <Link
-              to="/roadmap"
-              className="mt-6 inline-flex text-sm font-medium text-emerald-600 underline-offset-4 hover:text-emerald-500 hover:underline dark:text-emerald-400/95 dark:hover:text-emerald-300"
-            >
-              {t('products.roadmapLink')} →
-            </Link>
-          </div>
+          <Link
+            to="/products/yt2bili"
+            className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 p-8 transition hover:border-zinc-300 dark:border-white/[0.08] dark:from-zinc-900/80 dark:to-zinc-950 dark:hover:border-white/[0.14]"
+          >
+            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#fb7299]/15 blur-3xl transition group-hover:bg-[#fb7299]/25" />
+            <div className="relative">
+              <Yt2biliBrandIcon sizeClassName="h-20 w-20" />
+              <p className="mt-5 font-mono text-xs uppercase tracking-wider text-[#fb7299]">
+                {t('products.cliLabel')}
+              </p>
+              <h2 className="mt-2 text-2xl font-medium text-zinc-900 dark:text-zinc-50">yt2bili</h2>
+              <p className="mt-3 max-w-2xl leading-relaxed text-zinc-700 dark:text-zinc-400">
+                {t('products.yt2biliBody')}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                {t('products.viewProduct')}
+                <span aria-hidden className="transition group-hover:translate-x-0.5">
+                  →
+                </span>
+              </span>
+            </div>
+          </Link>
+        </section>
+
+        <section className="mt-6 rounded-2xl border border-dashed border-zinc-300 bg-zinc-100/60 p-8 dark:border-white/[0.1] dark:bg-zinc-950/50">
+          <p className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-600">
+            {t('products.nextLabel')}
+          </p>
+          <h2 className="mt-3 text-xl font-medium text-zinc-900 dark:text-zinc-100">
+            {t('products.nextTitle')}
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
+            {t('products.nextBody')}
+          </p>
+          <Link
+            to="/roadmap"
+            className="mt-6 inline-flex text-sm font-medium text-emerald-600 underline-offset-4 hover:text-emerald-500 hover:underline dark:text-emerald-400/95 dark:hover:text-emerald-300"
+          >
+            {t('products.roadmapLink')} →
+          </Link>
         </section>
 
         <section className="mt-12 grid gap-4 sm:grid-cols-3">

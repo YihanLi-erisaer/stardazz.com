@@ -22,6 +22,11 @@ export function AboutPage() {
       body: t('about.projectSmeeting'),
     },
     {
+      title: 'yt2bili',
+      href: '/products/yt2bili',
+      body: t('about.projectYt2bili'),
+    },
+    {
       title: 'AI Client',
       href: 'https://github.com/YihanLi-erisaer/aiclient',
       body: t('about.projectAiClient'),
@@ -120,7 +125,7 @@ export function AboutPage() {
             {t('about.projectsSub')}
           </p>
         </div>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {projects.map((project) => {
             const isExternal = project.href.startsWith('http')
             const className =

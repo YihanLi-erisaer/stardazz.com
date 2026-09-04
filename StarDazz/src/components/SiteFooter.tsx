@@ -39,6 +39,9 @@ export function SiteFooter() {
           <Link to="/products/smeeting" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('footer.smeeting')}
           </Link>
+          <Link to="/products/yt2bili" className="hover:text-zinc-900 dark:hover:text-zinc-300">
+            {t('footer.yt2bili')}
+          </Link>
           <Link to="/products/smeeting/privacy" className="hover:text-zinc-900 dark:hover:text-zinc-300">
             {t('footer.smeetingPrivacy')}
           </Link>
