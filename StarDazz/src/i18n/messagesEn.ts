@@ -50,9 +50,9 @@ export const messagesEn = {
     docTitle: 'About me — StarDazz',
     title: 'About me (Yihan Li)',
     subtitle:
-      'Independent software developer and video channel operator.',
+      'Software developer focused on frontend, Android, and on-device AI.',
     metaDescription:
-      'Meet the person behind StarDazz—background, tech stack, education, and featured open-source projects.',
+      'Meet the software developer behind StarDazz and explore my technical interests and selected projects.',
     crumbHome: 'Home',
     crumbCurrent: 'About me',
     editorLabel: 'Markdown input',
@@ -63,15 +63,15 @@ export const messagesEn = {
     clear: 'Clear',
     emptyPreview: 'Nothing to preview yet. Add Markdown on the left.',
     profileLabel: 'Profile',
-    profileTitle: 'Builder of local-first productivity tools',
+    profileTitle: 'Building practical, reliable software',
     profileBody:
-      'I build StarDazz as a small software studio focused on practical AI, Android engineering, and tools that make everyday knowledge work less manual.',
-    highlight1: 'Graduate study in computing and software systems at the University of Melbourne.',
-    highlight2: 'Hands-on work across Android, Kotlin, Python, on-device ASR, and small language models.',
-    highlight3: 'Open-source products with clear privacy boundaries and verifiable release channels.',
+      'I am a software developer with a background in computing and software systems. My work spans frontend, Android, backend services, and on-device AI, while StarDazz is where I share personal projects.',
+    highlight1: 'Bachelor of Science in Computing and Software Systems from the University of Melbourne.',
+    highlight2: 'Hands-on experience across frontend, mobile, and backend development.',
+    highlight3: 'Exploring local-first AI applications with privacy in mind.',
     currentTitle: 'Current focus',
     currentBody:
-      'Right now I am improving smeeting, documenting release decisions, and turning repeated meeting workflows into reliable local software.',
+      'I currently work in frontend development while continuing to improve personal projects such as smeeting and explore reliable, approachable on-device AI products.',
     contactCta: 'Contact me',
     stackTitle: 'Tech stack',
     stack1: 'Android: Kotlin, Jetpack Compose, Gradle, Kotlin Multiplatform',
@@ -91,7 +91,7 @@ export const messagesEn = {
       'A data collection and analysis pipeline for structured web data and downstream AI workflows.',
     educationTitle: 'Education',
     educationBody:
-      'Bachelor of Science in Computing and Software Systems at the University of Melbourne, with continuing focus on software engineering and applied AI.',
+      'Bachelor of Science from the University of Melbourne, majoring in Computing and Software Systems.',
     sampleMd: [
       '',
       '# About me',

@@ -50,9 +50,9 @@ export const messagesZhHK = {
   about: {
     docTitle: '關於我 — StarDazz',
     metaDescription:
-      '認識 StarDazz 幕後成員——背景、技術棧、學歷與精選開源專案。',
-    title: '關於我 (李奕涵）',
-    subtitle: '在左側編輯 Markdown，右側會即時渲染為排版後的內容。',
+      '認識 StarDazz 背後的軟體開發者，了解我的技術方向與精選專案。',
+    title: '關於我（李奕涵）',
+    subtitle: '軟體開發者，關注前端、Android 與裝置端 AI。',
     crumbHome: '首頁',
     crumbCurrent: '關於我',
     editorLabel: 'Markdown 輸入',
@@ -63,15 +63,15 @@ export const messagesZhHK = {
     clear: '清空',
     emptyPreview: '暫無內容。在左側輸入 Markdown 即可預覽。',
     profileLabel: '個人簡介',
-    profileTitle: '建構本機優先的效率工具',
+    profileTitle: '建構實用、可靠的軟體',
     profileBody:
-      '我把 StarDazz 當作一個小型軟體工作室來建設，關注實用 AI、Android 工程，以及能減少日常知識工作負擔的工具。',
-    highlight1: '在墨爾本大學學習計算與軟體系統相關課程。',
-    highlight2: '實踐方向涵蓋 Android、Kotlin、Python、裝置端語音辨識與小型語言模型。',
-    highlight3: '透過開源專案、清晰隱私邊界和可驗證發布管道建立可信度。',
+      '我是一名具備計算與軟體系統背景的軟體開發者，實踐方向涵蓋前端、Android、後端服務與裝置端 AI。我透過 StarDazz 記錄並發布個人專案。',
+    highlight1: '墨爾本大學計算與軟體系統理學學士。',
+    highlight2: '具備前端、行動端與後端開發實踐經驗。',
+    highlight3: '持續探索本機優先、重視私隱的 AI 應用。',
     currentTitle: '目前關注',
     currentBody:
-      '目前重點是繼續打磨 smeeting，記錄版本決策，並把重複的會議流程沉澱成本機可用的軟體能力。',
+      '目前從事前端開發，並持續完善 smeeting 等個人專案，探索可靠、易用的裝置端 AI 產品。',
     contactCta: '聯絡我',
     stackTitle: '技術棧',
     stack1: 'Android：Kotlin、Jetpack Compose、Gradle、Kotlin Multiplatform',
@@ -91,7 +91,7 @@ export const messagesZhHK = {
       '面向結構化網頁資料和後續 AI 工作流的資料採集與分析管線。',
     educationTitle: '教育背景',
     educationBody:
-      '墨爾本大學計算與軟體系統方向，本科階段持續關注軟體工程與應用 AI。',
+      '墨爾本大學理學學士，主修計算與軟體系統。',
     sampleMd: [
       '',
       '# About me',
