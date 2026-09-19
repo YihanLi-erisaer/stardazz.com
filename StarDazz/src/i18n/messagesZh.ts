@@ -343,6 +343,7 @@ export const messagesZh = {
     repo: 'GitHub 仓库',
     readme: '阅读 README',
     devBlog: '开发博客',
+    roadmap: '桌面端路线图',
     legal:
       '请确认视频属于下列情形之一：你拥有版权、已获授权、或源平台明确允许转载。YouTube 用户协议和 B 站社区规范都可能禁止未授权搬运。投稿成功只表示已进入审核，不表示已过审。',
     pipelineTitle: '处理流程',
@@ -488,28 +489,28 @@ export const messagesZh = {
   roadmap: {
     docTitle: '路线图 — StarDazz',
     metaDescription:
-      'StarDazz 路线图：smeeting 与未来效率工具的当前重点、下一步优化和长期想法。',
+      'yt2bili 桌面端路线图：可视化操作界面、Windows 安装程序，以及 macOS 双架构应用与 DMG。',
     crumbHome: '首页',
     crumbCurrent: '路线图',
-    title: '路线图与更新方向',
+    title: 'yt2bili 桌面端路线图',
     subtitle:
-      '用轻量方式公开当前正在做什么、下一步做什么，以及版本记录在哪里查看。',
-    phaseNow: '当前',
-    nowTitle: '稳定 smeeting 发布节奏',
+      '在现有 Python CLI 和媒体安全机制上分三期建设桌面应用。以下均为 2026 年 9 月 19 日确定的实施规划，不代表功能已经交付。',
+    phaseNow: '第一期 · 预计 15～21 个工作日',
+    nowTitle: '可视化桌面应用 · 0.2.0-alpha',
     nowBody:
-      '提升转写与 AI 摘要可靠性，持续维护版本说明，并让安装与支持路径更清晰。',
-    phaseNext: '下一步',
-    nextTitle: '完善产品文档',
+      '以 React、TypeScript、Tauri 2 和 Python worker 建立真实桌面工作流：可视化配置与扫码登录、批量任务、结构化进度、素材预览与编辑、确认投稿、失败重试和修复。同步完成路径迁移、持久调度、取消恢复、跨进程投稿锁和上传结果待核对状态。',
+    phaseNext: '第二期 · 预计 6～9 个工作日',
+    nextTitle: 'Windows x64 安装与分发 · 0.3.0',
     nextBody:
-      '补充支持资料、性能笔记、隐私说明，以及更多关于设计决策的技术文章。',
-    phaseLater: '之后',
-    laterTitle: '更多 StarDazz 工具',
+      '冻结 Python worker 和 FFmpeg、biliup、Deno 等依赖，使用 Tauri NSIS 交付 setup.exe；完成 WebView2、快捷方式、升级与卸载、代码签名、哈希、第三方声明及干净 Windows 环境验收。',
+    phaseLater: '第三期 · 预计 7～11 个工作日',
+    laterTitle: 'macOS 应用与 DMG · 0.4.0',
     laterBody:
-      '在 smeeting 基础更稳之后，探索更多围绕效率、应用 AI 和协作的小工具。',
+      '复用同一界面与业务核心，分别交付 Apple Silicon 和 Intel 原生应用；完成 Keychain、Finder 启动、CPU 媒体验证、.app/DMG 布局、Developer ID 签名、公证和 Gatekeeper 实机验证。',
     followTitle: '跟进进展',
     followBody:
-      '开发博客会解释主要决策；GitHub Releases 仍是应用版本变化的权威来源。',
+      '开发博客会记录方案和阶段进展；实际完成状态、源码与未来发布以 yt2bili GitHub 仓库为准。三期总估算约 28～41 个工作日，不含证书申请和平台审批等待。',
     blogCta: '阅读开发博客',
-    releasesCta: '查看 Releases',
+    releasesCta: '查看 yt2bili 仓库',
   },
 } as const

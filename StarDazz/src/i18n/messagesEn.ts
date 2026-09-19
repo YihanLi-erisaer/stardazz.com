@@ -348,6 +348,7 @@ export const messagesEn = {
     repo: 'GitHub repository',
     readme: 'Read the README',
     devBlog: 'Dev blog notes',
+    roadmap: 'Desktop roadmap',
     legal:
       'Use only for videos you own, have permission to reuse, or that the source platform explicitly allows you to republish. YouTube’s terms and Bilibili community rules may prohibit unauthorized reposts. A successful upload means the draft entered review, not that it has been approved.',
     pipelineTitle: 'Pipeline',
@@ -496,28 +497,28 @@ export const messagesEn = {
   roadmap: {
     docTitle: 'Roadmap — StarDazz',
     metaDescription:
-      'StarDazz roadmap for smeeting and future productivity tools: current priorities, next improvements, and longer-term ideas.',
+      'The yt2bili desktop roadmap: a visual workflow, a Windows installer, and native macOS apps and DMGs for both architectures.',
     crumbHome: 'Home',
     crumbCurrent: 'Roadmap',
-    title: 'Roadmap and changelog direction',
+    title: 'yt2bili desktop roadmap',
     subtitle:
-      'A lightweight public view of what is active now, what comes next, and where release notes live.',
-    phaseNow: 'Now',
-    nowTitle: 'Stabilize smeeting releases',
+      'Three delivery phases will build a desktop app on the existing Python CLI and media-safety foundation. These are implementation plans agreed on September 19, 2026—not shipped features.',
+    phaseNow: 'Phase 1 · estimated 15–21 working days',
+    nowTitle: 'Visual desktop app · 0.2.0-alpha',
     nowBody:
-      'Improve transcription and AI summary reliability, keep release notes current, and make install/support paths easier to follow.',
-    phaseNext: 'Next',
-    nextTitle: 'Better product documentation',
+      'Build the real desktop workflow with React, TypeScript, Tauri 2, and a Python worker: visual setup and QR login, batch tasks, structured progress, media preview and editing, confirmed submission, retries, and repair. This phase also covers user-data paths, persistent scheduling, cancellation and recovery, a cross-process upload lock, and unknown-submission handling.',
+    phaseNext: 'Phase 2 · estimated 6–9 working days',
+    nextTitle: 'Windows x64 installer and distribution · 0.3.0',
     nextBody:
-      'Add clearer support material, performance notes, privacy explanations, and more technical posts for design decisions.',
-    phaseLater: 'Later',
-    laterTitle: 'More StarDazz tools',
+      'Freeze the Python worker and bundled FFmpeg, biliup, Deno, and other dependencies, then ship a Tauri NSIS setup.exe. Complete WebView2 handling, shortcuts, upgrade and uninstall flows, code signing, checksums, third-party notices, and clean-Windows acceptance tests.',
+    phaseLater: 'Phase 3 · estimated 7–11 working days',
+    laterTitle: 'macOS apps and DMGs · 0.4.0',
     laterBody:
-      'Explore additional focused tools around productivity, applied AI, and collaboration once smeeting foundations are stronger.',
+      'Reuse the same UI and business core for separate native Apple Silicon and Intel builds. Complete Keychain integration, Finder launches, CPU media validation, .app/DMG layout, Developer ID signing, notarization, and Gatekeeper testing on real Macs.',
     followTitle: 'Follow progress',
     followBody:
-      'The dev blog explains major decisions. GitHub Releases remain the source of truth for app version changes.',
+      'The dev blog records the plan and milestone updates. Actual completion status, source, and future releases are tracked in the yt2bili GitHub repository. The three phases total an estimated 28–41 working days, excluding certificate and platform-review lead time.',
     blogCta: 'Read the dev blog',
-    releasesCta: 'View releases',
+    releasesCta: 'View the yt2bili repository',
   },
 } as const

@@ -9,6 +9,14 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://stardazz-com.vercel.app/blog/yt2bili-desktop-roadmap</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://stardazz-com.vercel.app/blog/yt2bili-incomplete-video-validation-fix</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://stardazz-com.vercel.app/blog/yt2bili-pipeline-and-commit-history</loc>
     <changefreq>weekly</changefreq>
   </url>

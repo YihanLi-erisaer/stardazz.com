@@ -347,6 +347,7 @@ export const messagesZhHK = {
     repo: 'GitHub 倉庫',
     readme: '閱讀 README',
     devBlog: '開發部落格',
+    roadmap: '桌面端路線圖',
     legal:
       '請確認影片屬於下列情形之一：你擁有版權、已獲授權、或來源平台明確允許轉載。YouTube 使用者協議和 B 站社群規範都可能禁止未授權搬運。投稿成功只表示已進入審核，不表示已過審。',
     pipelineTitle: '處理流程',
@@ -492,28 +493,28 @@ export const messagesZhHK = {
   roadmap: {
     docTitle: '路線圖 — StarDazz',
     metaDescription:
-      'StarDazz 路線圖：smeeting 與未來效率工具的目前重點、下一步最佳化和長期想法。',
+      'yt2bili 桌面端路線圖：視覺化操作介面、Windows 安裝程式，以及 macOS 雙架構應用程式與 DMG。',
     crumbHome: '首頁',
     crumbCurrent: '路線圖',
-    title: '路線圖與更新方向',
+    title: 'yt2bili 桌面端路線圖',
     subtitle:
-      '用輕量方式公開目前正在做什麼、下一步做什麼，以及版本紀錄在哪裡查看。',
-    phaseNow: '目前',
-    nowTitle: '穩定 smeeting 發布節奏',
+      '在現有 Python CLI 和媒體安全機制上分三期建設桌面應用程式。以下均為 2026 年 9 月 19 日確定的實施規劃，不代表功能已經交付。',
+    phaseNow: '第一期 · 預計 15～21 個工作日',
+    nowTitle: '視覺化桌面應用程式 · 0.2.0-alpha',
     nowBody:
-      '提升轉寫與 AI 摘要可靠性，持續維護版本說明，並讓安裝與支援路徑更清晰。',
-    phaseNext: '下一步',
-    nextTitle: '完善產品文件',
+      '以 React、TypeScript、Tauri 2 和 Python worker 建立真實桌面工作流程：視覺化設定與掃碼登入、批次任務、結構化進度、素材預覽與編輯、確認投稿、失敗重試和修復。同時完成路徑遷移、持久排程、取消恢復、跨程序投稿鎖和上傳結果待核對狀態。',
+    phaseNext: '第二期 · 預計 6～9 個工作日',
+    nextTitle: 'Windows x64 安裝與分發 · 0.3.0',
     nextBody:
-      '補充支援資料、效能筆記、隱私說明，以及更多關於設計決策的技術文章。',
-    phaseLater: '之後',
-    laterTitle: '更多 StarDazz 工具',
+      '凍結 Python worker 和 FFmpeg、biliup、Deno 等依賴，使用 Tauri NSIS 交付 setup.exe；完成 WebView2、捷徑、升級與解除安裝、程式碼簽署、雜湊、第三方聲明及乾淨 Windows 環境驗收。',
+    phaseLater: '第三期 · 預計 7～11 個工作日',
+    laterTitle: 'macOS 應用程式與 DMG · 0.4.0',
     laterBody:
-      '在 smeeting 基礎更穩之後，探索更多圍繞效率、應用 AI 和協作的小工具。',
+      '重用同一介面與業務核心，分別交付 Apple Silicon 和 Intel 原生應用程式；完成 Keychain、Finder 啟動、CPU 媒體驗證、.app/DMG 佈局、Developer ID 簽署、公證和 Gatekeeper 實機驗證。',
     followTitle: '跟進進展',
     followBody:
-      '開發部落格會解釋主要決策；GitHub Releases 仍是應用程式版本變化的權威來源。',
+      '開發部落格會記錄方案和階段進展；實際完成狀態、原始碼與未來發佈以 yt2bili GitHub 倉庫為準。三期總估算約 28～41 個工作日，不含憑證申請和平台審批等待。',
     blogCta: '閱讀開發部落格',
-    releasesCta: '查看 Releases',
+    releasesCta: '查看 yt2bili 倉庫',
   },
 } as const

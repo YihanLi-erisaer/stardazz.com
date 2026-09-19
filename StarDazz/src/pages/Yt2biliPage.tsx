@@ -100,10 +100,16 @@ export function Yt2biliPage() {
               {t('yt2bili.readme')}
             </a>
             <Link
-              to="/blog/yt2bili-pipeline-and-commit-history"
+              to="/blog/yt2bili-desktop-roadmap"
               className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
             >
               {t('yt2bili.devBlog')}
+            </Link>
+            <Link
+              to="/roadmap"
+              className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
+            >
+              {t('yt2bili.roadmap')}
             </Link>
           </div>
           <div className="mt-8 max-w-2xl rounded-xl border border-amber-200/80 bg-amber-50/80 px-4 py-4 dark:border-amber-500/20 dark:bg-amber-950/20 sm:px-5">
