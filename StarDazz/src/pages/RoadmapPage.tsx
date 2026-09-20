@@ -6,6 +6,11 @@ export function RoadmapPage() {
 
   const items = [
     {
+      phase: t('roadmap.phaseDelivered'),
+      title: t('roadmap.deliveredTitle'),
+      body: t('roadmap.deliveredBody'),
+    },
+    {
       phase: t('roadmap.phaseNow'),
       title: t('roadmap.nowTitle'),
       body: t('roadmap.nowBody'),

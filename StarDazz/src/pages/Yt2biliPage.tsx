@@ -32,6 +32,9 @@ export function Yt2biliPage() {
   ]
 
   const modules = [
+    { name: 'desktop/', body: t('yt2bili.mDesktop') },
+    { name: 'desktop_worker.py', body: t('yt2bili.mWorker') },
+    { name: 'scheduler.py', body: t('yt2bili.mScheduler') },
     { name: 'cli.py', body: t('yt2bili.mCli') },
     { name: 'pipeline.py', body: t('yt2bili.mPipeline') },
     { name: 'youtube.py', body: t('yt2bili.mYoutube') },
@@ -47,6 +50,27 @@ export function Yt2biliPage() {
     { item: t('yt2bili.dMark'), value: t('yt2bili.dMarkV') },
     { item: t('yt2bili.dRes'), value: t('yt2bili.dResV') },
     { item: t('yt2bili.dJobs'), value: t('yt2bili.dJobsV') },
+  ]
+
+  const screenshots = [
+    {
+      src: '/yt2bili/tasks-dark.png',
+      alt: t('yt2bili.screenshotTasksDarkAlt'),
+      caption: t('yt2bili.screenshotTasksDarkCaption'),
+      wide: true,
+    },
+    {
+      src: '/yt2bili/account-dark.png',
+      alt: t('yt2bili.screenshotAccountAlt'),
+      caption: t('yt2bili.screenshotAccountCaption'),
+      wide: false,
+    },
+    {
+      src: '/yt2bili/tasks-light.png',
+      alt: t('yt2bili.screenshotTasksLightAlt'),
+      caption: t('yt2bili.screenshotTasksLightCaption'),
+      wide: false,
+    },
   ]
 
   return (
@@ -79,6 +103,10 @@ export function Yt2biliPage() {
           <h1 className="mt-3 text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl">
             yt2bili
           </h1>
+          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 font-mono text-xs text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-950/30 dark:text-emerald-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+            {t('yt2bili.desktopStatus')}
+          </p>
           <p className="mt-4 text-xl leading-relaxed text-zinc-600 dark:text-zinc-400">
             {t('yt2bili.intro')}
           </p>
@@ -100,7 +128,7 @@ export function Yt2biliPage() {
               {t('yt2bili.readme')}
             </a>
             <Link
-              to="/blog/yt2bili-desktop-roadmap"
+              to="/blog/yt2bili-desktop-alpha-1"
               className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
             >
               {t('yt2bili.devBlog')}
@@ -116,6 +144,37 @@ export function Yt2biliPage() {
             <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-400">
               {t('yt2bili.legal')}
             </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-zinc-200 bg-zinc-100/60 py-16 dark:border-white/[0.06] dark:bg-zinc-950/60 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100 sm:text-2xl">
+            {t('yt2bili.screenshotsTitle')}
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
+            {t('yt2bili.screenshotsSub')}
+          </p>
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            {screenshots.map((screenshot) => (
+              <figure
+                key={screenshot.src}
+                className={screenshot.wide ? 'lg:col-span-2' : undefined}
+              >
+                <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-white/[0.08] dark:bg-zinc-950">
+                  <img
+                    src={screenshot.src}
+                    alt={screenshot.alt}
+                    loading="lazy"
+                    className="h-auto w-full"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm text-zinc-600 dark:text-zinc-500">
+                  {screenshot.caption}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </div>

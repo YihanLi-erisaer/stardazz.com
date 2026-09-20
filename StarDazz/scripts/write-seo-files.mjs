@@ -16,6 +16,7 @@ const base = (process.env.VITE_SITE_URL ?? 'https://stardazz-com.vercel.app').re
 
 /** Keep in sync with `src/content/devBlogPosts.ts` slugs. */
 const BLOG_SLUGS = [
+  'yt2bili-desktop-alpha-1',
   'yt2bili-desktop-roadmap',
   'yt2bili-incomplete-video-validation-fix',
   'yt2bili-pipeline-and-commit-history',

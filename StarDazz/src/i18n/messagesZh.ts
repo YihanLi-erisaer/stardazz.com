@@ -81,7 +81,7 @@ export const messagesZh = {
     projectSmeeting:
       '端侧会议助手，支持语音识别、本地 AI 摘要、会议纪要和行动项。',
     projectYt2bili:
-      'Python 命令行工具：下载你有权转载的 YouTube 视频，用 DeepL 翻译标题与简介，再排队投稿到 B 站。',
+      '本地桌面工具与 Python CLI：下载你有权转载的 YouTube 视频，翻译元数据，经完整校验后排队投稿到 B 站。',
     projectAiClient:
       '模块化 AI API 客户端与 KMP 探索，用于跨应用场景调用 LLM。',
     projectCrawler:
@@ -212,7 +212,7 @@ export const messagesZh = {
     smeetingBody:
       '轻量 Android 会议助手，支持语音识别、本地 AI 摘要、会议纪要和行动项。',
     yt2biliBody:
-      '面向你有权转载的视频：从 YouTube 下载，用 DeepL 翻译标题与简介，再排队投稿到 B 站。',
+      '桌面 Alpha 与 CLI 共用本地流水线：从 YouTube 下载授权转载视频，翻译、完整校验、预览并排队投稿到 B 站。',
     viewProduct: '查看产品',
     nextLabel: '后续计划',
     nextTitle: '更多专注型工具正在规划',
@@ -241,7 +241,7 @@ export const messagesZh = {
     smeetingDesc:
       '轻量智能会议助手：语音识别与 AI 摘要结合，自动生成会议纪要与待办，让记录与跟进更轻松。',
     yt2biliDesc:
-      '本地命令行工具：下载你有权转载的 YouTube 视频，DeepL 翻译元数据，并排队投稿到 B 站。',
+      '本地桌面应用与 CLI：下载授权转载视频，翻译并完整校验，预览确认后排队投稿到 B 站。',
     viewDetails: '查看详情',
     comingTitle: '更多产品筹备中',
     comingSub: '敬请期待 StarDazz 的下一款工具。',
@@ -335,11 +335,12 @@ export const messagesZh = {
   yt2bili: {
     docTitle: 'yt2bili — StarDazz',
     metaDescription:
-      'yt2bili 是 Python 命令行工具：下载你有权转载的 YouTube 视频，用 DeepL 翻译标题与简介，再排队投稿到 B 站。',
+      'yt2bili 是本地桌面应用与 Python CLI：下载授权转载的 YouTube 视频，翻译并完整校验，预览确认后投稿到 B 站。',
     crumbHome: '首页',
     label: 'StarDazz 产品',
     intro:
-      '把你有权转载的 YouTube 视频下载下来，用 DeepL 把标题和简介译成中文，再投稿到 B 站。支持一次传入多条链接：下载和封面处理可以并行，B 站上传会自动排队。',
+      '把你有权转载的 YouTube 视频下载下来，翻译标题和简介，完整校验媒体后预览并投稿到 B 站。桌面端将任务、账号、进度、素材和日志集中在一个本地工作区，CLI 继续保留。',
+    desktopStatus: '桌面开发版 · 0.2.0-alpha.1',
     repo: 'GitHub 仓库',
     readme: '阅读 README',
     devBlog: '开发博客',
@@ -347,24 +348,32 @@ export const messagesZh = {
     legal:
       '请确认视频属于下列情形之一：你拥有版权、已获授权、或源平台明确允许转载。YouTube 用户协议和 B 站社区规范都可能禁止未授权搬运。投稿成功只表示已进入审核，不表示已过审。',
     pipelineTitle: '处理流程',
-    pipelineSub: '与 README 一致的五步流水线，由 pipeline.py 实现，并用 SQLite 记录进度，方便 retry。',
+    pipelineSub: '桌面端与 CLI 共用同一业务核心。下载、校验、上传三个单路队列可以跨阶段并行，SQLite 保存状态以支持恢复。',
     s1: '解析链接元数据（标题、简介、封面、时长）。',
     s2: '下载最高可用画质；已是 MP4 则跳过转码。',
     s3: '封面裁成 1280×720 JPEG；失败则从视频抽帧。',
     s4: 'DeepL Free 翻译标题和简介（已是中文则跳过），简介末尾保留原标题、原作者和原链接。',
     s5: '调用 biliup 以 Web 投稿模式提交，创作声明为「内容无需标注」。',
-    featuresTitle: '实际能力',
-    featuresSub: '针对真实投稿约束设计：Windows 文件占用、B 站限流，以及 YouTube 的机器人校验。',
-    f1t: '批量 + 上传排队',
-    f1d: '可传入多条链接或文本文件。下载和封面可并行；DeepL 翻译和 B 站上传串行，同一账号不会并行投稿。',
+    featuresTitle: '桌面 Alpha 已实现',
+    featuresSub: '0.2.0-alpha.1 已完成本地工程验证；真实 B 站账号、DeepL 与实际投稿链路仍需用户补验。',
+    f1t: '可视化任务中心',
+    f1d: '支持任务列表、搜索筛选、分页、阶段进度、详情、封面、原文译文和日志；素材准备完成后可以编辑并明确确认投稿。',
     f2t: '可恢复的下载',
     f2d: '处理 HTTP 416、.part 重命名重试、ffprobe 时长校验，以及完整视频轨与缺失音轨合并，避免无谓重下。',
-    f3t: '能跑通的 YouTube 解析',
-    f3d: '优先 web_embedded 以拿到 1440/2160 DASH，记录所选格式，并支持浏览器 Cookie 导出以及 Node/Deno JS 运行时。',
-    f4t: '本地任务库',
-    f4d: 'data/tasks.sqlite 记录状态、BV 号和错误。投稿成功后会删除 work/<id>/ 下的本地文件，任务记录仍保留。',
-    cliTitle: '命令',
-    cliSub: '需要 Python 3.11+、PATH 中的 FFmpeg、以 :fx 结尾的 DeepL Free 密钥，以及可网页投稿的 B 站账号。',
+    f3t: '账号与本地配置',
+    f3d: '桌面端提供 B 站扫码登录、登录文件导入与刷新、DeepL 系统凭据保存、YouTube Cookie、首次配置向导、工具诊断和日志导出。',
+    f4t: '恢复与安全门禁',
+    f4d: '持续调度、数据库迁移备份、操作去重、共享目录锁、账号上传互斥和子进程回收共同避免重复投稿与状态丢失。',
+    screenshotsTitle: '桌面界面',
+    screenshotsSub: '以下为 0.2.0-alpha.1 的开发预览，使用示例任务并显示预览标识，不代表真实账号或投稿记录。',
+    screenshotTasksDarkAlt: 'yt2bili 深色主题任务中心',
+    screenshotTasksDarkCaption: '任务中心 · 深色主题',
+    screenshotAccountAlt: 'yt2bili 深色主题账号与连接页面',
+    screenshotAccountCaption: '账号与连接 · 深色主题',
+    screenshotTasksLightAlt: 'yt2bili 浅色主题任务中心',
+    screenshotTasksLightCaption: '任务中心 · 浅色主题',
+    cliTitle: '同时保留 CLI',
+    cliSub: '桌面端不是另一套下载与投稿实现；它与 Python CLI 共用媒体处理、队列、恢复和投稿安全规则。',
     cSetup: '下载 biliup 到 bin/，并检查 FFmpeg / JS 运行时',
     cLogin: '扫码登录；Cookie 写入 secrets/（已 gitignore）',
     cDryRun: '只下载、封面、翻译，不投稿',
@@ -372,7 +381,10 @@ export const messagesZh = {
     cBatch: '从文件读链接；上传仍排队',
     cRetry: '从失败步骤续跑某个 video_id',
     archTitle: '代码结构',
-    archSub: 'yt2bili 是本地 CLI，不是网页服务。密钥留在本机；除你主动投稿的稿件外不会上传其它内容。',
+    archSub: 'React/TypeScript 界面经 Tauri 和版本化 JSON Lines 协议连接 Python worker；不开放本地 HTTP 服务，也不提供任意命令执行接口。',
+    mDesktop: 'React/TypeScript + Tauri 桌面界面：任务、账号、设置、主题与原生窗口。',
+    mWorker: '协议白名单、结构化事件、配置脱敏，以及前端与 Python 业务层之间的桥接。',
+    mScheduler: '持续三阶段调度、任务恢复、取消、操作去重和后台子进程生命周期。',
     mCli: '命令入口：setup、login、renew、youtube-cookies、list、run、retry。',
     mPipeline: '编排各阶段、Windows 下载锁、翻译/上传锁、按任务日志、投稿后清理。',
     mYoutube: 'yt-dlp 封装：Cookie、JS 运行时、格式排序、416 修复、Windows 分片并发限制。',
@@ -394,10 +406,10 @@ export const messagesZh = {
     dRes: '分辨率',
     dResV: '源站最高可用画质（含 4K）；禁止嵌入时可能只能到 1080p',
     dJobs: '并行下载',
-    dJobsV: 'Windows 默认 1 路，其它系统 2 路（最大 8）；上传间隔 30 秒',
+    dJobsV: '下载、校验、上传各 1 路，跨阶段并行；上传默认间隔 20 秒',
     ossTitle: '开源',
     ossBody:
-      '源码在 GitHub。克隆后把 DEEPL_AUTH_KEY 填进 .env，不要提交密钥，第一次正式投稿前请先读 README。',
+      '源码与桌面 Alpha 在 GitHub。当前仍是开发版本，不是已签名安装包；真实账号登录、翻译和投稿应使用你自己的凭据与授权素材完成补验。',
     backHome: '返回首页',
   },
   smeetingSupport: {
@@ -489,16 +501,20 @@ export const messagesZh = {
   roadmap: {
     docTitle: '路线图 — StarDazz',
     metaDescription:
-      'yt2bili 桌面端路线图：可视化操作界面、Windows 安装程序，以及 macOS 双架构应用与 DMG。',
+      'yt2bili 路线图：桌面 Alpha 已完成，当前推进双账号上传与体验修正，后续交付 Windows 安装程序和 macOS 应用。',
     crumbHome: '首页',
     crumbCurrent: '路线图',
     title: 'yt2bili 桌面端路线图',
     subtitle:
-      '在现有 Python CLI 和媒体安全机制上分三期建设桌面应用。以下均为 2026 年 9 月 19 日确定的实施规划，不代表功能已经交付。',
-    phaseNow: '第一期 · 预计 15～21 个工作日',
-    nowTitle: '可视化桌面应用 · 0.2.0-alpha',
+      '桌面一期已于 2026 年 9 月 20 日完成工程实现与模拟验收。当前重点与后续平台交付分开记录，规划项不视为已经上线。',
+    phaseDelivered: '已完成 · 2026-09-20',
+    deliveredTitle: '桌面开发版 · 0.2.0-alpha.1',
+    deliveredBody:
+      '已实现原生 Tauri 窗口、深浅主题、任务中心、素材预览编辑、账号与连接、设置、结构化进度、持续调度、取消恢复和冻结后台验证。62 项原有 Python 测试、23 项桌面后台测试、5 项浏览器交互测试及原生通信检查通过；真实账号登录与实际投稿仍待补验。',
+    phaseNow: '当前重点 · Alpha 稳定化',
+    nowTitle: '双账号上传、单链接任务与体验修正',
     nowBody:
-      '以 React、TypeScript、Tauri 2 和 Python worker 建立真实桌面工作流：可视化配置与扫码登录、批量任务、结构化进度、素材预览与编辑、确认投稿、失败重试和修复。同步完成路径迁移、持久调度、取消恢复、跨进程投稿锁和上传结果待核对状态。',
+      '最高优先级 PRD 规划两个 B 站账号、共享下载/校验和两条独立上传队列；每次只添加一个链接并明确选择账号。该需求尚未实现。并行处理任务数字筛选、校验进度改为每 2 秒更新、等待数、上传间隔输入、启动速度、DeepL 额度与新建任务默认值等待办。',
     phaseNext: '第二期 · 预计 6～9 个工作日',
     nextTitle: 'Windows x64 安装与分发 · 0.3.0',
     nextBody:
@@ -509,7 +525,7 @@ export const messagesZh = {
       '复用同一界面与业务核心，分别交付 Apple Silicon 和 Intel 原生应用；完成 Keychain、Finder 启动、CPU 媒体验证、.app/DMG 布局、Developer ID 签名、公证和 Gatekeeper 实机验证。',
     followTitle: '跟进进展',
     followBody:
-      '开发博客会记录方案和阶段进展；实际完成状态、源码与未来发布以 yt2bili GitHub 仓库为准。三期总估算约 28～41 个工作日，不含证书申请和平台审批等待。',
+      '开发博客区分已完成验证、平台待补验和目标需求；实际代码、问题状态与未来发布仍以 yt2bili GitHub 仓库为准。Windows 签名安装包和 macOS 公证包尚未交付。',
     blogCta: '阅读开发博客',
     releasesCta: '查看 yt2bili 仓库',
   },

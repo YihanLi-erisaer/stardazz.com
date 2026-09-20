@@ -84,7 +84,7 @@ export const messagesEn = {
     projectSmeeting:
       'On-device meeting assistant with speech recognition, local AI summaries, minutes, and action items.',
     projectYt2bili:
-      'A Python CLI that downloads authorized YouTube videos, translates metadata with DeepL, and queues uploads to Bilibili.',
+      'A local desktop app and Python CLI that downloads authorized YouTube videos, translates metadata, validates the full media, and queues Bilibili submissions.',
     projectAiClient:
       'A modular AI API client and KMP exploration for LLM usage across app surfaces.',
     projectCrawler:
@@ -216,7 +216,7 @@ export const messagesEn = {
     smeetingBody:
       'A lightweight Android meeting assistant for speech recognition, local AI summaries, meeting minutes, and action items.',
     yt2biliBody:
-      'A Python CLI for videos you are allowed to republish: download from YouTube, translate titles and descriptions with DeepL, then queue Bilibili uploads.',
+      'A desktop alpha and CLI sharing one local pipeline: download authorized YouTube videos, translate and fully validate them, preview, then queue Bilibili submissions.',
     viewProduct: 'View product',
     nextLabel: 'Coming next',
     nextTitle: 'More focused tools are planned',
@@ -245,7 +245,7 @@ export const messagesEn = {
     smeetingDesc:
       'A lightweight smart meeting assistant: speech recognition plus AI summaries to generate minutes and action items with less manual work.',
     yt2biliDesc:
-      'A local CLI for authorized reprints: download YouTube videos, translate metadata with DeepL, and submit to Bilibili with queued uploads.',
+      'A local desktop app and CLI for authorized videos: download, translate, fully validate, preview, and queue submissions to Bilibili.',
     viewDetails: 'Learn more',
     comingTitle: 'More products coming',
     comingSub: 'The next StarDazz tool is on the way.',
@@ -340,11 +340,12 @@ export const messagesEn = {
   yt2bili: {
     docTitle: 'yt2bili — StarDazz',
     metaDescription:
-      'yt2bili is a Python CLI that downloads authorized YouTube videos, translates titles and descriptions with DeepL, and queues uploads to Bilibili.',
+      'yt2bili is a local desktop app and Python CLI that downloads authorized YouTube videos, translates and validates them, then previews and submits to Bilibili.',
     crumbHome: 'Home',
     label: 'StarDazz Product',
     intro:
-      'Download YouTube videos you have the right to republish, translate titles and descriptions with DeepL, then submit them to Bilibili. Batch links run with parallel downloads and a single-account upload queue.',
+      'Download YouTube videos you have the right to republish, translate their titles and descriptions, fully validate the media, then preview and submit to Bilibili. The desktop app brings tasks, accounts, progress, media, and logs into one local workspace while keeping the CLI.',
+    desktopStatus: 'Desktop development build · 0.2.0-alpha.1',
     repo: 'GitHub repository',
     readme: 'Read the README',
     devBlog: 'Dev blog notes',
@@ -353,25 +354,33 @@ export const messagesEn = {
       'Use only for videos you own, have permission to reuse, or that the source platform explicitly allows you to republish. YouTube’s terms and Bilibili community rules may prohibit unauthorized reposts. A successful upload means the draft entered review, not that it has been approved.',
     pipelineTitle: 'Pipeline',
     pipelineSub:
-      'The same five-stage flow as the README, implemented in pipeline.py with SQLite checkpoints so retry can resume.',
+      'The desktop app and CLI share one business core. Single-lane download, validation, and upload queues can overlap across stages, with state stored in SQLite for recovery.',
     s1: 'Resolve YouTube metadata (title, description, thumbnail, duration).',
     s2: 'Download the highest available quality; skip transcode if the file is already MP4.',
     s3: 'Process the cover to 1280×720 JPEG, or extract a frame if the thumbnail fails.',
     s4: 'Translate title and description with DeepL Free; skip if already Chinese; keep original title, author, and URL in the footer.',
     s5: 'Call biliup upload in web-submit mode with the “内容无需标注” declaration.',
-    featuresTitle: 'What it actually does',
+    featuresTitle: 'Implemented in the desktop alpha',
     featuresSub:
-      'Designed around real upload constraints: Windows file locks, Bilibili rate limits, and YouTube bot checks.',
-    f1t: 'Batch with a queue',
-    f1d: 'Pass multiple URLs or a text file. Downloads and cover work can run in parallel; DeepL and Bilibili upload stay serial so one account is not posting in parallel.',
+      '0.2.0-alpha.1 has passed local engineering checks. Real Bilibili login, DeepL, and live submission still require user-run platform validation.',
+    f1t: 'Visual task center',
+    f1d: 'Task lists, search and filters, pagination, stage progress, details, covers, source and translated text, and logs. Prepared media can be edited and explicitly confirmed before submission.',
     f2t: 'Recoverable downloads',
     f2d: 'HTTP 416 handling, .part rename retries, ffprobe duration checks, and muxing a complete video with a missing audio track instead of always re-downloading.',
-    f3t: 'YouTube access that still works',
-    f3d: 'Prefers the web_embedded client for 1440/2160 DASH, logs the chosen format, and supports browser cookie export plus Node/Deno JS runtimes for yt-dlp.',
-    f4t: 'Local task store',
-    f4d: 'SQLite in data/tasks.sqlite tracks status, BV ids, and errors. Successful uploads delete work/<id>/ media while keeping the task row.',
-    cliTitle: 'Commands',
-    cliSub: 'Python 3.11+, FFmpeg on PATH, a DeepL Free key ending in :fx, and a Bilibili account that can post from the web.',
+    f3t: 'Accounts and local setup',
+    f3d: 'The desktop app includes Bilibili QR login, login-file import and refresh, system credential storage for DeepL, YouTube cookies, first-run setup, tool diagnostics, and log export.',
+    f4t: 'Recovery and safety gates',
+    f4d: 'Persistent scheduling, database migration backups, operation deduplication, shared-directory locks, account upload exclusion, and child-process cleanup prevent duplicate submissions and lost state.',
+    screenshotsTitle: 'Desktop interface',
+    screenshotsSub: 'These 0.2.0-alpha.1 development previews use sample tasks and display a preview marker. They are not real accounts or submission history.',
+    screenshotTasksDarkAlt: 'yt2bili task center in the dark theme',
+    screenshotTasksDarkCaption: 'Task center · dark theme',
+    screenshotAccountAlt: 'yt2bili accounts and connections page in the dark theme',
+    screenshotAccountCaption: 'Accounts and connections · dark theme',
+    screenshotTasksLightAlt: 'yt2bili task center in the light theme',
+    screenshotTasksLightCaption: 'Task center · light theme',
+    cliTitle: 'The CLI remains available',
+    cliSub: 'The desktop app is not a second download and submission implementation. It shares media processing, queues, recovery, and submission safety rules with the Python CLI.',
     cSetup: 'Install biliup into bin/ and check FFmpeg / JS runtimes',
     cLogin: 'Scan a QR code; cookies go to secrets/ (gitignored)',
     cDryRun: 'Download, cover, translate — no upload',
@@ -379,7 +388,10 @@ export const messagesEn = {
     cBatch: 'URL list file; uploads still queue',
     cRetry: 'Resume a failed video_id without redoing finished steps',
     archTitle: 'Code layout',
-    archSub: 'The yt2bili package is a small CLI, not a web service. Secrets stay on disk; nothing is uploaded except the Bilibili draft you asked for.',
+    archSub: 'The React and TypeScript UI connects through Tauri to a Python worker over a versioned JSON Lines protocol. It exposes neither a local HTTP service nor arbitrary command execution.',
+    mDesktop: 'React/TypeScript and Tauri desktop UI for tasks, accounts, settings, themes, and the native window.',
+    mWorker: 'Method allowlist, structured events, redacted settings, and the bridge between the UI and Python services.',
+    mScheduler: 'Persistent three-stage scheduling, task recovery, cancellation, operation deduplication, and child-process lifecycle.',
     mCli: 'Argparse entry: setup, login, renew, youtube-cookies, list, run, retry.',
     mPipeline: 'Orchestrates stages, Windows download lock, translate/upload locks, per-task logs, cleanup after submit.',
     mYoutube: 'yt-dlp wrapper: cookies, JS runtime, format sort, 416 repair, fragment limits on Windows.',
@@ -401,10 +413,10 @@ export const messagesEn = {
     dRes: 'Resolution',
     dResV: 'Highest available, including 4K; embed-blocked videos may cap at 1080p',
     dJobs: 'Parallel downloads',
-    dJobsV: '1 on Windows, 2 elsewhere (max 8); 30s gap between uploads',
+    dJobsV: '1 each for download, validation, and upload; stages overlap; 20s default upload gap',
     ossTitle: 'Open source',
     ossBody:
-      'Source lives on GitHub. Clone it, fill DEEPL_AUTH_KEY in .env, never commit secrets, and read the README before the first real upload.',
+      'Source and the desktop alpha live on GitHub. This is still a development build, not a signed installer; validate real login, translation, and submission with your own credentials and authorized media.',
     backHome: 'Back to home',
   },
   smeetingSupport: {
@@ -497,16 +509,20 @@ export const messagesEn = {
   roadmap: {
     docTitle: 'Roadmap — StarDazz',
     metaDescription:
-      'The yt2bili desktop roadmap: a visual workflow, a Windows installer, and native macOS apps and DMGs for both architectures.',
+      'The yt2bili roadmap: the desktop alpha is complete, dual-account uploads and UX fixes are next, followed by Windows and macOS distribution.',
     crumbHome: 'Home',
     crumbCurrent: 'Roadmap',
     title: 'yt2bili desktop roadmap',
     subtitle:
-      'Three delivery phases will build a desktop app on the existing Python CLI and media-safety foundation. These are implementation plans agreed on September 19, 2026—not shipped features.',
-    phaseNow: 'Phase 1 · estimated 15–21 working days',
-    nowTitle: 'Visual desktop app · 0.2.0-alpha',
+      'Desktop phase 1 reached an implemented, simulation-tested build on September 20, 2026. Current work and later platform deliverables are tracked separately; planned items are not presented as shipped.',
+    phaseDelivered: 'Delivered · September 20, 2026',
+    deliveredTitle: 'Desktop development build · 0.2.0-alpha.1',
+    deliveredBody:
+      'Implemented the native Tauri window, light and dark themes, task center, media preview and editing, accounts and connections, settings, structured progress, persistent scheduling, cancellation and recovery, and frozen-worker checks. The original 62 Python tests, 23 desktop-backend tests, 5 browser interaction tests, and native IPC checks passed. Real account login and live submission still await platform validation.',
+    phaseNow: 'Current focus · Alpha stabilization',
+    nowTitle: 'Dual-account uploads, single-link tasks, and UX fixes',
     nowBody:
-      'Build the real desktop workflow with React, TypeScript, Tauri 2, and a Python worker: visual setup and QR login, batch tasks, structured progress, media preview and editing, confirmed submission, retries, and repair. This phase also covers user-data paths, persistent scheduling, cancellation and recovery, a cross-process upload lock, and unknown-submission handling.',
+      'The highest-priority PRD proposes two Bilibili accounts, shared download and validation queues, and one independent upload queue per account. Each new task would accept one link and require an explicit target account. This is not implemented yet. The backlog also covers filtered task counts, 2-second validation updates, waiting counts, the upload-gap input, startup speed, DeepL quota handling, and new-task defaults.',
     phaseNext: 'Phase 2 · estimated 6–9 working days',
     nextTitle: 'Windows x64 installer and distribution · 0.3.0',
     nextBody:
@@ -517,7 +533,7 @@ export const messagesEn = {
       'Reuse the same UI and business core for separate native Apple Silicon and Intel builds. Complete Keychain integration, Finder launches, CPU media validation, .app/DMG layout, Developer ID signing, notarization, and Gatekeeper testing on real Macs.',
     followTitle: 'Follow progress',
     followBody:
-      'The dev blog records the plan and milestone updates. Actual completion status, source, and future releases are tracked in the yt2bili GitHub repository. The three phases total an estimated 28–41 working days, excluding certificate and platform-review lead time.',
+      'Dev blog posts separate completed verification, pending platform validation, and target requirements. Code, issue status, and future releases remain authoritative in the yt2bili GitHub repository. A signed Windows installer and notarized macOS packages have not shipped.',
     blogCta: 'Read the dev blog',
     releasesCta: 'View the yt2bili repository',
   },
