@@ -23,23 +23,25 @@ export function Yt2biliPage() {
   ]
 
   const commands = [
-    { cmd: 'python -m yt2bili setup', note: t('yt2bili.cSetup') },
-    { cmd: 'python -m yt2bili login', note: t('yt2bili.cLogin') },
-    { cmd: 'python -m yt2bili run URL --dry-run', note: t('yt2bili.cDryRun') },
-    { cmd: 'python -m yt2bili run URL', note: t('yt2bili.cRun') },
-    { cmd: 'python -m yt2bili run --file urls.txt -j 3', note: t('yt2bili.cBatch') },
-    { cmd: 'python -m yt2bili retry VIDEO_ID', note: t('yt2bili.cRetry') },
+    { cmd: 'python -m yt2bili translation setup', note: t('yt2bili.cTranslationSetup') },
+    { cmd: 'python -m yt2bili accounts add', note: t('yt2bili.cAccountsAdd') },
+    { cmd: 'python -m yt2bili run URL --account ACCOUNT_ID', note: t('yt2bili.cPrepare') },
+    { cmd: 'python -m yt2bili submit TASK_ID', note: t('yt2bili.cSubmit') },
+    { cmd: 'python -m yt2bili run URL --account ACCOUNT_ID --auto', note: t('yt2bili.cAuto') },
+    { cmd: 'python -m yt2bili retry TASK_ID', note: t('yt2bili.cRetry') },
   ]
 
   const modules = [
     { name: 'desktop/', body: t('yt2bili.mDesktop') },
     { name: 'desktop_worker.py', body: t('yt2bili.mWorker') },
     { name: 'scheduler.py', body: t('yt2bili.mScheduler') },
+    { name: 'accounts.py', body: t('yt2bili.mAccounts') },
+    { name: 'upload_coordinator.py', body: t('yt2bili.mUploadCoordinator') },
     { name: 'cli.py', body: t('yt2bili.mCli') },
     { name: 'pipeline.py', body: t('yt2bili.mPipeline') },
     { name: 'youtube.py', body: t('yt2bili.mYoutube') },
     { name: 'media.py', body: t('yt2bili.mMedia') },
-    { name: 'translate.py', body: t('yt2bili.mTranslate') },
+    { name: 'translation/', body: t('yt2bili.mTranslate') },
     { name: 'bili_upload.py', body: t('yt2bili.mUpload') },
   ]
 
@@ -128,7 +130,7 @@ export function Yt2biliPage() {
               {t('yt2bili.readme')}
             </a>
             <Link
-              to="/blog/yt2bili-desktop-alpha-1"
+              to="/blog/yt2bili-five-accounts-local-translation"
               className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
             >
               {t('yt2bili.devBlog')}

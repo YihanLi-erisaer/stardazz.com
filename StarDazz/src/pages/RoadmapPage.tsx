@@ -11,6 +11,11 @@ export function RoadmapPage() {
       body: t('roadmap.deliveredBody'),
     },
     {
+      phase: t('roadmap.phaseUpdate'),
+      title: t('roadmap.updateTitle'),
+      body: t('roadmap.updateBody'),
+    },
+    {
       phase: t('roadmap.phaseNow'),
       title: t('roadmap.nowTitle'),
       body: t('roadmap.nowBody'),
