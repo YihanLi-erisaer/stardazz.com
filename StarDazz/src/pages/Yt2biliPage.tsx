@@ -12,6 +12,8 @@ export function Yt2biliPage() {
     { title: t('yt2bili.f2t'), desc: t('yt2bili.f2d') },
     { title: t('yt2bili.f3t'), desc: t('yt2bili.f3d') },
     { title: t('yt2bili.f4t'), desc: t('yt2bili.f4d') },
+    { title: t('yt2bili.f5t'), desc: t('yt2bili.f5d') },
+    { title: t('yt2bili.f6t'), desc: t('yt2bili.f6d') },
   ]
 
   const steps = [
@@ -28,6 +30,7 @@ export function Yt2biliPage() {
     { cmd: 'python -m yt2bili run URL --account ACCOUNT_ID', note: t('yt2bili.cPrepare') },
     { cmd: 'python -m yt2bili submit TASK_ID', note: t('yt2bili.cSubmit') },
     { cmd: 'python -m yt2bili run URL --account ACCOUNT_ID --auto', note: t('yt2bili.cAuto') },
+    { cmd: 'python -m yt2bili run URL --account ACCOUNT_ID --sync-douyin --sync-acfun', note: t('yt2bili.cPlatforms') },
     { cmd: 'python -m yt2bili retry TASK_ID', note: t('yt2bili.cRetry') },
   ]
 
@@ -37,6 +40,10 @@ export function Yt2biliPage() {
     { name: 'scheduler.py', body: t('yt2bili.mScheduler') },
     { name: 'accounts.py', body: t('yt2bili.mAccounts') },
     { name: 'upload_coordinator.py', body: t('yt2bili.mUploadCoordinator') },
+    { name: 'publications.py', body: t('yt2bili.mPublications') },
+    { name: 'douyin.py + douyin_broker.py', body: t('yt2bili.mDouyin') },
+    { name: 'acfun.py', body: t('yt2bili.mAcfun') },
+    { name: 'history_transfer.py', body: t('yt2bili.mHistory') },
     { name: 'cli.py', body: t('yt2bili.mCli') },
     { name: 'pipeline.py', body: t('yt2bili.mPipeline') },
     { name: 'youtube.py', body: t('yt2bili.mYoutube') },
@@ -129,8 +136,16 @@ export function Yt2biliPage() {
             >
               {t('yt2bili.readme')}
             </a>
+            <a
+              href={`${GITHUB}/releases/tag/v0.3.0`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
+            >
+              {t('yt2bili.downloadWindows')}
+            </a>
             <Link
-              to="/blog/yt2bili-five-accounts-local-translation"
+              to="/blog/yt2bili-windows-multiplatform-1-0-alpha"
               className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
             >
               {t('yt2bili.devBlog')}

@@ -16,6 +16,16 @@ export function RoadmapPage() {
       body: t('roadmap.updateBody'),
     },
     {
+      phase: t('roadmap.phaseWindows'),
+      title: t('roadmap.windowsTitle'),
+      body: t('roadmap.windowsBody'),
+    },
+    {
+      phase: t('roadmap.phaseAlpha'),
+      title: t('roadmap.alphaTitle'),
+      body: t('roadmap.alphaBody'),
+    },
+    {
       phase: t('roadmap.phaseNow'),
       title: t('roadmap.nowTitle'),
       body: t('roadmap.nowBody'),
