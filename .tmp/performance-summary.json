@@ -1,0 +1,400 @@
+{
+  "bundles": [
+    {
+      "directory": ".tmp/performance-before",
+      "files": [
+        "/assets/index-B0i01KdX.js",
+        "/assets/chunk-OE4NN4TA-DYv-Ym73.js",
+        "/assets/ThemeContext-C99QYFH7.js",
+        "/assets/SmeetingBrandIcon-DLkN2_Jg.js",
+        "/assets/Yt2biliBrandIcon-de-6SRr3.js",
+        "/assets/devBlogPosts-B__HMH6S.js"
+      ],
+      "raw": 483177,
+      "gzip": 160115
+    },
+    {
+      "directory": "StarDazz/dist",
+      "files": [
+        "/assets/index-Bv50mUJk.js",
+        "/assets/chunk-OE4NN4TA-C6LKJNpE.js",
+        "/assets/ThemeContext-ByeniTEi.js",
+        "/assets/Yt2biliBrandIcon-C0MfTTsl.js",
+        "/assets/SmeetingBrandIcon-fJ2SaOv0.js",
+        "/assets/RouteFallback-B19ayAUZ.js",
+        "/assets/devBlogPosts-t5gAMo1k.js"
+      ],
+      "raw": 376365,
+      "gzip": 123527
+    }
+  ],
+  "audits": [
+    {
+      "name": "before",
+      "url": "http://127.0.0.1:4175/",
+      "version": "12.8.2",
+      "score": 69,
+      "metrics": {
+        "first-contentful-paint": 3748.5733500000006,
+        "largest-contentful-paint": 5415.155900000001,
+        "total-blocking-time": 11,
+        "cumulative-layout-shift": 0.0001206622506426478,
+        "speed-index": 4932.925699543318,
+        "total-byte-weight": 1102197
+      },
+      "warnings": [],
+      "siteResourceTransfer": 896725,
+      "pageResources": [
+        {
+          "path": "/",
+          "status": 200,
+          "size": 1773
+        },
+        {
+          "path": "/css2",
+          "status": 200,
+          "size": 1304
+        },
+        {
+          "path": "/assets/index-B0i01KdX.js",
+          "status": 200,
+          "size": 70340
+        },
+        {
+          "path": "/assets/chunk-OE4NN4TA-DYv-Ym73.js",
+          "status": 200,
+          "size": 48547
+        },
+        {
+          "path": "/assets/ThemeContext-C99QYFH7.js",
+          "status": 200,
+          "size": 1137
+        },
+        {
+          "path": "/assets/SmeetingBrandIcon-DLkN2_Jg.js",
+          "status": 200,
+          "size": 921
+        },
+        {
+          "path": "/assets/Yt2biliBrandIcon-de-6SRr3.js",
+          "status": 200,
+          "size": 954
+        },
+        {
+          "path": "/assets/devBlogPosts-B__HMH6S.js",
+          "status": 200,
+          "size": 41080
+        },
+        {
+          "path": "/assets/index-DJQ2yRPL.css",
+          "status": 200,
+          "size": 10717
+        },
+        {
+          "path": "/screator/icon-dark.png",
+          "status": 200,
+          "size": 69624
+        },
+        {
+          "path": "/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200,
+          "size": 49084
+        },
+        {
+          "path": "/_vercel/speed-insights/script.js",
+          "status": 404,
+          "size": 152
+        },
+        {
+          "path": "/StardazzIcon.jpg",
+          "status": 200,
+          "size": 76329
+        },
+        {
+          "path": "/smeeting-icon-dark.png",
+          "status": 200,
+          "size": 524763
+        }
+      ]
+    },
+    {
+      "name": "after",
+      "url": "http://127.0.0.1:4176/",
+      "version": "12.8.2",
+      "score": 84,
+      "metrics": {
+        "first-contentful-paint": 2975.0824,
+        "largest-contentful-paint": 3680.107475,
+        "total-blocking-time": 37,
+        "cumulative-layout-shift": 0,
+        "speed-index": 2975.0824,
+        "total-byte-weight": 414793
+      },
+      "warnings": [],
+      "siteResourceTransfer": 209857,
+      "pageResources": [
+        {
+          "path": "/",
+          "status": 200,
+          "size": 1745
+        },
+        {
+          "path": "/assets/inter-latin-Dx4kXJAl.woff2",
+          "status": 200,
+          "size": 48576
+        },
+        {
+          "path": "/assets/index-Bv50mUJk.js",
+          "status": 200,
+          "size": 70308
+        },
+        {
+          "path": "/assets/chunk-OE4NN4TA-C6LKJNpE.js",
+          "status": 200,
+          "size": 48624
+        },
+        {
+          "path": "/assets/ThemeContext-ByeniTEi.js",
+          "status": 200,
+          "size": 1137
+        },
+        {
+          "path": "/assets/Yt2biliBrandIcon-C0MfTTsl.js",
+          "status": 200,
+          "size": 1022
+        },
+        {
+          "path": "/assets/SmeetingBrandIcon-fJ2SaOv0.js",
+          "status": 200,
+          "size": 974
+        },
+        {
+          "path": "/assets/RouteFallback-B19ayAUZ.js",
+          "status": 200,
+          "size": 801
+        },
+        {
+          "path": "/assets/devBlogPosts-t5gAMo1k.js",
+          "status": 200,
+          "size": 4013
+        },
+        {
+          "path": "/assets/index-DANtX2hc.css",
+          "status": 200,
+          "size": 11372
+        },
+        {
+          "path": "/assets/smeeting-dark-Dt65Jv5Y.jpg",
+          "status": 200,
+          "size": 5908
+        },
+        {
+          "path": "/assets/screator-dark-CEVIsBro.jpg",
+          "status": 200,
+          "size": 12661
+        },
+        {
+          "path": "/_vercel/speed-insights/script.js",
+          "status": 404,
+          "size": 152
+        },
+        {
+          "path": "/assets/stardazz-favicon-rMRC1mtR.jpg",
+          "status": 200,
+          "size": 2564
+        }
+      ]
+    },
+    {
+      "name": "blog",
+      "url": "http://127.0.0.1:4176/blog/screator-desktop-workspace-october-2026",
+      "version": "12.8.2",
+      "score": 79,
+      "metrics": {
+        "first-contentful-paint": 3281.16085,
+        "largest-contentful-paint": 4232.7429,
+        "total-blocking-time": 15,
+        "cumulative-layout-shift": 0,
+        "speed-index": 3281.16085,
+        "total-byte-weight": 452007
+      },
+      "warnings": [],
+      "siteResourceTransfer": 247071,
+      "pageResources": [
+        {
+          "path": "/blog/screator-desktop-workspace-october-2026",
+          "status": 200,
+          "size": 1809
+        },
+        {
+          "path": "/assets/inter-latin-Dx4kXJAl.woff2",
+          "status": 200,
+          "size": 48576
+        },
+        {
+          "path": "/assets/index-Bv50mUJk.js",
+          "status": 200,
+          "size": 70308
+        },
+        {
+          "path": "/assets/chunk-OE4NN4TA-C6LKJNpE.js",
+          "status": 200,
+          "size": 48624
+        },
+        {
+          "path": "/assets/ThemeContext-ByeniTEi.js",
+          "status": 200,
+          "size": 1137
+        },
+        {
+          "path": "/assets/Yt2biliBrandIcon-C0MfTTsl.js",
+          "status": 200,
+          "size": 1022
+        },
+        {
+          "path": "/assets/SmeetingBrandIcon-fJ2SaOv0.js",
+          "status": 200,
+          "size": 974
+        },
+        {
+          "path": "/assets/RouteFallback-B19ayAUZ.js",
+          "status": 200,
+          "size": 801
+        },
+        {
+          "path": "/assets/devBlogPosts-t5gAMo1k.js",
+          "status": 200,
+          "size": 4013
+        },
+        {
+          "path": "/assets/index-DANtX2hc.css",
+          "status": 200,
+          "size": 11372
+        },
+        {
+          "path": "/assets/BlogPostPage-CK0zx6cy.js",
+          "status": 200,
+          "size": 1742
+        },
+        {
+          "path": "/assets/MarkdownPreview-YQXN3L1i.js",
+          "status": 200,
+          "size": 46402
+        },
+        {
+          "path": "/assets/NotFoundPage-BvqzlT_o.js",
+          "status": 200,
+          "size": 1126
+        },
+        {
+          "path": "/_vercel/speed-insights/script.js",
+          "status": 404,
+          "size": 152
+        },
+        {
+          "path": "/assets/stardazz-favicon-rMRC1mtR.jpg",
+          "status": 200,
+          "size": 2564
+        },
+        {
+          "path": "/assets/screator-desktop-workspace-october-2026-D_PiMsZN.js",
+          "status": 200,
+          "size": 6449
+        }
+      ]
+    },
+    {
+      "name": "product",
+      "url": "http://127.0.0.1:4176/products/screator",
+      "version": "12.8.2",
+      "score": 81,
+      "metrics": {
+        "first-contentful-paint": 3043.9610749999997,
+        "largest-contentful-paint": 4002.7603500000005,
+        "total-blocking-time": 13,
+        "cumulative-layout-shift": 0,
+        "speed-index": 3043.9610749999997,
+        "total-byte-weight": 522657
+      },
+      "warnings": [],
+      "siteResourceTransfer": 317721,
+      "pageResources": [
+        {
+          "path": "/products/screator",
+          "status": 200,
+          "size": 1767
+        },
+        {
+          "path": "/assets/inter-latin-Dx4kXJAl.woff2",
+          "status": 200,
+          "size": 48576
+        },
+        {
+          "path": "/assets/index-Bv50mUJk.js",
+          "status": 200,
+          "size": 70308
+        },
+        {
+          "path": "/assets/chunk-OE4NN4TA-C6LKJNpE.js",
+          "status": 200,
+          "size": 48624
+        },
+        {
+          "path": "/assets/ThemeContext-ByeniTEi.js",
+          "status": 200,
+          "size": 1137
+        },
+        {
+          "path": "/assets/Yt2biliBrandIcon-C0MfTTsl.js",
+          "status": 200,
+          "size": 1022
+        },
+        {
+          "path": "/assets/SmeetingBrandIcon-fJ2SaOv0.js",
+          "status": 200,
+          "size": 974
+        },
+        {
+          "path": "/assets/RouteFallback-B19ayAUZ.js",
+          "status": 200,
+          "size": 801
+        },
+        {
+          "path": "/assets/devBlogPosts-t5gAMo1k.js",
+          "status": 200,
+          "size": 4013
+        },
+        {
+          "path": "/assets/index-DANtX2hc.css",
+          "status": 200,
+          "size": 11372
+        },
+        {
+          "path": "/assets/Yt2biliPage-DpdDZXSQ.js",
+          "status": 200,
+          "size": 3585
+        },
+        {
+          "path": "/_vercel/speed-insights/script.js",
+          "status": 404,
+          "size": 152
+        },
+        {
+          "path": "/assets/stardazz-favicon-rMRC1mtR.jpg",
+          "status": 200,
+          "size": 2564
+        },
+        {
+          "path": "/assets/screator-dark-CEVIsBro.jpg",
+          "status": 200,
+          "size": 12661
+        },
+        {
+          "path": "/screator/tasks-dark.png",
+          "status": 200,
+          "size": 110165
+        }
+      ]
+    }
+  ]
+}

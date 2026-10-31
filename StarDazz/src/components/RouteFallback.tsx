@@ -2,6 +2,7 @@
 export function RouteFallback() {
   return (
     <div
+      data-route-loading
       className="flex min-h-[50vh] items-center justify-center px-4"
       role="status"
       aria-live="polite"

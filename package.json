@@ -5,6 +5,7 @@
     "dev": "npm run dev --prefix StarDazz",
     "build": "npm run build --prefix StarDazz",
     "preview": "npm run preview --prefix StarDazz",
+    "perf:check": "npm run perf:check --prefix StarDazz",
     "lint": "npm run lint --prefix StarDazz"
   },
   "devDependencies": {

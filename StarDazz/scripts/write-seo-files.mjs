@@ -16,6 +16,7 @@ const base = (process.env.VITE_SITE_URL ?? 'https://stardazz-com.vercel.app').re
 
 /** Keep in sync with `src/content/devBlogPosts.ts` slugs. */
 const BLOG_SLUGS = [
+  'screator-desktop-workspace-october-2026',
   'yt2bili-windows-multiplatform-1-0-alpha',
   'yt2bili-five-accounts-local-translation',
   'yt2bili-desktop-alpha-1',
@@ -36,7 +37,7 @@ const paths = [
   '/products/smeeting',
   '/products/smeeting/support',
   '/products/smeeting/privacy',
-  '/products/yt2bili',
+  '/products/screator',
   '/contact',
   '/roadmap',
 ]

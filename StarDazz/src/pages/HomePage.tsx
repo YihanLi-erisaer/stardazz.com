@@ -113,7 +113,7 @@ export function HomePage() {
             </Link>
 
             <Link
-              to="/products/yt2bili"
+              to="/products/screator"
               className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 
                 p-8 transition hover:border-zinc-300 dark:border-white/[0.08] dark:from-zinc-900/80 dark:to-zinc-950 
                 dark:hover:border-white/[0.14] dark:hover:shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
@@ -126,7 +126,7 @@ export function HomePage() {
                 <p className="font-mono text-xs uppercase tracking-wider text-[#fb7299]">
                   {t('home.cardLabel')}
                 </p>
-                <h3 className="mt-2 text-2xl font-medium text-zinc-900 dark:text-zinc-50">yt2bili</h3>
+                <h3 className="mt-2 text-2xl font-medium text-zinc-900 dark:text-zinc-50">screator</h3>
                 <p className="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-400">
                   {t('home.yt2biliDesc')}
                 </p>

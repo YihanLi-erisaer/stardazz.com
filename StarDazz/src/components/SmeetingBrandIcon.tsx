@@ -1,4 +1,6 @@
 import { useTheme } from '../theme/ThemeContext'
+import iconDark from '../assets/brand/smeeting-dark.jpg'
+import iconLight from '../assets/brand/smeeting-light.jpg'
 
 type Props = {
   sizeClassName?: string
@@ -6,7 +8,7 @@ type Props = {
 
 export function SmeetingBrandIcon({ sizeClassName = 'h-14 w-14' }: Props) {
   const { theme } = useTheme()
-  const src = theme === 'dark' ? '/smeeting-icon-dark.png' : '/smeeting-icon-light.png'
+  const src = theme === 'dark' ? iconDark : iconLight
 
   return (
     <div
@@ -15,8 +17,10 @@ export function SmeetingBrandIcon({ sizeClassName = 'h-14 w-14' }: Props) {
       <img
         src={src}
         alt="smeeting icon"
+        width={256}
+        height={256}
         className="h-full w-full object-cover object-center"
-        loading="lazy"
+        decoding="async"
       />
     </div>
   )

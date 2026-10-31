@@ -65,7 +65,7 @@ export function ProductsPage() {
           </Link>
 
           <Link
-            to="/products/yt2bili"
+            to="/products/screator"
             className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 p-8 transition hover:border-zinc-300 dark:border-white/[0.08] dark:from-zinc-900/80 dark:to-zinc-950 dark:hover:border-white/[0.14]"
           >
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#fb7299]/15 blur-3xl transition group-hover:bg-[#fb7299]/25" />
@@ -74,7 +74,7 @@ export function ProductsPage() {
               <p className="mt-5 font-mono text-xs uppercase tracking-wider text-[#fb7299]">
                 {t('products.cliLabel')}
               </p>
-              <h2 className="mt-2 text-2xl font-medium text-zinc-900 dark:text-zinc-50">yt2bili</h2>
+              <h2 className="mt-2 text-2xl font-medium text-zinc-900 dark:text-zinc-50">screator</h2>
               <p className="mt-3 max-w-2xl leading-relaxed text-zinc-700 dark:text-zinc-400">
                 {t('products.yt2biliBody')}
               </p>

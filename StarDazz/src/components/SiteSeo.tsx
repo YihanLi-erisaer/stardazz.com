@@ -13,7 +13,7 @@ const DOC_TITLE_KEY_BY_PATH: Record<string, string> = {
   '/products/smeeting': 'smeeting.docTitle',
   '/products/smeeting/privacy': 'smeetingPrivacy.docTitle',
   '/products/smeeting/support': 'smeetingSupport.docTitle',
-  '/products/yt2bili': 'yt2bili.docTitle',
+  '/products/screator': 'yt2bili.docTitle',
   '/contact': 'contact.docTitle',
   '/login': 'login.docTitle',
   '/roadmap': 'roadmap.docTitle',
@@ -27,13 +27,14 @@ const META_DESC_KEY_BY_PATH: Record<string, string> = {
   '/products/smeeting': 'smeeting.metaDescription',
   '/products/smeeting/privacy': 'smeetingPrivacy.metaDescription',
   '/products/smeeting/support': 'smeetingSupport.metaDescription',
-  '/products/yt2bili': 'yt2bili.metaDescription',
+  '/products/screator': 'yt2bili.metaDescription',
   '/contact': 'contact.metaDescription',
   '/login': 'login.metaDescription',
   '/roadmap': 'roadmap.metaDescription',
 }
 
 const SMEETING_GITHUB = 'https://github.com/YihanLi-erisaer/smeeting'
+const SCREATOR_GITHUB = 'https://github.com/YihanLi-erisaer/screator'
 
 function defaultSiteOrigin(): string {
   const fromEnv = import.meta.env.VITE_SITE_URL?.replace(/\/$/, '')
@@ -51,13 +52,14 @@ function buildJsonLd(args: {
   siteUrl: string
   pathname: string
   descriptionSmeeting: string
+  descriptionScreator: string
   blogPost?: {
     title: string
     description: string
     date: string
   }
 }) {
-  const { siteUrl, pathname, descriptionSmeeting, blogPost } = args
+  const { siteUrl, pathname, descriptionSmeeting, descriptionScreator, blogPost } = args
   const orgId = `${siteUrl}/#organization`
 
   const organization = {
@@ -96,6 +98,20 @@ function buildJsonLd(args: {
     })
   }
 
+  if (pathname === '/products/screator') {
+    graph.push({
+      '@type': 'SoftwareApplication',
+      name: 'screator',
+      applicationCategory: 'MultimediaApplication',
+      operatingSystem: 'Windows, macOS (Apple Silicon)',
+      description: descriptionScreator,
+      url: `${siteUrl}/products/screator`,
+      screenshot: `${siteUrl}/screator/tasks-dark.png`,
+      sameAs: SCREATOR_GITHUB,
+      publisher: { '@id': orgId },
+    })
+  }
+
   if (blogPost) {
     graph.push({
       '@type': 'BlogPosting',
@@ -120,8 +136,9 @@ export function SiteSeo() {
   const { t, locale } = useLanguage()
   const siteUrl = useSiteOrigin()
 
-  const normalizedPath =
+  const trimmedPath =
     pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname
+  const normalizedPath = trimmedPath === '/products/yt2bili' ? '/products/screator' : trimmedPath
 
   const blogDetailMatch = /^\/blog\/([^/]+)$/.exec(normalizedPath)
   const blogSlug = blogDetailMatch?.[1]
@@ -154,9 +171,13 @@ export function SiteSeo() {
 
   const isBlogPost = Boolean(blogPost)
   const isSmeetingPage = path.startsWith('/products/smeeting')
+  const isScreatorPage =
+    path === '/products/screator' || path === '/roadmap' || blogSlug?.startsWith('screator-')
   const ogType = isBlogPost ? 'article' : 'website'
-  const ogImage = `${siteUrl}/${isSmeetingPage ? 'smeeting-icon-dark.png' : 'smeeting-icon-light.png'}`
-  const ogImageAlt = isSmeetingPage ? 'smeeting app icon' : 'StarDazz preview image'
+  const ogImage = `${siteUrl}/${isScreatorPage ? 'screator/tasks-dark.png' : isSmeetingPage ? 'smeeting-icon-dark.png' : 'smeeting-icon-light.png'}`
+  const ogImageAlt = isScreatorPage
+    ? t('yt2bili.screenshotTasksDarkAlt')
+    : isSmeetingPage ? 'smeeting app icon' : 'StarDazz preview image'
   const ogLocale = localeToOgLocale(locale)
 
   const jsonLd = useMemo(
@@ -165,6 +186,7 @@ export function SiteSeo() {
         siteUrl,
         pathname: path,
         descriptionSmeeting: t('smeeting.metaDescription'),
+        descriptionScreator: t('yt2bili.metaDescription'),
         blogPost: blogPost
           ? {
               title: blogPost.title[locale],

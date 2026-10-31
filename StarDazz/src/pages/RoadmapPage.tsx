@@ -26,6 +26,16 @@ export function RoadmapPage() {
       body: t('roadmap.alphaBody'),
     },
     {
+      phase: t('roadmap.phaseMac'),
+      title: t('roadmap.macTitle'),
+      body: t('roadmap.macBody'),
+    },
+    {
+      phase: t('roadmap.phaseWorkspace'),
+      title: t('roadmap.workspaceTitle'),
+      body: t('roadmap.workspaceBody'),
+    },
+    {
       phase: t('roadmap.phaseNow'),
       title: t('roadmap.nowTitle'),
       body: t('roadmap.nowBody'),
@@ -96,7 +106,7 @@ export function RoadmapPage() {
             {t('roadmap.blogCta')}
           </Link>
           <a
-            href="https://github.com/YihanLi-erisaer/yt2bili"
+            href="https://github.com/YihanLi-erisaer/screator"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-5 py-2 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"

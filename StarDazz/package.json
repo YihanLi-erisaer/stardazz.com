@@ -9,6 +9,7 @@
     "dev": "vite",
     "prebuild": "node scripts/write-seo-files.mjs",
     "build": "tsc -b && vite build",
+    "perf:check": "node scripts/check-performance-budget.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

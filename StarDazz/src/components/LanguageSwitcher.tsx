@@ -19,20 +19,31 @@ export function LanguageSwitcher() {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const menuRef = useRef<HTMLUListElement>(null)
 
-  const updateMenuPos = () => {
-    const el = buttonRef.current
-    if (!el) return
-    const r = el.getBoundingClientRect()
-    setMenuPos({ top: r.bottom + 4, right: window.innerWidth - r.right })
-  }
-
   useLayoutEffect(() => {
     if (!open) return
+    let frame: number | null = null
+    const updateMenuPos = () => {
+      const el = buttonRef.current
+      if (!el) return
+      const r = el.getBoundingClientRect()
+      const next = { top: r.bottom + 4, right: window.innerWidth - r.right }
+      setMenuPos((previous) =>
+        previous?.top === next.top && previous.right === next.right ? previous : next,
+      )
+    }
+
     updateMenuPos()
-    const onWin = () => updateMenuPos()
+    const onWin = () => {
+      if (frame !== null) return
+      frame = requestAnimationFrame(() => {
+        frame = null
+        updateMenuPos()
+      })
+    }
     window.addEventListener('resize', onWin)
-    window.addEventListener('scroll', onWin, true)
+    window.addEventListener('scroll', onWin, { capture: true, passive: true })
     return () => {
+      if (frame !== null) cancelAnimationFrame(frame)
       window.removeEventListener('resize', onWin)
       window.removeEventListener('scroll', onWin, true)
     }

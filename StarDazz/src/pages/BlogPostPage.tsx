@@ -1,10 +1,30 @@
+import { lazy, Suspense } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { MarkdownPreview } from '../components/MarkdownPreview'
+import { RouteFallback } from '../components/RouteFallback'
 import { NotFoundPage } from './NotFoundPage'
-import { getDevBlogPostBySlug } from '../content/devBlogPosts'
+import { getDevBlogPostBySlug, type LocalizedText } from '../content/devBlogPosts'
 import { useLanguage } from '../i18n/LanguageContext'
 import { localeToDateFormatLocale } from '../i18n/localeDisplay'
 import type { Locale } from '../i18n/messages'
+
+// Keep lazy component identities stable and load only the selected article.
+const bodyModules = import.meta.glob<LocalizedText>('../content/posts/*.ts', {
+  import: 'default',
+})
+const postBodies = Object.fromEntries(
+  Object.entries(bodyModules).map(([path, loadBody]) => [
+    path.slice(path.lastIndexOf('/') + 1, -3),
+    lazy(async () => {
+      const body = await loadBody()
+      return {
+        default: function PostBody({ locale }: { locale: Locale }) {
+          return <MarkdownPreview source={body[locale]} />
+        },
+      }
+    }),
+  ] as const),
+)
 
 function formatBlogDate(iso: string, locale: Locale): string {
   const d = new Date(`${iso}T12:00:00`)
@@ -23,8 +43,9 @@ export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>()
   const { locale, t } = useLanguage()
   const post = slug ? getDevBlogPostBySlug(slug) : undefined
+  const PostBody = slug ? postBodies[slug] : undefined
 
-  if (!post) {
+  if (!post || !PostBody) {
     return <NotFoundPage />
   }
 
@@ -58,7 +79,9 @@ export function BlogPostPage() {
       </header>
 
       <div className="mt-10">
-        <MarkdownPreview source={post.body[locale]} />
+        <Suspense key={post.slug} fallback={<RouteFallback />}>
+          <PostBody locale={locale} />
+        </Suspense>
       </div>
 
       <p className="mt-12">

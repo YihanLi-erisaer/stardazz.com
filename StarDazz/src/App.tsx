@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout'
 import { HomePage } from './pages/HomePage'
 
@@ -44,6 +44,11 @@ const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
 )
 
+function LegacyYt2biliRedirect() {
+  const { search, hash } = useLocation()
+  return <Navigate to={{ pathname: '/products/screator', search, hash }} replace />
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -63,7 +68,8 @@ export default function App() {
             element={<SmeetingSupportPage />}
           />
           <Route path="/products/smeeting" element={<SmeetingPage />} />
-          <Route path="/products/yt2bili" element={<Yt2biliPage />} />
+          <Route path="/products/screator" element={<Yt2biliPage />} />
+          <Route path="/products/yt2bili" element={<LegacyYt2biliRedirect />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/roadmap" element={<RoadmapPage />} />

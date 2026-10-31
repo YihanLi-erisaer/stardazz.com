@@ -22,8 +22,8 @@ export function AboutPage() {
       body: t('about.projectSmeeting'),
     },
     {
-      title: 'yt2bili',
-      href: '/products/yt2bili',
+      title: 'screator',
+      href: '/products/screator',
       body: t('about.projectYt2bili'),
     },
     {

@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Yt2biliBrandIcon } from '../components/Yt2biliBrandIcon'
 import { useLanguage } from '../i18n/LanguageContext'
 
-const GITHUB = 'https://github.com/YihanLi-erisaer/yt2bili'
+const GITHUB = 'https://github.com/YihanLi-erisaer/screator'
+const UI_SOURCE = `${GITHUB}/tree/383c5bd87ba1d3546cf813df94b4fa3a8c506c0b/desktop`
 
 export function Yt2biliPage() {
   const { t } = useLanguage()
+  const [selectedScreenshot, setSelectedScreenshot] = useState(0)
 
   const features = [
     { title: t('yt2bili.f1t'), desc: t('yt2bili.f1d') },
@@ -14,6 +17,8 @@ export function Yt2biliPage() {
     { title: t('yt2bili.f4t'), desc: t('yt2bili.f4d') },
     { title: t('yt2bili.f5t'), desc: t('yt2bili.f5d') },
     { title: t('yt2bili.f6t'), desc: t('yt2bili.f6d') },
+    { title: t('yt2bili.f7t'), desc: t('yt2bili.f7d') },
+    { title: t('yt2bili.f8t'), desc: t('yt2bili.f8d') },
   ]
 
   const steps = [
@@ -25,13 +30,13 @@ export function Yt2biliPage() {
   ]
 
   const commands = [
-    { cmd: 'python -m yt2bili translation setup', note: t('yt2bili.cTranslationSetup') },
-    { cmd: 'python -m yt2bili accounts add', note: t('yt2bili.cAccountsAdd') },
-    { cmd: 'python -m yt2bili run URL --account ACCOUNT_ID', note: t('yt2bili.cPrepare') },
-    { cmd: 'python -m yt2bili submit TASK_ID', note: t('yt2bili.cSubmit') },
-    { cmd: 'python -m yt2bili run URL --account ACCOUNT_ID --auto', note: t('yt2bili.cAuto') },
-    { cmd: 'python -m yt2bili run URL --account ACCOUNT_ID --sync-douyin --sync-acfun', note: t('yt2bili.cPlatforms') },
-    { cmd: 'python -m yt2bili retry TASK_ID', note: t('yt2bili.cRetry') },
+    { cmd: 'python -m screator translation setup', note: t('yt2bili.cTranslationSetup') },
+    { cmd: 'python -m screator accounts add', note: t('yt2bili.cAccountsAdd') },
+    { cmd: 'python -m screator run URL --account ACCOUNT_ID', note: t('yt2bili.cPrepare') },
+    { cmd: 'python -m screator submit TASK_ID', note: t('yt2bili.cSubmit') },
+    { cmd: 'python -m screator run URL --account ACCOUNT_ID --auto', note: t('yt2bili.cAuto') },
+    { cmd: 'python -m screator run URL --account ACCOUNT_ID --sync-douyin --sync-acfun', note: t('yt2bili.cPlatforms') },
+    { cmd: 'python -m screator retry TASK_ID', note: t('yt2bili.cRetry') },
   ]
 
   const modules = [
@@ -63,24 +68,37 @@ export function Yt2biliPage() {
 
   const screenshots = [
     {
-      src: '/yt2bili/tasks-dark.png',
+      src: '/screator/tasks-dark.png',
       alt: t('yt2bili.screenshotTasksDarkAlt'),
       caption: t('yt2bili.screenshotTasksDarkCaption'),
-      wide: true,
     },
     {
-      src: '/yt2bili/account-dark.png',
+      src: '/screator/materials-light.png',
+      alt: t('yt2bili.screenshotMaterialsAlt'),
+      caption: t('yt2bili.screenshotMaterialsCaption'),
+    },
+    {
+      src: '/screator/data-dark.png',
+      alt: t('yt2bili.screenshotDataAlt'),
+      caption: t('yt2bili.screenshotDataCaption'),
+    },
+    {
+      src: '/screator/accounts-dark.png',
       alt: t('yt2bili.screenshotAccountAlt'),
       caption: t('yt2bili.screenshotAccountCaption'),
-      wide: false,
     },
     {
-      src: '/yt2bili/tasks-light.png',
+      src: '/screator/tasks-light.png',
       alt: t('yt2bili.screenshotTasksLightAlt'),
       caption: t('yt2bili.screenshotTasksLightCaption'),
-      wide: false,
+    },
+    {
+      src: '/screator/settings-light.png',
+      alt: t('yt2bili.screenshotSettingsAlt'),
+      caption: t('yt2bili.screenshotSettingsCaption'),
     },
   ]
+  const activeScreenshot = screenshots[selectedScreenshot]
 
   return (
     <div className="relative">
@@ -99,7 +117,7 @@ export function Yt2biliPage() {
             {t('nav.products')}
           </Link>
           <span className="mx-2 text-zinc-500 dark:text-zinc-600">/</span>
-          <span className="text-zinc-700 dark:text-zinc-400">yt2bili</span>
+          <span className="text-zinc-700 dark:text-zinc-400">screator</span>
         </nav>
 
         <div className="mt-10 max-w-3xl">
@@ -110,8 +128,9 @@ export function Yt2biliPage() {
             {t('yt2bili.label')}
           </p>
           <h1 className="mt-3 text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl">
-            yt2bili
+            screator
           </h1>
+          <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">{t('yt2bili.renamed')}</p>
           <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 font-mono text-xs text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-950/30 dark:text-emerald-400">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
             {t('yt2bili.desktopStatus')}
@@ -137,15 +156,23 @@ export function Yt2biliPage() {
               {t('yt2bili.readme')}
             </a>
             <a
-              href={`${GITHUB}/releases/tag/v0.3.0`}
+              href={`${GITHUB}/releases/tag/Windows-v1.0.0alpha`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
             >
               {t('yt2bili.downloadWindows')}
             </a>
+            <a
+              href={`${GITHUB}/releases/tag/macOS-v1.0.0alpha`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
+            >
+              {t('yt2bili.downloadMac')}
+            </a>
             <Link
-              to="/blog/yt2bili-windows-multiplatform-1-0-alpha"
+              to="/blog/screator-desktop-workspace-october-2026"
               className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-800 transition hover:border-zinc-400 hover:bg-zinc-100 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-200 dark:hover:border-white/25 dark:hover:bg-white/[0.06]"
             >
               {t('yt2bili.devBlog')}
@@ -157,6 +184,9 @@ export function Yt2biliPage() {
               {t('yt2bili.roadmap')}
             </Link>
           </div>
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            {t('yt2bili.releaseNote')}
+          </p>
           <div className="mt-8 max-w-2xl rounded-xl border border-amber-200/80 bg-amber-50/80 px-4 py-4 dark:border-amber-500/20 dark:bg-amber-950/20 sm:px-5">
             <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-400">
               {t('yt2bili.legal')}
@@ -173,26 +203,48 @@ export function Yt2biliPage() {
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
             {t('yt2bili.screenshotsSub')}
           </p>
-          <div className="mt-8 grid gap-5 lg:grid-cols-2">
-            {screenshots.map((screenshot) => (
-              <figure
+          <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label={t('yt2bili.screenshotsTitle')}>
+            {screenshots.map((screenshot, index) => (
+              <button
                 key={screenshot.src}
-                className={screenshot.wide ? 'lg:col-span-2' : undefined}
+                type="button"
+                aria-pressed={selectedScreenshot === index}
+                aria-controls="screator-screenshot"
+                onClick={() => setSelectedScreenshot(index)}
+                className={`rounded-full border px-4 py-2 text-sm transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-500 ${selectedScreenshot === index
+                  ? 'border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900'
+                  : 'border-zinc-300 bg-white text-zinc-600 hover:border-zinc-500 dark:border-white/15 dark:bg-white/[0.03] dark:text-zinc-400 dark:hover:border-white/40'}`}
               >
-                <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-white/[0.08] dark:bg-zinc-950">
-                  <img
-                    src={screenshot.src}
-                    alt={screenshot.alt}
-                    loading="lazy"
-                    className="h-auto w-full"
-                  />
-                </div>
-                <figcaption className="mt-3 text-sm text-zinc-600 dark:text-zinc-500">
-                  {screenshot.caption}
-                </figcaption>
-              </figure>
+                {screenshot.caption}
+              </button>
             ))}
           </div>
+          <figure id="screator-screenshot" className="mt-6">
+            <a
+              href={activeScreenshot.src}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${activeScreenshot.alt} — ${t('yt2bili.screenshotViewFull')}`}
+              className="block overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-950 shadow-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-500 dark:border-white/10"
+            >
+              <img
+                src={activeScreenshot.src}
+                alt={activeScreenshot.alt}
+                width={1440}
+                height={1000}
+                loading="lazy"
+                decoding="async"
+                className="h-auto w-full"
+              />
+            </a>
+            <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-600 dark:text-zinc-400">
+              <span aria-live="polite">{activeScreenshot.caption} · {t('yt2bili.screenshotDate')}</span>
+              <div className="flex flex-wrap gap-4">
+                <a href={UI_SOURCE} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-zinc-950 dark:hover:text-zinc-200">{t('yt2bili.screenshotSource')}</a>
+                <a href={activeScreenshot.src} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-zinc-950 dark:hover:text-zinc-200">{t('yt2bili.screenshotViewFull')} ↗</a>
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
 
@@ -235,6 +287,7 @@ export function Yt2biliPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 max-w-4xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{t('yt2bili.platformsNote')}</p>
         </div>
       </div>
 
@@ -250,7 +303,7 @@ export function Yt2biliPage() {
                 key={row.cmd}
                 className="flex flex-col gap-1 rounded-xl border border-zinc-200 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between dark:border-white/[0.06] dark:bg-white/[0.02]"
               >
-                <code className="font-mono text-sm text-zinc-800 dark:text-zinc-200">{row.cmd}</code>
+                <code className="min-w-0 break-all font-mono text-sm text-zinc-800 dark:text-zinc-200">{row.cmd}</code>
                 <span className="text-sm text-zinc-600 dark:text-zinc-500">{row.note}</span>
               </li>
             ))}

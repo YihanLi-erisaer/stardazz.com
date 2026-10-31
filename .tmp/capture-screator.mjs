@@ -1,0 +1,42 @@
+import { createRequire } from 'node:module'
+import { mkdir } from 'node:fs/promises'
+import { fileURLToPath } from 'node:url'
+
+const require = createRequire(new URL('../../screator/desktop/package.json', import.meta.url))
+const { chromium } = require('@playwright/test')
+const output = fileURLToPath(new URL('../StarDazz/public/screator/', import.meta.url))
+await mkdir(output, { recursive: true })
+const browser = await chromium.launch({ channel: 'msedge', headless: true })
+try {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 })
+  page.on('pageerror', (error) => console.error(error.message))
+  await page.goto('http://127.0.0.1:1426/?preview&accounts=2&populated&uiLanguage=zh-CN')
+  await page.getByText('用更少的工具，构建更专注的工作流', { exact: true }).waitFor()
+  await page.locator('.queue-overview-skeleton').waitFor({ state: 'hidden' })
+  await page.evaluate(() => document.fonts.ready)
+  await page.screenshot({ path: output + 'tasks-dark.png', animations: 'disabled' })
+  await page.getByRole('button', { name: '账号与连接', exact: true }).click()
+  await page.getByRole('heading', { name: '账号与连接', exact: true }).waitFor()
+  await page.getByText('UID 10001', { exact: false }).first().waitFor()
+  await page.screenshot({ path: output + 'accounts-dark.png', animations: 'disabled' })
+  await page.getByRole('button', { name: '数据中心', exact: true }).click()
+  await page.locator('.data-account-card').first().waitFor()
+  await page.locator('.data-row').first().waitFor()
+  await page.screenshot({ path: output + 'data-dark.png', animations: 'disabled' })
+  await page.getByRole('button', { name: '切换明暗主题' }).click()
+  await page.locator('html[data-theme="light"]').waitFor()
+  await page.getByRole('button', { name: '素材管理', exact: true }).click()
+  await page.getByRole('combobox', { name: '素材库', exact: true }).click()
+  await page.getByRole('option', { name: '示例素材库', exact: true }).click()
+  await page.getByText('示例视频.mp4', { exact: true }).waitFor()
+  await page.screenshot({ path: output + 'materials-light.png', animations: 'disabled' })
+  await page.getByRole('button', { name: '设置', exact: true }).click()
+  await page.getByRole('heading', { name: '通用设置' }).waitFor()
+  await page.screenshot({ path: output + 'settings-light.png', animations: 'disabled' })
+  await page.getByRole('navigation', { name: '主导航' }).getByRole('button', { name: /^投稿中心/ }).click()
+  await page.getByText('用更少的工具，构建更专注的工作流', { exact: true }).waitFor()
+  await page.screenshot({ path: output + 'tasks-light.png', animations: 'disabled' })
+  console.log('Captured six current screator frontend views with development preview data.')
+} finally {
+  await browser.close()
+}
